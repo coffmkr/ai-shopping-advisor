@@ -23,7 +23,8 @@
 | ---------------------------------- | --------------------------------------------------------------------------- |
 | Claude Opus 5.5 (Claude Code)      | Razonamiento para viabilidad, arquitectura, modelo de datos y documentación |
 | Claude Sonnet 5.5 (en el producto) | Agente buscador: borrador de la ficha de recomendación y notas por criterio |
-| Claude Haiku 5.5 (en el producto)  | Asistente conversacional: respuesta rápida y de bajo costo                  |
+| Claude Haiku 5.5 (en el producto)  | Asistente conversacional (ampliación): respuesta rápida y de bajo costo     |
+| nomic-embed-text vía Ollama (en el producto) | Embeddings de 768 dimensiones para el chat (ampliación)           |
 
 
 **Contexto avanzado**
@@ -290,3 +291,65 @@ Documenta 3 tickets con el detalle necesario para desarrollarlos de principio a 
 ## 7. Pull Requests
 
 Se documentarán cuando comience la implementación.
+
+---
+
+## 8. Iteración tras la revisión de la primera entrega
+
+La revisión de la primera entrega pidió acotar el alcance del MVP, cerrar definiciones técnicas que bloqueaban
+tickets y versionar el contexto para la IA. Se trabajó en cuatro pasos, cada uno con una decisión explícita del
+autor.
+
+**Prompt 1 — Análisis de la revisión y plan de acción**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Analiza la revisión de la primera entrega. Clasifica cada observación según su naturaleza: decisiones técnicas que requieren criterio del autor y ajustes de documentación derivables del diseño existente. Para cada una, indica en qué secciones del README impacta y en qué orden conviene resolverlas.
+```
+
+**Resultado:** dos decisiones abiertas (modelo de embeddings y librería de la cola) y un conjunto de ajustes de
+documentación: alcance, endpoints, tickets, semilla, proxy y contexto para la IA.
+**Ajuste humano:** decidí cerrar todas las observaciones antes de iniciar la implementación, sobre la rama de la
+primera entrega, para que la segunda parta de una base consistente.
+
+**Prompt 2 — Elección del modelo de embeddings**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Evalúa alternativas de modelo de embeddings para la búsqueda semántica del asistente: modelos de nube y modelos locales. Compara dimensión del vector, compatibilidad con el índice HNSW de pgvector, coste, privacidad y facilidad para cambiar de proveedor, y propone dónde calcular el embedding para que la publicación de un producto no dependa de un servicio externo.
+```
+
+**Resultado:** `nomic-embed-text` servido con Ollama, columna `vector(768)` con índice HNSW por coseno, y cálculo
+asíncrono posterior a la aprobación con un comando de relleno para la semilla.
+**Ajuste humano:** descarté la primera recomendación (un modelo de nube) en favor de un modelo local: sin coste
+ni envío de datos a terceros para una demo local, y con una dimensión que permite migrar a nube sin cambiar el
+esquema.
+
+**Prompt 3 — Cola de trabajos y concurrencia del agente**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Define la cola de trabajos del agente buscador sobre PostgreSQL, sin infraestructura adicional. Especifica la política de concurrencia: qué ocurre si se lanzan dos búsquedas a la vez, en la misma categoría o en categorías distintas. Analiza los conflictos con las restricciones del modelo de datos y refleja la decisión en la API, las historias de usuario y los tests.
+```
+
+**Resultado:** pg-boss con un worker de concurrencia 1, 409 si ya hay una búsqueda activa en la categoría
+(garantizado por un índice único parcial) y omisión de ASIN existentes. El análisis detectó que dos búsquedas
+simultáneas de la misma categoría violarían la unicidad del producto y harían fallar la transacción completa.
+**Ajuste humano:** validé que la regla cubre el caso de uso de un único administrador sin limitar búsquedas en
+categorías distintas.
+
+**Prompt 4 — Aplicación de los ajustes y contexto para la IA**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Actualiza la documentación técnica con las decisiones tomadas. Reorganiza el alcance en un núcleo de MVP (curaduría, catálogo, comparador y redirección con clic registrado) y una ampliación (asistente conversacional y editor de rúbricas). Completa la API con los endpoints que necesitan los flujos de punta a punta, añade los tickets de aprobación y de catálogo/comparador en el servidor, resuelve la búsqueda de origen de la semilla y el acceso desde un solo origen con Nuxt. Después, versiona el contexto para la IA: CLAUDE.md con stack, arquitectura y reglas de trabajo, el hook que protege los secretos y la configuración de OpenSpec.
+```
+
+**Resultado:** README actualizado (secciones 1 a 6 y nueva 3.3 con el diseño de la ampliación), backlog de nueve
+tickets con dos nuevos detallados, `CLAUDE.md`, hook `PreToolUse` verificado con casos bloqueados y permitidos, y
+`openspec/` configurado con el contexto del proyecto.
+**Ajuste humano:** revisé la coherencia entre secciones y el tono de la documentación antes de cerrar la entrega.

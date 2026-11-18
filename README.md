@@ -30,7 +30,7 @@ genera comisión.
 
 ### **0.4. URL del proyecto:**
 
-No desplegado: el MVP es una demo que se ejecuta en local (ver 1.4 y 2.4).
+Pendiente: se publicará con la entrega final (ver 2.4). Mientras tanto, se ejecuta en local (ver 1.4).
 
 ### 0.5. URL o archivo comprimido del repositorio
 
@@ -54,10 +54,9 @@ búsqueda, filtrado y primer borrador, y una persona garantiza la calidad de lo 
 
 **Para quién.**
 - **Cliente (visitante):** quiere comprar algo para su escritorio sin investigar durante horas.
-  *Hace:* navega las categorías, abre el detalle de un producto y compara opciones, como en cualquier e-commerce;
-  si tiene dudas, pregunta al asistente en lenguaje natural.
-  *Recibe:* productos ya seleccionados con su ficha de recomendación, una comparación lado a lado, respuestas del
-  asistente basadas solo en el catálogo y un botón hacia Amazon para comprar.
+  *Hace:* navega las categorías, abre el detalle de un producto y compara opciones, como en cualquier e-commerce.
+  *Recibe:* productos ya seleccionados con su ficha de recomendación, una comparación lado a lado y un botón hacia
+  Amazon para comprar. (En la ampliación, además, un asistente al que preguntar en lenguaje natural; ver 1.2.)
 - **Administrador (dueño del sitio):** quiere un catálogo curado sin buscar producto por producto.
   *Introduce:* una categoría y un precio máximo. *Recibe:* candidatos con datos y un borrador de la ficha
   redactado por el agente, que revisa, ajusta y aprueba.
@@ -68,7 +67,8 @@ búsqueda, filtrado y primer borrador, y una persona garantiza la calidad de lo 
 
 ### **1.2. Características y funcionalidades principales:**
 
-Cinco funcionalidades imprescindibles (*must-have*):
+**Núcleo del MVP:** cuatro funcionalidades imprescindibles (*must-have*) que cierran de punta a punta el flujo
+del administrador (curaduría) y el del visitante (compra). Las rúbricas de cada categoría vienen de la semilla.
 
 | # | Funcionalidad | Actor |
 |---|---|---|
@@ -76,7 +76,13 @@ Cinco funcionalidades imprescindibles (*must-have*):
 | 2 | **Revisión, aprobación y link de afiliado.** Panel autenticado para aprobar o rechazar candidatos. Antes de aprobar, el administrador revisa y edita la ficha de recomendación que redactó el agente. Al aprobar, el sistema genera el link de afiliado con el tag propio; cada clic hacia Amazon pasa por `/go/{id}`, que lo registra antes de redirigir. | Administrador / Sistema |
 | 3 | **Catálogo público con ficha de recomendación.** Como cualquier e-commerce: categorías, listado y detalle de cada producto aprobado. El detalle muestra la ficha completa, el botón "Ver en Amazon" y el aviso de afiliado. | Cliente |
 | 4 | **Comparador por categoría.** El cliente elige de 2 a 4 productos de la misma categoría y los ve lado a lado: nota del asesor por criterio, especificaciones clave, pros y contras, para quién es cada uno, rango de precio y etiquetas. | Cliente |
-| 5 | **Asistente conversacional.** Un chat donde el cliente pide recomendaciones o hace preguntas en lenguaje natural ("algo para que no me duela el cuello con la laptop"). Responde solo con productos del catálogo aprobado, usando búsqueda semántica (pgvector) sobre sus fichas. Si nada encaja, lo dice y guarda el pedido como demanda no cubierta. | Cliente |
+
+**Ampliación (después del núcleo, si el tiempo lo permite):**
+
+| # | Funcionalidad | Actor |
+|---|---|---|
+| 5 | **Asistente conversacional.** Un chat donde el cliente pide recomendaciones o hace preguntas en lenguaje natural ("algo para que no me duela el cuello con la laptop"). Responde solo con productos del catálogo aprobado, usando búsqueda semántica (pgvector) sobre sus fichas. Si nada encaja, lo dice y guarda el pedido como demanda no cubierta. Diseño técnico en 3.3. | Cliente |
+| 6 | **Editor de rúbricas.** Pantalla del panel para crear y editar los criterios de la nota del asesor de cada categoría. En el núcleo, las rúbricas se cargan desde la semilla. | Administrador |
 
 **La ficha de recomendación** es lo que ofrece el producto: no solo qué comprar, sino por qué y para quién.
 El agente redacta un borrador de cada bloque y el administrador lo revisa:
@@ -98,14 +104,13 @@ El agente redacta un borrador de cada bloque y el administrador lo revisa:
 1. **Curaduría (interno, asíncrono):** el administrador lanza una búsqueda → el agente crea candidatos con el
    borrador de la ficha → el administrador revisa la ficha y aprueba → el producto se publica. Ocurre con
    anticipación; el cliente nunca espera por este flujo.
-2. **Compra (cliente, en tiempo real):** el cliente navega las categorías, compara productos o pregunta al
-   asistente → abre el detalle → hace clic en "Ver en Amazon" → se registra el clic y Amazon atribuye la venta al
-   tag. El catálogo, el comparador y el asistente trabajan sobre la base de datos (fichas aprobadas y sus
-   embeddings), sin llamar al agente buscador ni a Amazon; el asistente solo llama al modelo de IA para redactar
-   la respuesta.
+2. **Compra (cliente, en tiempo real):** el cliente navega las categorías o compara productos → abre el detalle →
+   hace clic en "Ver en Amazon" → se registra el clic y Amazon atribuye la venta al tag. El catálogo y el
+   comparador trabajan solo sobre la base de datos (fichas aprobadas), sin llamar al agente buscador, a Amazon ni a
+   ningún modelo de IA.
 
 **Fuera del MVP (evolución prevista):**
-- **CRM de demanda no cubierta:** pantalla para que el administrador vea los pedidos sin respuesta del asistente,
+- **CRM de demanda no cubierta** (depende del asistente conversacional): pantalla para que el administrador vea los pedidos sin respuesta del asistente,
   los agrupe por tema y lance búsquedas del agente cuando haya demanda (en el MVP solo se registran).
 - **Comparación entre plataformas:** el mismo producto en distintas tiendas (AliExpress, Mercado Libre) y
   comparación entre categorías distintas.
@@ -125,20 +130,20 @@ Pantallas previstas (los mockups y el video se agregarán con la implementación
 4. **Comparador:** tabla lado a lado de 2 a 4 productos de la misma categoría, con la imagen de cada uno en la
    cabecera, una fila por criterio y
    resaltando el mejor en cada fila; cada columna tiene su botón "Ver en Amazon".
-5. **Asistente (chat):** botón flotante en todas las páginas; responde con hasta 3 tarjetas de productos del
-   catálogo, cada una con la explicación de por qué encaja con el pedido y el enlace a su ficha.
-6. El aviso de afiliado aparece al pie de todas las páginas.
+5. El aviso de afiliado aparece al pie de todas las páginas.
 
 **Panel de administración:**
-7. **Login de administrador.**
-8. **Búsquedas del agente:** elegir categoría y precio máximo, lanzar y ver el estado (`queued` → `completed`).
-9. **Cola de revisión:** lista de candidatos con datos del proveedor y el borrador de la ficha; el administrador
+6. **Login de administrador.**
+7. **Búsquedas del agente:** elegir categoría y precio máximo, lanzar y ver el listado de búsquedas con su estado
+   (`queued` → `running` → `completed` o `failed`).
+8. **Cola de revisión:** lista de candidatos con datos del proveedor y el borrador de la ficha; el administrador
    edita cada bloque y luego "Aprueba" (por qué lo recomendamos y nota por criterio obligatorios) o "Rechaza".
-10. **Rúbricas por categoría:** los criterios de la nota del asesor (por ejemplo, para soportes de laptop:
-   ergonomía, construcción, portabilidad y calidad-precio).
+
+**Ampliación:** el **asistente (chat)**, un botón flotante en todas las páginas que responde con hasta 3 tarjetas
+de productos del catálogo, y la pantalla de **rúbricas por categoría** del panel.
 
 Las imágenes de producto se obtienen del proveedor de datos (Canopy) y se muestran en tarjetas, detalle y
-comparador. El MVP es una demo que no se publica en producción; el prototipo de viabilidad ya mostró el flujo
+comparador. El MVP es una demo académica, no un lanzamiento comercial; el prototipo de viabilidad ya mostró el flujo
 agente → tarjetas con imágenes y datos reales (`docs/viabilidad/02-amazon-canopy.md`).
 
 ### **1.4. Instrucciones de instalación:**
@@ -149,8 +154,9 @@ Se completarán con el código. Previsto, con atajos en un `Makefile`:
    (ninguna clave real se sube al repositorio).
 2. `make setup` (solo la primera vez): instala dependencias, levanta PostgreSQL 16 + pgvector con Docker
    Compose (una base de desarrollo y otra de pruebas), corre las migraciones y la semilla (categorías, rúbricas,
-   administrador de prueba y productos de ejemplo grabados, sin llamar a Canopy).
-3. `make start`: backend AdonisJS en `http://localhost:3333` y frontend Nuxt en `http://localhost:3000`.
+   administrador de prueba, una búsqueda de origen ficticia y productos de ejemplo grabados, sin llamar a Canopy).
+3. `make start`: backend AdonisJS en `http://localhost:3333`, worker de la cola (pg-boss) y frontend Nuxt en
+   `http://localhost:3000`. El navegador solo habla con Nuxt, que reenvía `/api/*` y `/go/*` al backend (ver 2.2).
 4. `make test` (unitarios y funcionales del backend, componentes del frontend) y `make test-e2e` (Playwright).
 
 ### **1.5. Validación de viabilidad (previa a esta documentación)**
@@ -179,9 +185,10 @@ flowchart LR
     A[Administrador]
   end
 
-  subgraph Frontend["Frontend — Nuxt (SSR) + Tailwind"]
-    PUB[Sitio público<br/>catálogo, ficha, comparador, chat]
-    ADM[Panel de administración<br/>búsquedas, revisión, rúbricas]
+  subgraph Frontend["Frontend — Nuxt (SSR) + Tailwind · único origen del navegador"]
+    PUB[Sitio público<br/>catálogo, ficha, comparador]
+    ADM[Panel de administración<br/>login, búsquedas, revisión]
+    PX[Proxy Nuxt<br/>/api/* y /go/*]
   end
 
   subgraph Backend["Backend — AdonisJS 7 (monolito modular)"]
@@ -189,34 +196,36 @@ flowchart LR
     SC[Servicio scout<br/>agente buscador]
     RV[Servicio review<br/>aprobación + link]
     CT[Servicio catalog<br/>listado, ficha, comparador]
-    CH[Servicio chat<br/>búsqueda semántica]
     LK[Redirección /go/:id]
-    Q[(Cola de trabajos)]
+    W[Worker pg-boss<br/>concurrencia 1]
     subgraph Puertos
       CP[[CatalogProvider]]
       LL[[LlmClient]]
-      EP[[EmbeddingProvider]]
       AL[[AffiliateLinkBuilder]]
     end
   end
 
-  DB[(PostgreSQL 16 + pgvector<br/>Lucid ORM)]
+  DB[(PostgreSQL 16<br/>Lucid ORM + tablas de pg-boss)]
   CAN[Canopy MCP<br/>datos de amazon.com]
   CL[Claude API]
-  EMB[API de embeddings]
   AMZ[amazon.com<br/>tag zapyens-20]
 
-  V --> PUB --> API
-  A --> ADM --> API
-  API --> SC & RV & CT & CH & LK
-  SC --> Q --> SC
+  V --> PUB --> PX
+  A --> ADM --> PX
+  PX --> API
+  API --> SC & RV & CT & LK
+  SC -- encola agent-run --> DB
+  DB -- toma el trabajo --> W --> SC
   SC --> CP --> CAN
-  SC & CH --> LL --> CL
-  RV & CH --> EP --> EMB
+  SC --> LL --> CL
   RV & LK --> AL
-  SC & RV & CT & CH & LK --> DB
+  SC & RV & CT & LK --> DB
   LK -- 302 --> AMZ
 ```
+
+El diagrama muestra el núcleo del MVP. La ampliación (asistente conversacional con embeddings y editor de
+rúbricas) se describe en 1.2 y 3.3 y no cambia estas piezas: añade un servicio `chat`, un puerto
+`EmbeddingProvider` y un trabajo más en la misma cola.
 
 **Patrón:** monolito modular con arquitectura hexagonal (puertos y adaptadores) sobre las convenciones de
 AdonisJS. Cada funcionalidad es un servicio y toda dependencia externa está detrás de un puerto.
@@ -233,27 +242,38 @@ AdonisJS. Cada funcionalidad es un servicio y toda dependencia externa está det
   (más rápido y mejor para SEO que una SPA), y el framework es el que mejor domina el autor, lo que permite
   revisar con criterio el código que genera la IA.
 
+- Cola de trabajos con **pg-boss** sobre el mismo PostgreSQL: el agente tarda uno o dos minutos (varias llamadas a
+  Canopy y a Claude), así que la petición HTTP responde enseguida con 202 y un worker ejecuta la búsqueda en
+  segundo plano, con estados, reintentos y sin infraestructura adicional (sin Redis).
+- **Un solo origen para el navegador:** Nuxt reenvía `/api/*` y `/go/*` a AdonisJS (`routeRules` con `proxy`).
+  La cookie de sesión `SameSite=Strict` funciona sin CORS, y el renderizado en servidor de Nuxt llama al backend
+  por la red interna.
+
 **Sacrificios:** no escala por módulo de forma independiente; dos aplicaciones (Nuxt y AdonisJS) en lugar de
-una; la cola sobre PostgreSQL rinde menos que una dedicada. Aceptables para el volumen del MVP.
+una; la cola sobre PostgreSQL rinde menos que una dedicada (Redis + BullMQ); un salto de red más por el proxy.
+Aceptables para el volumen del MVP.
 
 ### **2.2. Descripción de componentes principales:**
 
 | Componente | Tecnología | Responsabilidad |
 |---|---|---|
-| Sitio público | Nuxt (Vue) con SSR + Tailwind CSS, componentes propios | Inicio, categorías, ficha de recomendación, comparador, chat y aviso de afiliado |
-| Panel de administración | Mismo proyecto Nuxt, rutas protegidas | Lanzar búsquedas, cola de revisión con editor de la ficha, rúbricas por categoría |
+| Sitio público | Nuxt (Vue) con SSR + Tailwind CSS, componentes propios | Inicio, categorías, ficha de recomendación, comparador y aviso de afiliado |
+| Panel de administración | Mismo proyecto Nuxt, rutas protegidas por middleware | Login, lanzar búsquedas y ver su estado, cola de revisión con editor de la ficha |
+| Proxy de Nuxt | `routeRules` de Nitro (`/api/**` y `/go/**` → `http://localhost:3333`) | Que el navegador hable con un solo origen; reenvía la cookie de sesión al backend |
 | API REST | AdonisJS 7: controladores, validación con VineJS, auth por sesión, Shield, OpenAPI con `@foadonis/openapi` | Entrada HTTP, sesiones del administrador, orquestación de servicios |
-| Servicio scout (agente buscador) | Cola de trabajos + `CatalogProvider` + `LlmClient` (`claude-sonnet-5-5`) | Busca en Canopy, filtra en código (patrocinados, precio, variantes), obtiene especificaciones y reseñas, y pide al LLM el borrador de la ficha y las notas por criterio |
-| Servicio review | Lucid + `AffiliateLinkBuilder` + `EmbeddingProvider` | Aprueba o rechaza; al aprobar guarda la ficha, genera el link de afiliado y el embedding |
+| Cola de trabajos | **pg-boss** sobre el mismo PostgreSQL (esquema `pgboss`) | Guarda las búsquedas pendientes; un worker con concurrencia 1 las ejecuta de una en una, con reintento ante errores transitorios |
+| Servicio scout (agente buscador) | pg-boss + `CatalogProvider` + `LlmClient` (`claude-sonnet-5-5`) | Busca en Canopy, filtra en código (patrocinados, precio, variantes, ASIN ya existentes), obtiene especificaciones y reseñas, y pide al LLM el borrador de la ficha y las notas por criterio |
+| Servicio review | Lucid + `AffiliateLinkBuilder` | Aprueba o rechaza; al aprobar valida la ficha, la guarda y genera el link de afiliado en una sola transacción. **No llama a ningún servicio externo**, así que publicar nunca depende de un tercero |
 | Servicio catalog | Lucid | Listado por categoría, ficha, alternativas (misma categoría, otro rango de precio) y comparador |
-| Servicio chat | pgvector + `LlmClient` (`claude-haiku-5-5`) | Recupera las 10 fichas aprobadas más cercanas al pedido; el LLM elige hasta 3 y explica; valida los IDs; registra la demanda no cubierta |
 | Redirección `/go/:id` | `AffiliateLinkBuilder` | Registra el clic y redirige a `https://www.amazon.com/dp/{ASIN}?tag={AMAZON_TAG}` |
 | `CanopyCatalogProvider` | Cliente MCP propio (Streamable HTTP) | `search_amazon_products`, `get_amazon_product` y `get_amazon_product_top_reviews` en `https://mcp.canopyapi.co/mcp` |
-| Base de datos | PostgreSQL 16 + pgvector, Lucid ORM | Productos, fichas, notas, rúbricas, búsquedas, clics, consultas del chat y embeddings |
+| Base de datos | PostgreSQL 16 (imagen con pgvector, preparada para la ampliación), Lucid ORM | Productos, fichas, notas, rúbricas, búsquedas, clics y la cola de pg-boss |
+| *Ampliación:* servicio chat | pgvector + `EmbeddingProvider` (`nomic-embed-text` vía Ollama) + `LlmClient` (`claude-haiku-5-5`) | Ver 3.3 |
 
-**Stack tecnológico:** TypeScript · AdonisJS 7 (Lucid, VineJS, Auth, Shield) · PostgreSQL 16 + pgvector ·
+**Stack tecnológico:** TypeScript · AdonisJS 7 (Lucid, VineJS, Auth, Shield) · PostgreSQL 16 · pg-boss ·
 Nuxt (Vue) + Tailwind CSS · Claude API (Anthropic SDK) · Canopy MCP · Japa · Vitest + `@nuxt/test-utils` ·
-Playwright · Docker Compose · Makefile · GitHub Actions · OpenSpec · Claude Code.
+Playwright · Docker Compose · Makefile · GitHub Actions · OpenSpec · Claude Code. Ampliación: pgvector + Ollama
+(`nomic-embed-text`).
 
 ### **2.3. Descripción de alto nivel del proyecto y estructura de ficheros**
 
@@ -269,13 +289,13 @@ ai-shopping-advisor/
 ├── docker-compose.yml            # PostgreSQL + pgvector: base de desarrollo y de pruebas
 ├── backend/                      # AdonisJS 7
 │   ├── app/
-│   │   ├── controllers/          # Endpoints HTTP: admin, catálogo, comparador, chat y /go
+│   │   ├── controllers/          # Endpoints HTTP: sesión, admin, catálogo, comparador y /go
 │   │   ├── validators/           # VineJS: entrada de la API y salida del LLM
-│   │   ├── models/               # Lucid: Category, Product, AgentRun, ChatQuery…
-│   │   ├── services/             # Lógica de negocio: scout, review, catalog, chat
+│   │   ├── models/               # Lucid: Category, Product, AgentRun, ClickEvent…
+│   │   ├── services/             # Lógica de negocio: scout, review, catalog
 │   │   ├── ports/                # Interfaces de proveedores externos (ver 2.2)
-│   │   ├── adapters/             # Implementaciones: canopy, claude, embeddings, amazon
-│   │   └── jobs/                 # Trabajo asíncrono del agente buscador
+│   │   ├── adapters/             # Implementaciones: canopy, claude, amazon
+│   │   └── jobs/                 # Trabajos de pg-boss: agent-run (worker en bin/worker.ts)
 │   ├── database/
 │   │   ├── migrations/
 │   │   └── seeders/              # Categorías, rúbricas, admin de prueba, productos grabados
@@ -286,7 +306,7 @@ ai-shopping-advisor/
 │       └── fixtures/             # Respuestas grabadas de Canopy y Claude
 ├── frontend/                     # Nuxt
 │   ├── pages/                    # index, categoria/[slug], producto/[slug], comparar, admin/…
-│   ├── components/               # ProductCard, RecommendationSheet, CompareTable, ChatWidget…
+│   ├── components/               # ProductCard, RecommendationSheet, CompareTable, SheetEditor…
 │   ├── composables/              # Acceso a la API
 │   └── tests/                    # Tests de componentes (Vitest + @nuxt/test-utils)
 └── e2e/                          # Playwright: flujo de curaduría y de compra
@@ -297,7 +317,8 @@ solo depende de `ports/`; `adapters/` implementa los puertos contra servicios re
 
 ### **2.4. Infraestructura y despliegue**
 
-**CI sí, CD no:** el MVP es una demo local; el despliegue no forma parte del alcance.
+**CI desde el inicio; despliegue previsto para la entrega final.** El desarrollo y las pruebas corren en local y
+en CI; el despliegue se aborda al cerrar el núcleo del MVP.
 
 ```mermaid
 flowchart LR
@@ -311,14 +332,18 @@ flowchart LR
 ```
 
 - **Local:** Docker Compose con PostgreSQL 16 + pgvector (base de desarrollo y base de pruebas separadas);
-  `make start` levanta AdonisJS y Nuxt; `make test` y `make test-e2e` corren todas las pruebas.
+  `make start` levanta AdonisJS, el worker de pg-boss y Nuxt; `make test` y `make test-e2e` corren todas las pruebas.
 - **CI:** un solo workflow de GitHub Actions que se ejecuta en cada pull request y en cada push a `main`: lint,
   typecheck, tests unitarios y funcionales del backend, tests de componentes del frontend y escaneo de secretos.
   Cada pull request muestra si el CI pasó o falló.
 - **E2E:** se ejecuta en local con `make test-e2e` y, en GitHub, de forma manual (botón "Run workflow"), para no
   levantar toda la aplicación en cada cambio.
-- **Despliegue:** fuera del alcance del MVP. Si en el futuro se publica, los secretos irán en el gestor de
-  variables de la plataforma, nunca en el repositorio.
+- **Despliegue (entrega final):** cuatro procesos (Nuxt, API AdonisJS, worker de pg-boss y PostgreSQL), con la
+  misma imagen de Docker para la API y el worker. Opción prevista: un VPS con Docker Compose o una plataforma
+  gestionada (Railway o similar) con PostgreSQL gestionado. El navegador sigue hablando con un solo origen: Nuxt
+  reenvía `/api` y `/go` a la dirección interna de la API, que no se expone a internet. Los secretos van en el
+  gestor de variables de la plataforma, nunca en el repositorio. Como la demo muestra imágenes obtenidas vía
+  Canopy, el entorno desplegado se identifica como demo académica y no se promociona (ver 2.5).
 
 ### **2.5. Seguridad**
 
@@ -332,14 +357,16 @@ flowchart LR
 - **Inyección de instrucciones:** títulos, reseñas y mensajes del chat se pasan al LLM como datos delimitados; la
   salida del LLM se valida con VineJS y todo ID de producto se comprueba contra la base de datos.
 - **Autenticación del administrador:** guard de sesión de AdonisJS, contraseña con hash argon2, cookie
-  `httpOnly`, `Secure`, `SameSite=Strict`, protección CSRF con Shield; rutas `/admin/*` protegidas.
-- **Abuso:** rate limit en el chat (10 mensajes por minuto por visitante) y límite diario de búsquedas del agente
-  para no agotar la cuota de Canopy.
-- **Privacidad:** no se guardan IPs ni datos personales; los clics usan como máximo un hash diario no reversible;
-  los mensajes del chat se guardan sin datos del visitante.
+  `httpOnly`, `Secure`, `SameSite=Strict`, protección CSRF con Shield; rutas `/admin/*` protegidas. El
+  navegador solo habla con el origen de Nuxt (proxy hacia AdonisJS), así que la cookie estricta funciona sin
+  abrir CORS.
+- **Abuso:** límite diario de búsquedas del agente y una sola búsqueda activa por categoría, para no agotar la
+  cuota de Canopy. En la ampliación, rate limit en el chat (10 mensajes por minuto por visitante).
+- **Privacidad:** no se guardan IPs ni datos personales; los clics usan como máximo un hash diario no reversible.
+  En la ampliación, los mensajes del chat se guardan sin datos del visitante.
 - **Contenido de reseñas:** los pros y contras se redactan con palabras propias; no se copia texto de reseñas.
 - **Programa de afiliados:** aviso de afiliado en toda página con links; sin links de Amazon en contenido
-  dirigido a menores de 13 años. El MVP muestra imágenes obtenidas vía Canopy porque es una demo no publicada;
+  dirigido a menores de 13 años. El MVP muestra imágenes obtenidas vía Canopy porque es una demo académica;
   antes de un lanzamiento en producción, imágenes y precios deben venir de la API oficial de Amazon.
 
 ### **2.6. Tests**
@@ -351,16 +378,17 @@ de las historias de usuario se convierte en al menos un test):
   tag ajeno), filtros del agente (patrocinados, precio máximo, variantes, ASIN inventado), cálculo del rango de
   precio, cálculo de alternativas y validación de la salida del LLM.
 - **Funcionales (Japa + `@japa/api-client`, `backend/tests/functional/`):** la API por HTTP contra la base de
-  pruebas real, nunca simulada. Ejemplos: aprobar un candidato guarda la ficha, genera link y embedding; el
-  comparador rechaza productos de distintas categorías; `/go/{id}` registra el clic y responde 302; un producto
-  rechazado da 404; el chat nunca devuelve productos no aprobados.
+  pruebas real, nunca simulada. Ejemplos: aprobar un candidato guarda la ficha y genera el link sin llamar a
+  servicios externos; una segunda búsqueda en una categoría con otra activa da 409; el comparador rechaza
+  productos de distintas categorías; `/go/{id}` registra el clic y responde 302; un producto rechazado da 404.
 - **Componentes (Vitest + `@nuxt/test-utils`):** ficha de recomendación, tabla del comparador (resalta el mejor
-  por criterio), editor de la ficha en el panel y widget del chat.
+  por criterio) y editor de la ficha en el panel.
 - **E2E (Playwright):** curaduría (búsqueda → revisión → aprobación) y compra (categoría → comparador → ficha →
   clic registrado), con Canopy y Claude simulados por respuestas grabadas.
 - **Evals de IA:** criterios flexibles en lugar de texto exacto. Agente: 10 búsquedas grabadas (sin patrocinados,
-  precio respetado, ficha completa, notas dentro de la rúbrica, ningún ASIN inventado). Chat: 15 preguntas
-  (solo productos aprobados, 1 a 3 resultados, pregunta fuera del tema → sin productos y registrada como demanda).
+  precio respetado, ficha completa, notas dentro de la rúbrica, ningún ASIN inventado). En la ampliación, chat:
+  15 preguntas (solo productos aprobados, 1 a 3 resultados, pregunta fuera del tema → sin productos y registrada
+  como demanda).
 - **Ya implementado en la fase de viabilidad:** pruebas del módulo de autenticación del proveedor descartado
   (renovación de token, concurrencia, errores).
 
@@ -399,6 +427,7 @@ erDiagram
     uuid requested_by_id FK "not null"
     numeric max_price_usd "null, >= 0"
     agent_run_status status "not null, default queued"
+    boolean is_seed "not null, default false"
     int provider_requests "not null, default 0"
     int candidates_created "not null, default 0"
     text error_message "null"
@@ -434,7 +463,6 @@ erDiagram
     text rejection_reason "null"
     uuid reviewed_by_id FK "null"
     timestamptz reviewed_at "null"
-    vector embedding "null"
     timestamptz data_updated_at "not null"
     timestamptz created_at "not null"
   }
@@ -447,25 +475,10 @@ erDiagram
     uuid product_id PK, FK
     uuid paired_product_id PK, FK
   }
-  CHAT_QUERY {
-    uuid id PK
-    varchar message "not null, 5-500"
-    boolean no_match "not null"
-    varchar model "not null"
-    int latency_ms "not null"
-    timestamptz created_at "not null"
-  }
-  CHAT_RECOMMENDATION {
-    uuid chat_query_id PK, FK
-    uuid product_id PK, FK
-    smallint position "not null, 1-3"
-    text explanation "not null"
-  }
   CLICK_EVENT {
     bigint id PK
     uuid product_id FK "not null"
     click_source source "not null"
-    uuid chat_query_id FK "null"
     char visitor_hash "null, sha256 diario"
     timestamptz occurred_at "not null"
   }
@@ -479,18 +492,19 @@ erDiagram
   PRODUCT ||--o{ PRODUCT_SCORE : "recibe"
   RUBRIC_CRITERION ||--o{ PRODUCT_SCORE : "se evalúa en"
   PRODUCT ||--o{ PRODUCT_PAIRING : "combina con"
-  CHAT_QUERY ||--o{ CHAT_RECOMMENDATION : "devuelve"
-  PRODUCT ||--o{ CHAT_RECOMMENDATION : "es recomendado en"
   PRODUCT ||--o{ CLICK_EVENT : "recibe"
-  CHAT_QUERY |o--o{ CLICK_EVENT : "origina"
 ```
+
+El diagrama es el esquema del núcleo del MVP. Las tablas y columnas del asistente conversacional (embeddings,
+consultas y recomendaciones del chat) llegan con una migración propia en la ampliación (ver 3.3). Las tablas
+internas de pg-boss viven en su propio esquema (`pgboss`) y no forman parte del modelo de dominio.
 
 ### **3.2. Descripción de entidades principales:**
 
 **Enumerados:** `agent_run_status` = `queued | running | completed | failed`; `product_status` =
 `pending | approved | rejected | unpublished`; `product_provider` = `amazon` (se amplía con nuevos proveedores);
 `price_tier` = `budget | mid | premium` (se muestra como $, $$, $$$); `click_source` =
-`listing | detail | compare | chat`.
+`listing | detail | compare` (la ampliación añade `chat`).
 
 **ADMIN_USER** — administradores del sitio.
 - `id` (uuid, PK); `email` (varchar 254, not null, unique); `password` (varchar, not null; hash argon2 del
@@ -511,9 +525,19 @@ portabilidad y calidad-precio para soportes de laptop).
 **AGENT_RUN** — cada ejecución del agente buscador.
 - `id` (uuid, PK); `category_id` (FK → CATEGORY, not null); `requested_by_id` (FK → ADMIN_USER, not null);
   `max_price_usd` (numeric 10,2, null, check ≥ 0); `status` (`agent_run_status`, not null, default `queued`);
+  `is_seed` (boolean, not null, default false; marca la búsqueda de origen ficticia de la semilla);
   `provider_requests` (int, not null, default 0; requests gastados en Canopy); `candidates_created` (int, not
   null, default 0); `error_message` (text, null; sin datos sensibles); `created_at`, `started_at`, `finished_at`.
 - Índice: (`status`, `created_at`).
+- **Una sola búsqueda activa por categoría:** índice único parcial sobre (`category_id`) `WHERE status IN
+  ('queued', 'running')`. La API responde 409 antes de llegar a él, y el índice garantiza la regla aunque
+  lleguen dos peticiones a la vez. Búsquedas de categorías distintas sí pueden encolarse; el worker las ejecuta
+  de una en una.
+- El límite diario de búsquedas cuenta solo las que tienen `is_seed = false`.
+- **Búsqueda de origen de la semilla:** como `PRODUCT.agent_run_id` es obligatorio, la semilla crea por cada
+  categoría un AGENT_RUN con `is_seed = true`, `status = completed`, `provider_requests = 0`, lanzado por el
+  administrador de prueba, y le cuelga los productos grabados. Así la integridad referencial se mantiene sin
+  relajar ninguna restricción.
 
 **PRODUCT** — candidato propuesto por el agente; si se aprueba, se publica con su ficha de recomendación.
 - Identidad: `id` (uuid, PK); `provider` (`product_provider`, not null); `provider_product_id` (varchar 20, not
@@ -535,9 +559,9 @@ portabilidad y calidad-precio para soportes de laptop).
   `rejection_reason` (text, null); `reviewed_at` (timestamptz, null).
 - Checks cuando `status = approved`: `summary` entre 20 y 500 caracteres, `ideal_for`, `not_for` y
   `affiliate_url` no nulos, al menos un pro y un contra.
-- Búsqueda semántica: `embedding` (vector, null; se calcula al aprobar, a partir del título y la ficha;
-  dimensión según el modelo de embeddings; índice HNSW por similitud coseno).
 - Índices: (`category_id`, `status`), (`category_id`, `price_tier`).
+- Si el agente encuentra un ASIN que ya existe (en cualquier estado, incluido `rejected`), lo omite en lugar de
+  intentar insertarlo: así un rechazado no reaparece y la unicidad nunca hace fallar la búsqueda entera.
 - *Alternativas* no se guardan: se calculan como productos aprobados de la misma categoría con otro
   `price_tier`.
 
@@ -550,30 +574,64 @@ portabilidad y calidad-precio para soportes de laptop).
 **PRODUCT_PAIRING** — "combina bien con" (venta cruzada, normalmente entre categorías distintas).
 - PK compuesta (`product_id`, `paired_product_id`), ambas FK → PRODUCT; check `product_id <> paired_product_id`.
 
-**CHAT_QUERY** — cada mensaje al asistente. Los que tienen `no_match = true` forman la demanda no cubierta.
-- `id` (uuid, PK); `message` (varchar 500, not null); `no_match` (boolean, not null); `model` (varchar 60, not
-  null); `latency_ms` (int, not null); `created_at`. No guarda datos del visitante.
-- Índice: (`no_match`, `created_at`).
-
-**CHAT_RECOMMENDATION** — productos devueltos en cada respuesta del asistente (N:M entre CHAT_QUERY y PRODUCT).
-- PK compuesta (`chat_query_id`, `product_id`), ambas FK; `position` (smallint, not null, 1–3);
-  `explanation` (text, not null).
-
 **CLICK_EVENT** — cada clic en "Ver en Amazon".
-- `id` (bigint, PK); `product_id` (FK → PRODUCT, not null); `source` (`click_source`, not null: listado, ficha,
-  comparador o chat); `chat_query_id` (FK → CHAT_QUERY, null; solo si `source = chat`); `visitor_hash` (char 64,
-  null; hash diario no reversible, nunca la IP); `occurred_at` (timestamptz, not null).
+- `id` (bigint, PK); `product_id` (FK → PRODUCT, not null); `source` (`click_source`, not null: listado, ficha
+  o comparador); `visitor_hash` (char 64, null; hash diario no reversible, nunca la IP); `occurred_at`
+  (timestamptz, not null).
 - Índice: (`product_id`, `occurred_at`).
+
+### **3.3. Ampliación: asistente conversacional (diseño cerrado, se implementa después del núcleo)**
+
+Decisiones tomadas para que la ampliación no bloquee ni condicione el núcleo:
+
+- **Modelo de embeddings:** `nomic-embed-text`, servido en local con Ollama (sin clave, sin coste, los textos no
+  salen de la máquina). Devuelve **768 dimensiones**. Prefijos obligatorios del modelo: `search_document: ` para
+  el texto de la ficha y `search_query: ` para el mensaje del visitante. Si en producción se cambia a un modelo de
+  nube, se pide recortado a 768 (los modelos con Matryoshka lo admiten): el esquema no cambia, pero hay que
+  regenerar todos los vectores, porque los de modelos distintos no son comparables.
+- **Columna e índice:** migración propia de la ampliación con `CREATE EXTENSION vector`,
+  `product.embedding vector(768) null` e índice HNSW con `vector_cosine_ops` (768 está por debajo del máximo de
+  2.000 dimensiones que admite HNSW). Los vectores se guardan normalizados.
+- **Fuera de la aprobación:** aprobar no calcula el embedding. Al aprobar se encola el trabajo `embed-product`
+  en pg-boss; si Ollama no responde, pg-boss reintenta con espera creciente y el producto ya está publicado en
+  el catálogo y el comparador mientras tanto. Un comando `node ace embeddings:backfill` calcula los que falten
+  (productos de la semilla y reintentos agotados). El chat solo busca entre productos `approved` con
+  `embedding IS NOT NULL`.
+- **Tablas nuevas:** CHAT_QUERY (`id`, `message` varchar 500, `no_match` boolean, `model`, `latency_ms`,
+  `created_at`; índice (`no_match`, `created_at`); sin datos del visitante) y CHAT_RECOMMENDATION (PK
+  (`chat_query_id`, `product_id`), `position` 1–3, `explanation`). CLICK_EVENT gana `chat_query_id` (FK, null)
+  y `click_source` gana el valor `chat`.
+- **Endpoint:** `POST /api/chat` (recupera las 10 fichas más cercanas, el LLM elige hasta 3 y explica, se validan
+  los IDs contra la base, rate limit de 10 mensajes por minuto).
+- **Editor de rúbricas:** `PUT /api/admin/categories/{id}/rubric` y su pantalla en el panel.
 
 ---
 
 ## 4. Especificación de la API
 
-Tres endpoints principales, uno por cada paso clave del producto. El resto de la API:
-`GET /api/categories`, `GET /api/categories/{slug}/products`, `GET /api/products/{slug}` (ficha),
-`POST /api/chat`, `GET /api/admin/candidates`, `PUT /api/admin/categories/{id}/rubric` y la redirección
-`GET /go/{productId}?src=listing|detail|compare|chat`. La especificación completa se generará con
-`@foadonis/openapi`.
+Todos los endpoints del núcleo del MVP, para que el flujo del administrador (login → búsqueda → revisión →
+aprobación) y el del visitante (categoría → comparador o ficha → Amazon) queden completos de principio a fin:
+
+| Flujo | Método y ruta | Auth | Para qué |
+|---|---|---|---|
+| Admin | `POST /api/admin/session` | — | Iniciar sesión (email y contraseña) |
+| Admin | `DELETE /api/admin/session` | sesión | Cerrar sesión |
+| Admin | `GET /api/admin/session` | sesión | Administrador actual (lo usa el middleware de Nuxt) |
+| Admin | `POST /api/admin/agent-runs` | sesión | Lanzar una búsqueda del agente (**detallado abajo**) |
+| Admin | `GET /api/admin/agent-runs` | sesión | Listar búsquedas con su estado (pantalla de búsquedas) |
+| Admin | `GET /api/admin/agent-runs/{id}` | sesión | Estado de una búsqueda (el panel lo consulta cada pocos segundos) |
+| Admin | `GET /api/admin/candidates?status=pending&agentRunId=` | sesión | Cola de revisión |
+| Admin | `GET /api/admin/candidates/{id}` | sesión | Un candidato con datos del proveedor, borrador y rúbrica de su categoría |
+| Admin | `PATCH /api/admin/candidates/{id}` | sesión | Aprobar o rechazar (**detallado abajo**) |
+| Visitante | `GET /api/categories` | — | Categorías del inicio |
+| Visitante | `GET /api/categories/{slug}/products` | — | Listado público de una categoría (solo `approved`) |
+| Visitante | `GET /api/products/{slug}` | — | Ficha completa con alternativas y "combina bien con" |
+| Visitante | `GET /api/compare?ids=` | — | Comparador (**detallado abajo**) |
+| Visitante | `GET /go/{productId}?src=listing\|detail\|compare` | — | Registra el clic y redirige con 302 a Amazon |
+
+El navegador llama siempre al origen de Nuxt (`http://localhost:3000/api/...`), que reenvía al backend. La
+especificación completa se generará con `@foadonis/openapi`. Ampliación: `POST /api/chat` y
+`PUT /api/admin/categories/{id}/rubric` (ver 3.3).
 
 ```yaml
 openapi: 3.1.0
@@ -581,7 +639,8 @@ info:
   title: AI Shopping Advisor API
   version: 0.1.0
 servers:
-  - url: http://localhost:3333
+  - url: http://localhost:3000
+    description: Origen de Nuxt; reenvía /api y /go al backend AdonisJS (localhost:3333)
 components:
   securitySchemes:
     adminSession:
@@ -604,7 +663,23 @@ components:
         maxPriceUsd: { type: number, nullable: true }
         status: { type: string, enum: [queued, running, completed, failed] }
         candidatesCreated: { type: integer }
+        errorMessage: { type: string, nullable: true }
         createdAt: { type: string, format: date-time }
+        finishedAt: { type: string, format: date-time, nullable: true }
+    ProductCard:
+      description: Producto aprobado tal como aparece en el listado de una categoría
+      type: object
+      required: [id, slug, title, priceTier, summary, scores, badges]
+      properties:
+        id: { type: string, format: uuid }
+        slug: { type: string }
+        title: { type: string }
+        imageUrl: { type: string, nullable: true }
+        priceTier: { type: string, enum: [budget, mid, premium] }
+        summary: { type: string, description: Por qué lo recomendamos }
+        scores: { type: object, additionalProperties: { type: integer } }
+        badges: { type: array, items: { type: string } }
+        goUrl: { type: string, example: '/go/0b6f2d4e-…?src=listing' }
     Sheet:
       description: Ficha de recomendación
       type: object
@@ -628,7 +703,42 @@ components:
         badges: { type: array, items: { type: string, enum: [best_rated, best_value, premium_pick, editor_choice] } }
         pairedProductIds: { type: array, items: { type: string, format: uuid } }
 paths:
+  /api/admin/session:
+    post:
+      summary: Inicia sesión de administrador (crea la cookie de sesión)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string, minLength: 8 }
+      responses:
+        '200': { description: Sesión iniciada; responde con el id y el email del administrador }
+        '400': { description: Credenciales inválidas (mismo mensaje si el email no existe, para no revelarlo), content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '422': { description: Email o contraseña con formato inválido }
+        '429': { description: Demasiados intentos (5 por minuto) }
   /api/admin/agent-runs:
+    get:
+      summary: Lista las búsquedas del agente, las más recientes primero
+      security: [{ adminSession: [] }]
+      parameters:
+        - { name: status, in: query, schema: { type: string, enum: [queued, running, completed, failed] } }
+        - { name: page, in: query, schema: { type: integer, minimum: 1, default: 1 } }
+      responses:
+        '200':
+          description: Página de búsquedas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/AgentRun' } }
+                  meta: { type: object, properties: { total: { type: integer }, page: { type: integer } } }
+        '401': { description: Sin sesión de administrador }
     post:
       summary: Lanza una búsqueda del agente buscador en una categoría
       security: [{ adminSession: [] }]
@@ -646,8 +756,57 @@ paths:
         '202': { description: Búsqueda encolada, content: { application/json: { schema: { $ref: '#/components/schemas/AgentRun' } } } }
         '401': { description: Sin sesión de administrador, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
         '404': { description: Categoría inexistente, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '409': { description: Ya hay una búsqueda queued o running en esta categoría, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
         '429': { description: Límite diario de búsquedas alcanzado, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/admin/agent-runs/{id}:
+    get:
+      summary: Estado de una búsqueda
+      security: [{ adminSession: [] }]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      responses:
+        '200': { description: La búsqueda, content: { application/json: { schema: { $ref: '#/components/schemas/AgentRun' } } } }
+        '401': { description: Sin sesión de administrador }
+        '404': { description: Búsqueda inexistente }
+  /api/admin/candidates:
+    get:
+      summary: Cola de revisión (candidatos de las búsquedas)
+      security: [{ adminSession: [] }]
+      parameters:
+        - { name: status, in: query, schema: { type: string, enum: [pending, approved, rejected], default: pending } }
+        - { name: agentRunId, in: query, schema: { type: string, format: uuid } }
+      responses:
+        '200': { description: Lista con id, título, imagen, marca, valoración, categoría, búsqueda de origen y estado }
+        '401': { description: Sin sesión de administrador }
   /api/admin/candidates/{id}:
+    get:
+      summary: Un candidato con el borrador de su ficha y la rúbrica de su categoría
+      security: [{ adminSession: [] }]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      responses:
+        '200':
+          description: Candidato
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string, format: uuid }
+                  status: { type: string, enum: [pending, approved, rejected, unpublished] }
+                  asin: { type: string, example: B08BRCT4JH }
+                  title: { type: string }
+                  brand: { type: string, nullable: true }
+                  imageUrl: { type: string, nullable: true }
+                  rating: { type: number }
+                  reviewsCount: { type: integer }
+                  referencePriceUsd: { type: number, nullable: true, description: Solo visible en el panel }
+                  draft: { $ref: '#/components/schemas/Sheet' }
+                  rubric:
+                    type: array
+                    items: { type: object, properties: { key: { type: string }, label: { type: string } } }
+        '401': { description: Sin sesión de administrador }
+        '404': { description: Candidato inexistente }
     patch:
       summary: Aprueba un candidato con su ficha (genera el link de afiliado) o lo rechaza
       security: [{ adminSession: [] }]
@@ -686,6 +845,27 @@ paths:
         '404': { description: Candidato inexistente }
         '409': { description: El candidato no está en estado pending }
         '422': { description: Ficha inválida (p. ej. falta una nota de la rúbrica o el resumen es muy corto) }
+  /api/categories/{slug}/products:
+    get:
+      summary: Listado público de una categoría (solo productos approved)
+      parameters:
+        - { name: slug, in: path, required: true, schema: { type: string, example: soportes-laptop } }
+        - { name: priceTier, in: query, schema: { type: string, enum: [budget, mid, premium] } }
+        - { name: sort, in: query, schema: { type: string, enum: [score, recent], default: score } }
+      responses:
+        '200':
+          description: Categoría con su rúbrica y sus productos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  category: { type: object, properties: { slug: { type: string }, name: { type: string } } }
+                  criteria:
+                    type: array
+                    items: { type: object, properties: { key: { type: string }, label: { type: string } } }
+                  products: { type: array, items: { $ref: '#/components/schemas/ProductCard' } }
+        '404': { description: Categoría inexistente }
   /api/compare:
     get:
       summary: Compara de 2 a 4 productos aprobados de la misma categoría
@@ -810,6 +990,9 @@ Criterios de aceptación:
   aparece de nuevo en la cola.
 - **Dado** que Canopy no responde, **cuando** corre la búsqueda, **entonces** queda en `failed` con un mensaje
   claro y sin candidatos parciales.
+- **Dado** que ya hay una búsqueda `queued` o `running` en "Soportes para laptop", **cuando** lanzo otra en la
+  misma categoría, **entonces** veo "Ya hay una búsqueda en curso para esta categoría" y no se crea; **y cuando**
+  la lanzo en otra categoría, **entonces** queda `queued` y se ejecuta al terminar la anterior.
 
 Prioridad: alta · Estimación: 8 puntos
 
@@ -827,8 +1010,10 @@ Criterios de aceptación:
   intento aprobar, **entonces** veo qué falta y el candidato sigue `pending`.
 - **Dado** que cambié el texto del agente, **cuando** apruebo, **entonces** se publica mi versión y el borrador
   original queda guardado.
-- **Dado** un candidato que rechacé, **cuando** un visitante abre el catálogo, el comparador o el chat,
-  **entonces** no lo ve.
+- **Dado** un candidato que rechacé, **cuando** un visitante abre el catálogo o el comparador, **entonces** no
+  lo ve.
+- **Dado** que intento aprobar un candidato que ya no está `pending` (por ejemplo, lo aprobé en otra pestaña),
+  **cuando** envío la aprobación, **entonces** veo que ya fue revisado y no se modifica.
 
 Prioridad: alta · Estimación: 5 puntos
 
@@ -856,6 +1041,21 @@ Prioridad: alta · Estimación: 8 puntos
 
 ## 6. Tickets de Trabajo
 
+Backlog del núcleo del MVP en orden de construcción. Se trabaja **un ticket por vez**: tests primero, código
+después. Los cinco primeros están detallados abajo; el resto se detalla al empezarlo.
+
+| # | Ticket | Tipo | Depende de | Historia |
+|---|---|---|---|---|
+| 1 | Esquema inicial, migraciones y semilla | Base de datos | — | — |
+| 2 | Agente buscador: endpoint, cola pg-boss y worker | Backend | 1 | HU1 |
+| 3 | Aprobación y rechazo del candidato | Backend | 1 | HU2 |
+| 4 | Catálogo público, comparador y redirección `/go` | Backend | 1 | HU3 |
+| 5 | Página del comparador | Frontend | 4 | HU3 |
+| 6 | Sesión del administrador (`/api/admin/session`) y middleware del panel en Nuxt | Backend + Frontend | 1 | HU1, HU2 |
+| 7 | Panel: búsquedas, cola de revisión y editor de la ficha | Frontend | 2, 3, 6 | HU1, HU2 |
+| 8 | Sitio público: inicio, categoría y ficha | Frontend | 4 | HU3 |
+| 9 | E2E de curaduría y de compra (Playwright) y workflow de CI | QA / DevOps | 1–8 | Todas |
+
 **Ticket 1 — [Base de datos] Esquema inicial, migraciones y semilla**
 
 - **Tipo:** base de datos · **Prioridad:** alta (bloquea al resto) · **Estimación:** 5 puntos
@@ -864,15 +1064,18 @@ Prioridad: alta · Estimación: 8 puntos
 - **Alcance:**
   1. `docker-compose.yml` con la imagen `pgvector/pgvector:pg16` y dos bases (desarrollo y pruebas) en puertos
      no estándar para no chocar con un PostgreSQL local.
-  2. Migraciones de Lucid para las 10 tablas y los 5 enumerados, con `CREATE EXTENSION vector`.
+  2. Migraciones de Lucid para las 8 tablas y los 5 enumerados del núcleo (sección 3.1; pgvector y las tablas del
+     chat llegan con la migración de la ampliación).
   3. Restricciones: unique (`provider`, `provider_product_id`), unique (`category_id`, `key`) en la rúbrica,
      formato del ASIN, `score` entre 0 y 10, `rating` entre 0 y 5, checks de ficha completa y `affiliate_url`
-     cuando `status = approved`, `product_id <> paired_product_id`.
+     cuando `status = approved`, `product_id <> paired_product_id`, y único parcial de búsqueda activa por
+     categoría en AGENT_RUN.
   4. Índices: (`category_id`, `status`), (`category_id`, `price_tier`), (`product_id`, `occurred_at`),
-     (`no_match`, `created_at`) y HNSW sobre `embedding`.
+     (`status`, `created_at`).
   5. Modelos Lucid con sus relaciones.
-  6. Semilla: 4 categorías de escritorio con sus rúbricas, un administrador de prueba (contraseña desde `.env`) y
-     12 productos aprobados con ficha, a partir de respuestas grabadas (sin llamar a Canopy).
+  6. Semilla: 4 categorías de escritorio con sus rúbricas, un administrador de prueba (contraseña desde `.env`),
+     una búsqueda de origen ficticia por categoría (`is_seed = true`, `completed`) y 12 productos aprobados con
+     ficha colgados de ellas, a partir de respuestas grabadas (sin llamar a Canopy).
 - **TDD — tests primero (Japa contra la base de pruebas real):**
   - Insertar dos productos con el mismo (`amazon`, ASIN) falla por unicidad.
   - Aprobar un producto sin `affiliate_url` o sin `summary` falla por el check.
@@ -880,7 +1083,8 @@ Prioridad: alta · Estimación: 8 puntos
   - Una nota de 11 falla.
   - Un producto no puede combinarse consigo mismo.
   - Borrar una categoría con productos falla por la FK.
-  - La búsqueda por similitud devuelve primero el producto con el embedding más cercano.
+  - Dos AGENT_RUN `queued` en la misma categoría fallan por el único parcial; uno `completed` y otro `queued`, no.
+  - Tras la semilla, todo producto tiene una búsqueda de origen con `is_seed = true`.
 - **Criterios de aceptación:** `make setup` funciona en una máquina limpia; los tests pasan con `make test`; la semilla no
   llama a servicios externos.
 
@@ -894,27 +1098,91 @@ Prioridad: alta · Estimación: 8 puntos
   1. Puerto `CatalogProvider` y adaptador `CanopyCatalogProvider` (cliente MCP): `search_amazon_products`
      (`domain: US`), `get_amazon_product` y `get_amazon_product_top_reviews`.
   2. Filtros deterministas en código: excluir `sponsored`, sin ASIN, sin precio o valoración, sobre
-     `maxPriceUsd`, y variantes con las mismas valoraciones.
+     `maxPriceUsd`, variantes con las mismas valoraciones y ASIN que ya existen en la base (en cualquier estado).
   3. `LlmClient` con `claude-sonnet-5-5`: recibe cada producto filtrado (datos, especificaciones y reseñas como
      bloques de datos delimitados) y la rúbrica de la categoría; devuelve JSON con `summary`, `idealFor`, `notFor`,
      `pros`, `cons` (con palabras propias), `scores` por criterio y `keySpecs`. Se valida con VineJS; se
      descartan ASINs que no estaban en la entrada y notas de criterios que no son de la rúbrica.
-  4. Trabajo asíncrono con estados `queued → running → completed | failed`, una transacción para los candidatos,
-     `agent_draft` guardado tal cual y contador `provider_requests`.
-  5. Límite diario de búsquedas (`CANOPY_MAX_SEARCHES_PER_DAY`) → 429.
+  4. Cola con **pg-boss**: el endpoint crea el AGENT_RUN `queued` y publica el trabajo `agent-run` con su id; un
+     worker (`bin/worker.ts`, concurrencia 1) lo ejecuta con estados `queued → running → completed | failed`,
+     una transacción para los candidatos, `agent_draft` guardado tal cual y contador `provider_requests`. Reintento
+     solo ante errores transitorios del proveedor (máx. 2, con espera creciente); al agotarse, `failed`.
+  5. `GET /api/admin/agent-runs` y `GET /api/admin/agent-runs/{id}` para el listado y el estado.
+  6. Una búsqueda activa por categoría → 409; límite diario de búsquedas (`CANOPY_MAX_SEARCHES_PER_DAY`, sin
+     contar las de la semilla) → 429.
 - **TDD — tests primero:**
   - Unitarios (fixtures grabadas de Canopy): 10 resultados con 3 patrocinados → ningún candidato patrocinado;
-    producto de US$64.99 con tope de US$40 → descartado.
+    producto de US$64.99 con tope de US$40 → descartado; un ASIN que ya existe como `rejected` → omitido.
   - Unitario: el LLM simulado devuelve un ASIN inventado o un criterio fuera de la rúbrica → se descarta.
   - Funcionales: 202 con sesión; 401 sin sesión; 404 con categoría inexistente; proveedor simulado con error →
-    `failed` y 0 candidatos; 429 al superar el límite diario.
+    `failed` y 0 candidatos; 409 con otra búsqueda activa en la misma categoría; 202 en otra categoría; 429 al
+    superar el límite diario.
   - Eval: 10 búsquedas grabadas cumplen los criterios de HU1 (ficha completa, notas en rango, sin patrocinados).
 - **Criterios de aceptación:** todos los criterios de HU1 cubiertos por tests; ningún test llama a Canopy ni a
   Claude reales; la API key nunca aparece en logs.
 
-**Ticket 3 — [Frontend] Comparador por categoría**
+**Ticket 3 — [Backend] Aprobación y rechazo del candidato**
 
-- **Tipo:** frontend · **Prioridad:** alta · **Estimación:** 5 puntos · **Depende de:** `GET /api/compare` ·
+- **Tipo:** backend · **Prioridad:** alta (es la pieza más delicada: estado, link y ficha publicada) ·
+  **Estimación:** 5 puntos · **Depende de:** Ticket 1 · **Historia:** HU2
+- **Descripción:** implementar la cola de revisión y la decisión del administrador sobre cada candidato:
+  `GET /api/admin/candidates`, `GET /api/admin/candidates/{id}` y `PATCH /api/admin/candidates/{id}`.
+- **Alcance:**
+  1. `AffiliateLinkBuilder` (puerto + implementación Amazon): recibe solo el ASIN, lo valida
+     (`^[A-Z0-9]{10}$`) y devuelve `https://www.amazon.com/dp/{ASIN}?tag={AMAZON_TAG}`. Nunca recibe ni reutiliza
+     URLs del proveedor.
+  2. Validador VineJS de la ficha (`Sheet`): longitudes de 4.3, una nota 0–10 **por cada** criterio de la rúbrica
+     de la categoría del producto y ningún criterio ajeno; `pairedProductIds` deben ser productos aprobados.
+  3. Servicio `review.approve`: en **una sola transacción** con bloqueo de la fila (`SELECT … FOR UPDATE`)
+     comprueba que el candidato sigue `pending`, guarda la ficha (sin tocar `agent_draft`), las notas en
+     PRODUCT_SCORE y los PRODUCT_PAIRING, genera `affiliate_url`, calcula `price_tier` por terciles de la
+     categoría y fija `status = approved`, `reviewed_by_id` y `reviewed_at`. No llama a ningún servicio externo.
+  4. Servicio `review.reject`: `status = rejected`, `rejection_reason` opcional, `reviewed_*`.
+  5. Errores: 401 sin sesión, 404 inexistente, 409 si no está `pending`, 422 con la lista de campos que fallan.
+- **TDD — tests primero:**
+  - Unitarios `AffiliateLinkBuilder`: ASIN válido → URL exacta con el tag; ASIN de 9 caracteres o con minúsculas
+    → error; no expone ningún parámetro para pasarle una URL.
+  - Funcional: aprobar un candidato cuyo `provider_snapshot` trae `tag=otro-20` → el `affiliate_url` guardado
+    contiene `tag=zapyens-20` y no contiene `otro-20`.
+  - Funcional: aprobar con una nota de menos o un criterio de otra categoría → 422 y sigue `pending`.
+  - Funcional: aprobar con un resumen editado → se publica el editado y `agent_draft` no cambia.
+  - Funcional: aprobar dos veces el mismo candidato (dos peticiones simultáneas) → una 200 y otra 409.
+  - Funcional: rechazar → `rejected` y el producto no aparece en `GET /api/categories/{slug}/products`.
+  - Funcional: sin sesión → 401 en los tres endpoints.
+- **Criterios de aceptación:** todos los criterios de HU2 cubiertos por tests; ningún test de este ticket
+  necesita red; la regla "el link se construye en el servidor desde el ASIN" está cubierta por un test que
+  fallaría si alguien reutilizara la URL del proveedor.
+
+**Ticket 4 — [Backend] Catálogo público, comparador y redirección**
+
+- **Tipo:** backend · **Prioridad:** alta · **Estimación:** 5 puntos · **Depende de:** Ticket 1 ·
+  **Historia:** HU3
+- **Descripción:** implementar los endpoints públicos sobre los que se apoyan el sitio y el comparador:
+  `GET /api/categories`, `GET /api/categories/{slug}/products`, `GET /api/products/{slug}`,
+  `GET /api/compare` y `GET /go/{productId}`.
+- **Alcance:**
+  1. Servicio `catalog`: solo productos `approved`; nunca expone `reference_price_usd`, `provider_snapshot`,
+     `agent_draft` ni `affiliate_url` (el visitante siempre sale por `/go`).
+  2. Ficha: alternativas = aprobados de la misma categoría con otro `price_tier` (máx. 2: uno más barato y uno
+     más premium si existen); "combina bien con" desde PRODUCT_PAIRING, solo aprobados.
+  3. Comparador: parsea `ids` (2 a 4 uuids distintos), carga los productos, exige que todos estén aprobados y
+     sean de la misma categoría, arma `criteria` desde la rúbrica y calcula `bestByCriterion` (en empate gana el de
+     mejor `rating` y luego el de más reseñas, para que el resultado sea determinista).
+  4. `/go/{productId}`: valida `src`, inserta CLICK_EVENT y responde 302 al `affiliate_url`; producto no aprobado
+     → 404 sin registrar el clic.
+- **TDD — tests primero:**
+  - Unitario `bestByCriterion`: gana la nota más alta; empate resuelto por `rating` y luego por reseñas.
+  - Funcional: 1 id o 5 ids → 422; ids repetidos → 422; dos categorías distintas → 422; uno `rejected` → 404.
+  - Funcional: comparar 2 productos aprobados devuelve el ejemplo de la sección 4 a partir de la semilla.
+  - Funcional: el listado de una categoría no incluye `pending` ni `rejected` ni el precio exacto.
+  - Funcional: `/go/{id}?src=compare` → 302 con `tag=zapyens-20` y un CLICK_EVENT con `source = compare`;
+    `src=foo` → 422; producto `pending` → 404 y ningún clic registrado.
+- **Criterios de aceptación:** el Ticket 5 puede construirse contra estos endpoints sin simularlos; el contrato
+  coincide con la sección 4.
+
+**Ticket 5 — [Frontend] Comparador por categoría**
+
+- **Tipo:** frontend · **Prioridad:** alta · **Estimación:** 5 puntos · **Depende de:** Ticket 4 ·
   **Historia:** HU3
 - **Descripción:** página pública de Nuxt que muestra de 2 a 4 productos de una categoría lado a lado y ayuda a
   decidir.
