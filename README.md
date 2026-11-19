@@ -1224,4 +1224,30 @@ candidatos nuevos, va al final para no bloquear al resto.
 
 ## 7. Pull Requests
 
-Se documentarán cuando comience la implementación.
+Cada entrega se integra con **un pull request** que lista los tickets que incluye. Dentro del PR, los commits van
+agrupados por ticket (`spec(Tn)`, `feat(Tn)`), de modo que cada ticket se puede revisar por separado.
+
+**PR 1 — Segunda entrega: flujo principal funcionando (T0–T5)**
+
+- **Rama:** `feature/entrega-2-jb` → `feature/entrega-1-jb` (la base es la entrega anterior para que el PR muestre
+  solo el código nuevo).
+- **Enlace:** se añade al abrir el PR en GitHub.
+- **Qué incluye:**
+
+| Ticket | Historia | Camino | Change de OpenSpec archivado |
+| --- | --- | --- | --- |
+| T0 Preparar el proyecto | — | Delegación directa | — |
+| T1 Catálogo: inicio, categorías, ficha y clic hacia Amazon | HU5 | OpenSpec | `2026-11-18-t1-catalogo` |
+| T2 Comparador de productos | HU3 | OpenSpec | `2026-11-18-t2-comparador` |
+| T3 Acceso del administrador al panel | HU4 | OpenSpec | `2026-11-18-t3-acceso-admin` |
+| T4 Revisión y publicación de candidatos | HU2 | OpenSpec | `2026-11-18-t4-curaduria` |
+| T5 Búsqueda de productos con el agente | HU1 | OpenSpec | `2026-11-18-t5-agente` |
+
+- **Specs vivas resultantes:** `openspec/specs/` con `catalogo`, `acceso-admin`, `curaduria` y `agente-buscador`.
+- **Tests:** 94 en el backend (unitarios y funcionales contra la base de pruebas real, con Canopy y Claude simulados
+  con respuestas grabadas) y 20 de componentes en el frontend. Todos en verde con `make test`.
+- **Cómo probarlo:** `make setup` y `make start` (sección 1.4). En http://localhost:3000 se recorre la tienda
+  (categoría, comparador, ficha y salida a Amazon con el tag de afiliado); en http://localhost:3000/admin, el panel
+  (aprobar o rechazar candidatos y lanzar una búsqueda del agente).
+- **Pendiente para la entrega final (T6):** pruebas de punta a punta con Playwright, integración continua y
+  despliegue.

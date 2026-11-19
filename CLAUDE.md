@@ -63,6 +63,8 @@ Durante el apply: `proposal.md`, `design.md` y `specs/` son de solo lectura; sol
 ## Forma de trabajar
 
 - **Un ticket por vez** (backlog en README sección 6). No mezcles cambios de varios tickets.
+- **Un pull request por entrega**, con los commits agrupados por ticket (`spec(Tn)`, `feat(Tn)`) y la lista de
+  tickets incluidos en la descripción. Se documenta en la sección 7 del README.
 - **TDD:** primero escribe los tests que deben fallar (listados en el ticket), muéstralos fallando, después el
   código mínimo para que pasen, y luego refactoriza.
 - Los tests funcionales usan la **base de pruebas real**, nunca una base simulada. Canopy y Claude se simulan con

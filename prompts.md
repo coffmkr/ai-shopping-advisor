@@ -290,7 +290,17 @@ Documenta 3 tickets con el detalle necesario para desarrollarlos de principio a 
 
 ## 7. Pull Requests
 
-Se documentarán cuando comience la implementación.
+**Prompt 1 — Pull request de la segunda entrega**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Prepara el pull request de la segunda entrega sobre la rama de la entrega anterior, para que muestre solo el código nuevo. La descripción debe listar los tickets que incluye con su historia de usuario, el camino seguido (OpenSpec o delegación directa) y el change archivado de cada uno, el resultado de los tests y los pasos para probar el flujo principal en local. Documenta el PR en la sección 7 del README.
+```
+
+**Resultado:** sección 7 del README y descripción del PR.
+**Ajuste humano:** decidí un PR por entrega en lugar de uno por ticket: los commits ya están agrupados por ticket y
+la trazabilidad de cada uno queda en su change de OpenSpec.
 
 ---
 
@@ -421,4 +431,6 @@ Implementa el adaptador del puerto LlmClient con el SDK oficial de Anthropic: un
 - El redirect de AdonisJS heredaba la query string de la petición y rompía el link de afiliado.
 - El proxy de Nuxt seguía la redirección hacia Amazon en lugar de devolver el 302 al navegador.
 - `migration:fresh` no eliminaba los tipos enumerados de PostgreSQL.
+- `make fresh` fallaba con la base ya usada por el worker: pg-boss crea su propio esquema con tipos que
+  `migration:fresh` no conoce, así que se elimina ese esquema antes y el worker lo recrea al arrancar.
 - La aprobación simultánea del mismo candidato se probó sin transacción global para verificar el bloqueo real.
