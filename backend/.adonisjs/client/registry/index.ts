@@ -44,6 +44,24 @@ const routes = {
     tokens: [[0,"go"],[1,"id"]],
     types: placeholder as Registry['redirect.show']['types'],
   },
+  'session.store': {
+    methods: ["POST"],
+    pattern: '/api/admin/session',
+    tokens: [[0,"api"],[0,"admin"],[0,"session"]],
+    types: placeholder as Registry['session.store']['types'],
+  },
+  'session.show': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/admin/session',
+    tokens: [[0,"api"],[0,"admin"],[0,"session"]],
+    types: placeholder as Registry['session.show']['types'],
+  },
+  'session.destroy': {
+    methods: ["DELETE"],
+    pattern: '/api/admin/session',
+    tokens: [[0,"api"],[0,"admin"],[0,"session"]],
+    types: placeholder as Registry['session.destroy']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

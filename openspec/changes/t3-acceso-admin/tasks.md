@@ -1,7 +1,7 @@
 ## 1. API de sesión
 
-- [ ] 1.1 Tests funcionales (deben fallar): login correcto con id y email y sin contraseña, 422 con formato inválido, 400 con el mismo mensaje para contraseña incorrecta y email inexistente, 429 al sexto intento fallido, 401 sin sesión, logout y 401 posterior, cookie HttpOnly y SameSite=Strict
-- [ ] 1.2 Validador, servicio `LoginThrottle`, controlador de sesión, grupo de rutas `/api/admin` y cookie `SameSite=Strict`; tests en verde
+- [x] 1.1 Tests funcionales (deben fallar): login correcto con id y email y sin contraseña, 422 con formato inválido, 400 con el mismo mensaje para contraseña incorrecta y email inexistente, 429 al sexto intento fallido, 401 sin sesión, logout y 401 posterior, cookie HttpOnly y SameSite=Strict
+- [x] 1.2 Validador, servicio `LoginThrottle`, controlador de sesión, grupo de rutas `/api/admin` y cookie `SameSite=Strict`; tests en verde
 
 ## 2. Panel en Nuxt
 

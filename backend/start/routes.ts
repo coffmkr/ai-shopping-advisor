@@ -9,6 +9,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
+import { middleware } from '#start/kernel'
 import { controllers } from '#generated/controllers'
 
 router.get('/api/health', [controllers.Health, 'show'])
@@ -23,3 +24,13 @@ router.get('/api/compare', [controllers.Catalog, 'compare'])
 
 // Salida a Amazon con clic registrado
 router.get('/go/:id', [controllers.Redirect, 'show'])
+
+// Panel del administrador (HU4): todo /api/admin/* exige sesión salvo el login
+router.post('/api/admin/session', [controllers.admin.Session, 'store'])
+router
+  .group(() => {
+    router.get('session', [controllers.admin.Session, 'show'])
+    router.delete('session', [controllers.admin.Session, 'destroy'])
+  })
+  .prefix('/api/admin')
+  .use(middleware.auth())

@@ -4,6 +4,9 @@
  */
 
 export const controllers = {
+  admin: {
+    Session: () => import('#controllers/admin/session_controller'),
+  },
   Catalog: () => import('#controllers/catalog_controller'),
   Health: () => import('#controllers/health_controller'),
   Redirect: () => import('#controllers/redirect_controller'),

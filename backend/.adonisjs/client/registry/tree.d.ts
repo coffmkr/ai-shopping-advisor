@@ -14,4 +14,9 @@ export interface ApiDefinition {
   redirect: {
     show: typeof routes['redirect.show']
   }
+  session: {
+    store: typeof routes['session.store']
+    show: typeof routes['session.show']
+    destroy: typeof routes['session.destroy']
+  }
 }
