@@ -35,7 +35,8 @@ function mapItem(item: CanopyItem): ProviderSearchResult | null {
 }
 
 export function mapSearchResults(response: any): ProviderSearchResult[] {
-  const items: CanopyItem[] = response?.data?.amazonProductSearchResults?.productResults?.results ?? []
+  const items: CanopyItem[] =
+    response?.data?.amazonProductSearchResults?.productResults?.results ?? []
   return items.map(mapItem).filter((item): item is ProviderSearchResult => item !== null)
 }
 

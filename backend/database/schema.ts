@@ -23,7 +23,20 @@ export class AdminUserSchema extends BaseModel {
 }
 
 export class AgentRunSchema extends BaseModel {
-  static $columns = ['candidatesCreated', 'categoryId', 'createdAt', 'errorMessage', 'finishedAt', 'id', 'isSeed', 'maxPriceUsd', 'providerRequests', 'requestedById', 'startedAt', 'status'] as const
+  static $columns = [
+    'candidatesCreated',
+    'categoryId',
+    'createdAt',
+    'errorMessage',
+    'finishedAt',
+    'id',
+    'isSeed',
+    'maxPriceUsd',
+    'providerRequests',
+    'requestedById',
+    'startedAt',
+    'status',
+  ] as const
   $columns = AgentRunSchema.$columns
   @column()
   declare candidatesCreated: number
@@ -104,7 +117,37 @@ export class ProductScoreSchema extends BaseModel {
 }
 
 export class ProductSchema extends BaseModel {
-  static $columns = ['affiliateUrl', 'agentDraft', 'agentRunId', 'badges', 'brand', 'categoryId', 'cons', 'createdAt', 'dataUpdatedAt', 'id', 'idealFor', 'imageUrl', 'keySpecs', 'notFor', 'priceTier', 'pros', 'provider', 'providerProductId', 'providerSnapshot', 'rating', 'referencePriceUsd', 'rejectionReason', 'reviewedAt', 'reviewedById', 'reviewsCount', 'slug', 'status', 'summary', 'title'] as const
+  static $columns = [
+    'affiliateUrl',
+    'agentDraft',
+    'agentRunId',
+    'badges',
+    'brand',
+    'categoryId',
+    'cons',
+    'createdAt',
+    'dataUpdatedAt',
+    'id',
+    'idealFor',
+    'imageUrl',
+    'keySpecs',
+    'notFor',
+    'priceTier',
+    'pros',
+    'provider',
+    'providerProductId',
+    'providerSnapshot',
+    'rating',
+    'referencePriceUsd',
+    'rejectionReason',
+    'reviewedAt',
+    'reviewedById',
+    'reviewsCount',
+    'slug',
+    'status',
+    'summary',
+    'title',
+  ] as const
   $columns = ProductSchema.$columns
   @column()
   declare affiliateUrl: string | null

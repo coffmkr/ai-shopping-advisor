@@ -81,9 +81,7 @@ test.group('Restricciones del esquema', (group) => {
     const productId = await insertProduct(categoryId, agentRunId)
 
     await assert.rejects(() =>
-      db
-        .table('product_pairings')
-        .insert({ product_id: productId, paired_product_id: productId })
+      db.table('product_pairings').insert({ product_id: productId, paired_product_id: productId })
     )
   })
 

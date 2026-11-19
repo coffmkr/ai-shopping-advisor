@@ -8,7 +8,9 @@ async function fixture(name: string) {
 }
 
 test.group('Mapeo de respuestas de Canopy al dominio', () => {
-  test('mapea los resultados de búsqueda sin conservar la URL del proveedor', async ({ assert }) => {
+  test('mapea los resultados de búsqueda sin conservar la URL del proveedor', async ({
+    assert,
+  }) => {
     const results = mapSearchResults(await fixture('search-soportes-laptop.json'))
 
     assert.isAbove(results.length, 10)

@@ -4,7 +4,7 @@ import type {
   ProviderSearchResult,
   SearchOptions,
 } from '#ports/catalog_provider'
-import CanopyMcpClient from '#adapters/canopy/canopy_mcp_client'
+import type CanopyMcpClient from '#adapters/canopy/canopy_mcp_client'
 import { mapProductDetail, mapSearchResults } from '#adapters/canopy/canopy_mapper'
 
 /**
