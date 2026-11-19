@@ -12,10 +12,10 @@
 
 ## 3. Pantallas del panel
 
-- [ ] 3.1 Tests de componentes (deben fallar): el editor emite la ficha con notas por criterio, pros y contras por línea; muestra los errores 422 por campo
-- [ ] 3.2 `SheetEditor`, páginas `admin/revision` y `admin/revision/[id]`; tests en verde
-- [ ] 3.3 Verificación manual: aprobar un candidato y verlo en el catálogo; rechazar el Redragon K521
+- [x] 3.1 Tests de componentes (deben fallar): el editor emite la ficha con notas por criterio, pros y contras por línea; muestra los errores 422 por campo
+- [x] 3.2 `SheetEditor`, páginas `admin/revision` y `admin/revision/[id]`; tests en verde
+- [x] 3.3 Verificación manual: aprobar un candidato y verlo en el catálogo; rechazar el Redragon K521
 
 ## 4. Cierre
 
-- [ ] 4.1 `make test`, typecheck y lint en verde
+- [x] 4.1 `make test`, typecheck y lint en verde

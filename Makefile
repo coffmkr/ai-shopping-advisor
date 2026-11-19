@@ -30,7 +30,7 @@ seed: db-up
 
 ## Borra y recrea el esquema de desarrollo con la semilla
 fresh: db-up
-	cd backend && node ace migration:fresh --seed
+	cd backend && node ace migration:fresh --drop-types --seed
 
 ## Backend en :3333 y frontend en :3000 (el navegador solo usa :3000)
 start: db-up
