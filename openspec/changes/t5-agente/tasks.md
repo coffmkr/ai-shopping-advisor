@@ -16,10 +16,10 @@
 
 ## 4. Panel
 
-- [ ] 4.1 Test de componente (debe fallar): la lista muestra el estado de cada búsqueda y enlaza a sus candidatos
-- [ ] 4.2 Página `admin/busquedas` con formulario, lista y consulta del estado; test en verde
-- [ ] 4.3 Verificación manual: búsqueda real en Canopy con el worker, candidatos en la cola de revisión
+- [x] 4.1 Test de componente (debe fallar): la lista muestra el estado de cada búsqueda y enlaza a sus candidatos
+- [x] 4.2 Página `admin/busquedas` con formulario, lista y consulta del estado; test en verde
+- [x] 4.3 Verificación manual: búsqueda real en Canopy con el worker, candidatos en la cola de revisión
 
 ## 5. Cierre
 
-- [ ] 5.1 README actualizado (comandos y decisiones que cambien) y `make test`, typecheck y lint en verde
+- [x] 5.1 README actualizado (comandos y decisiones que cambien) y `make test`, typecheck y lint en verde

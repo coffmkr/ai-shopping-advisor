@@ -24,6 +24,7 @@ export interface ProductCard {
 }
 
 export interface CategorySummary {
+  id: string
   slug: string
   name: string
   icon: string | null

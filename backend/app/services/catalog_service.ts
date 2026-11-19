@@ -100,6 +100,7 @@ export default class CatalogService {
 
     return {
       categories: categories.map((category) => ({
+        id: category.id,
         slug: category.slug,
         name: category.name,
         icon: category.icon,

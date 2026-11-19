@@ -49,3 +49,18 @@ export interface FieldError {
   field: string
   message: string
 }
+
+export interface AgentRun {
+  id: string
+  categoryId: string
+  category?: { slug: string; name: string }
+  maxPriceUsd: number | null
+  status: 'queued' | 'running' | 'completed' | 'failed'
+  isSeed: boolean
+  candidatesCreated: number
+  providerRequests: number
+  errorMessage: string | null
+  createdAt: string
+  startedAt: string | null
+  finishedAt: string | null
+}

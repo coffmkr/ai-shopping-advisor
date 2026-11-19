@@ -32,12 +32,15 @@ test.group('API pública del catálogo', (group) => {
     response.assertStatus(200)
     const { categories, featured } = response.body()
     assert.lengthOf(categories, 4)
-    assert.deepInclude(categories, {
-      slug: 'soportes-laptop',
-      name: 'Soportes para laptop',
-      icon: 'laptop',
-      productCount: 3,
-    })
+    assert.isString(categories[0].id)
+    assert.containsSubset(categories, [
+      {
+        slug: 'soportes-laptop',
+        name: 'Soportes para laptop',
+        icon: 'laptop',
+        productCount: 3,
+      },
+    ])
     assert.lengthOf(featured, 4)
     assert.equal(new Set(featured.map((p: any) => p.categorySlug)).size, 4)
   })
