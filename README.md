@@ -1231,7 +1231,7 @@ agrupados por ticket (`spec(Tn)`, `feat(Tn)`), de modo que cada ticket se puede 
 
 - **Rama:** `feature/entrega-2-jb` → `feature/entrega-1-jb` (la base es la entrega anterior para que el PR muestre
   solo el código nuevo).
-- **Enlace:** se añade al abrir el PR en GitHub.
+- **Enlace:** https://github.com/coffmkr/ai-shopping-advisor/pull/1
 - **Qué incluye:**
 
 | Ticket | Historia | Camino | Change de OpenSpec archivado |
