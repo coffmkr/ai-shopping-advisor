@@ -295,7 +295,7 @@ Documenta 3 tickets con el detalle necesario para desarrollarlos de principio a 
 ```text
 Herramienta: Claude Code · Modelo: Claude Opus 5.5
 
-Prepara el pull request de la segunda entrega sobre la rama de la entrega anterior, para que muestre solo el código nuevo. La descripción debe listar los tickets que incluye con su historia de usuario, el camino seguido (OpenSpec o delegación directa) y el change archivado de cada uno, el resultado de los tests y los pasos para probar el flujo principal en local. Documenta el PR en la sección 7 del README.
+Prepara el pull request de la segunda entrega hacia main. La descripción debe listar los tickets que incluye con su historia de usuario, el camino seguido (OpenSpec o delegación directa) y el change archivado de cada uno, el resultado de los tests y los pasos para probar el flujo principal en local. Documenta el PR en la sección 7 del README.
 ```
 
 **Resultado:** sección 7 del README y descripción del PR.

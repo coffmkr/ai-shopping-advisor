@@ -1229,8 +1229,7 @@ agrupados por ticket (`spec(Tn)`, `feat(Tn)`), de modo que cada ticket se puede 
 
 **PR 1 — Segunda entrega: flujo principal funcionando (T0–T5)**
 
-- **Rama:** `feature/entrega-2-jb` → `feature/entrega-1-jb` (la base es la entrega anterior para que el PR muestre
-  solo el código nuevo).
+- **Rama:** `feature/entrega-2-jb` → `main`.
 - **Enlace:** https://github.com/coffmkr/ai-shopping-advisor/pull/1
 - **Qué incluye:**
 
