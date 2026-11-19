@@ -15,16 +15,16 @@
 
 ## 3. Semilla
 
-- [ ] 3.1 Tests de la semilla (deben fallar): conteos esperados, link con el tag de la tienda, búsqueda de origen `is_seed`, idempotencia
-- [ ] 3.2 Fichas de ejemplo redactadas para 12 productos y cálculo del rango de precio por terciles
-- [ ] 3.3 Seeder idempotente; tests en verde
+- [x] 3.1 Tests de la semilla (deben fallar): conteos esperados, link con el tag de la tienda, búsqueda de origen `is_seed`, idempotencia
+- [x] 3.2 Fichas de ejemplo redactadas para 12 productos y cálculo del rango de precio por terciles
+- [x] 3.3 Seeder idempotente; tests en verde
 
 ## 4. API pública
 
-- [ ] 4.1 Tests funcionales (deben fallar): categorías con conteo, listado de una categoría solo con aprobados y ordenado, 404 de categoría, ficha completa, 404 de producto no aprobado, alternativas y combinables sin no aprobados, ficha sin datos internos
-- [ ] 4.2 Servicio `catalog`, controladores y rutas; tests en verde
-- [ ] 4.3 Tests funcionales de `/go` (deben fallar): 302 con el tag y clic `detail`, 422 con origen inválido sin clic, 404 de producto no aprobado sin clic
-- [ ] 4.4 Controlador de redirección; tests en verde
+- [x] 4.1 Tests funcionales (deben fallar): categorías con conteo, listado de una categoría solo con aprobados y ordenado, 404 de categoría, ficha completa, 404 de producto no aprobado, alternativas y combinables sin no aprobados, ficha sin datos internos
+- [x] 4.2 Servicio `catalog`, controladores y rutas; tests en verde
+- [x] 4.3 Tests funcionales de `/go` (deben fallar): 302 con el tag y clic `detail`, 422 con origen inválido sin clic, 404 de producto no aprobado sin clic
+- [x] 4.4 Controlador de redirección; tests en verde
 
 ## 5. Sitio público
 

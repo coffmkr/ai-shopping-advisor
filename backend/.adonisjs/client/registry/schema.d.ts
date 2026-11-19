@@ -21,6 +21,58 @@ export interface Registry {
       rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/health_controller').default['show']>>>
     }
   }
+  'catalog.categories': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/categories'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['categories']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['categories']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['categories']>>>
+    }
+  }
+  'catalog.category_products': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/categories/:slug/products'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { slug: ParamValue }
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['categoryProducts']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['categoryProducts']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['categoryProducts']>>>
+    }
+  }
+  'catalog.product': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/products/:slug'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { slug: ParamValue }
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['product']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['product']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['product']>>>
+    }
+  }
+  'redirect.show': {
+    methods: ["GET","HEAD"]
+    pattern: '/go/:id'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: ExtractQueryForGet<InferInput<(typeof import('#validators/redirect').redirectValidator)>>
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/redirect_controller').default['show']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/redirect_controller').default['show']>>> | { status: 422; response: { errors: SimpleError[] } }
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/redirect_controller').default['show']>>> | { status: 422; response: { errors: SimpleError[] } }
+    }
+  }
 }
 
 export namespace Route {

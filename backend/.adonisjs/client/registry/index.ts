@@ -14,6 +14,30 @@ const routes = {
     tokens: [[0,"api"],[0,"health"]],
     types: placeholder as Registry['health.show']['types'],
   },
+  'catalog.categories': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/categories',
+    tokens: [[0,"api"],[0,"categories"]],
+    types: placeholder as Registry['catalog.categories']['types'],
+  },
+  'catalog.category_products': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/categories/:slug/products',
+    tokens: [[0,"api"],[0,"categories"],[1,"slug"],[0,"products"]],
+    types: placeholder as Registry['catalog.category_products']['types'],
+  },
+  'catalog.product': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/products/:slug',
+    tokens: [[0,"api"],[0,"products"],[1,"slug"]],
+    types: placeholder as Registry['catalog.product']['types'],
+  },
+  'redirect.show': {
+    methods: ["GET","HEAD"],
+    pattern: '/go/:id',
+    tokens: [[0,"go"],[1,"id"]],
+    types: placeholder as Registry['redirect.show']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

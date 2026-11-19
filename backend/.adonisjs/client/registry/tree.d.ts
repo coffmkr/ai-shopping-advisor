@@ -5,4 +5,12 @@ export interface ApiDefinition {
   health: {
     show: typeof routes['health.show']
   }
+  catalog: {
+    categories: typeof routes['catalog.categories']
+    categoryProducts: typeof routes['catalog.category_products']
+    product: typeof routes['catalog.product']
+  }
+  redirect: {
+    show: typeof routes['redirect.show']
+  }
 }

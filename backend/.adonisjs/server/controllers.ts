@@ -4,5 +4,7 @@
  */
 
 export const controllers = {
+  Catalog: () => import('#controllers/catalog_controller'),
   Health: () => import('#controllers/health_controller'),
+  Redirect: () => import('#controllers/redirect_controller'),
 }
