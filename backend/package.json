@@ -64,12 +64,14 @@
     "@adonisjs/lucid": "^22.4.2",
     "@adonisjs/session": "^8.1.0",
     "@adonisjs/shield": "^9.0.0",
+    "@anthropic-ai/sdk": "^1.10.0",
     "@japa/api-client": "^3.2.1",
     "@modelcontextprotocol/sdk": "^1.32.2",
     "@tuyau/core": "^1.2.2",
     "@vinejs/vine": "^4.4.0",
     "luxon": "^3.7.2",
     "pg": "^8.23.1",
+    "pg-boss": "^12.38.2",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {
