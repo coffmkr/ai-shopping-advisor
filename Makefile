@@ -30,6 +30,9 @@ seed: db-up
 
 ## Borra y recrea el esquema de desarrollo con la semilla
 fresh: db-up
+	@# pg-boss crea su propio esquema (pgboss) con tipos que migration:fresh no sabe borrar;
+	@# se elimina antes y el worker lo vuelve a crear al arrancar.
+	docker compose exec -T db psql -U advisor -d advisor_dev -qc 'DROP SCHEMA IF EXISTS pgboss CASCADE'
 	cd backend && node ace migration:fresh --drop-types --seed
 
 ## Backend en :3333, worker del agente y frontend en :3000 (el navegador solo usa :3000)
