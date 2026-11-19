@@ -16,7 +16,11 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/api/**': { proxy: `${apiInternalUrl}/api/**` },
-    '/go/**': { proxy: `${apiInternalUrl}/go/**` },
+    // redirect: 'manual' → el 302 hacia Amazon llega al navegador tal cual
+    // (si el proxy siguiera la redirección, devolvería la página de Amazon).
+    '/go/**': {
+      proxy: { to: `${apiInternalUrl}/go/**`, fetchOptions: { redirect: 'manual' } },
+    },
   },
   app: {
     head: {

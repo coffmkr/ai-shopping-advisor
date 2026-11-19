@@ -28,11 +28,11 @@
 
 ## 5. Sitio público
 
-- [ ] 5.1 Tests de componentes (deben fallar): tarjeta con nota, etiquetas, rango y enlace `/go` con `src=listing`; ficha con todos los bloques y enlace con `src=detail`
-- [ ] 5.2 Componentes y páginas de inicio, categoría y ficha; tests en verde
-- [ ] 5.3 Verificación manual con la semilla: inicio, categoría, ficha y salida a Amazon a través del proxy
+- [x] 5.1 Tests de componentes (deben fallar): tarjeta con nota, etiquetas, rango y enlace `/go` con `src=listing`; ficha con todos los bloques y enlace con `src=detail`
+- [x] 5.2 Componentes y páginas de inicio, categoría y ficha; tests en verde
+- [x] 5.3 Verificación manual con la semilla: inicio, categoría, ficha y salida a Amazon a través del proxy
 
 ## 6. Cierre
 
-- [ ] 6.1 `make test`, typecheck y lint en verde
-- [ ] 6.2 Actualizar README si alguna decisión cambió respecto a lo documentado
+- [x] 6.1 `make test`, typecheck y lint en verde
+- [x] 6.2 Actualizar README si alguna decisión cambió respecto a lo documentado

@@ -265,11 +265,11 @@ Aceptables para el volumen del MVP.
 | Proxy de Nuxt | `routeRules` de Nitro (`/api/**` y `/go/**` → `http://localhost:3333`) | Que el navegador hable con un solo origen; reenvía la cookie de sesión al backend |
 | API REST | AdonisJS 7: controladores, validación con VineJS, auth por sesión, Shield, OpenAPI con `@foadonis/openapi` | Entrada HTTP, sesiones del administrador, orquestación de servicios |
 | Cola de trabajos | **pg-boss** sobre el mismo PostgreSQL (esquema `pgboss`) | Guarda las búsquedas pendientes; un worker con concurrencia 1 las ejecuta de una en una, con reintento ante errores transitorios |
-| Servicio scout (agente buscador) | pg-boss + `CatalogProvider` + `LlmClient` (`claude-sonnet-5-5`) | Busca en Canopy, filtra en código (patrocinados, precio, variantes, ASIN ya existentes), obtiene especificaciones y reseñas, y pide al LLM el borrador de la ficha y las notas por criterio |
+| Servicio scout (agente buscador) | pg-boss + `CatalogProvider` + `LlmClient` (`claude-sonnet-5-5`) | Busca en Canopy, filtra en código (patrocinados, precio, variantes, ASIN ya existentes), obtiene el detalle (viñetas y especificaciones técnicas) y pide al LLM el borrador de la ficha y las notas por criterio |
 | Servicio review | Lucid + `AffiliateLinkBuilder` | Aprueba o rechaza; al aprobar valida la ficha, la guarda y genera el link de afiliado en una sola transacción. **No llama a ningún servicio externo**, así que publicar nunca depende de un tercero |
 | Servicio catalog | Lucid | Listado por categoría, ficha, alternativas (misma categoría, otro rango de precio) y comparador |
 | Redirección `/go/:id` | `AffiliateLinkBuilder` | Registra el clic y redirige a `https://www.amazon.com/dp/{ASIN}?tag={AMAZON_TAG}` |
-| `CanopyCatalogProvider` | Cliente MCP propio (Streamable HTTP) | `search_amazon_products`, `get_amazon_product` y `get_amazon_product_top_reviews` en `https://mcp.canopyapi.co/mcp` |
+| `CanopyCatalogProvider` | Cliente MCP con `@modelcontextprotocol/sdk` (Streamable HTTP) | `search_amazon_products` y `get_amazon_product` en `https://mcp.canopyapi.co/mcp` (servidor 3.0; la herramienta de reseñas de la versión 2.1 ya no existe). Ignora siempre la `url` del proveedor |
 | Base de datos | PostgreSQL 16 (imagen con pgvector, preparada para la ampliación), Lucid ORM | Productos, fichas, notas, rúbricas, búsquedas, clics y la cola de pg-boss |
 | *Ampliación:* servicio chat | pgvector + `EmbeddingProvider` (`nomic-embed-text` vía Ollama) + `LlmClient` (`claude-haiku-5-5`) | Ver 3.3 |
 
@@ -626,7 +626,7 @@ aprobación) y el del visitante (categoría → comparador o ficha → Amazon) q
 | Admin | `GET /api/admin/candidates?status=pending&agentRunId=` | sesión | Cola de revisión |
 | Admin | `GET /api/admin/candidates/{id}` | sesión | Un candidato con datos del proveedor, borrador y rúbrica de su categoría |
 | Admin | `PATCH /api/admin/candidates/{id}` | sesión | Aprobar o rechazar (**detallado abajo**) |
-| Visitante | `GET /api/categories` | — | Categorías del inicio |
+| Visitante | `GET /api/categories` | — | Categorías del inicio con su número de productos y un destacado por categoría |
 | Visitante | `GET /api/categories/{slug}/products` | — | Listado público de una categoría (solo `approved`) |
 | Visitante | `GET /api/products/{slug}` | — | Ficha completa con alternativas y "combina bien con" |
 | Visitante | `GET /api/compare?ids=` | — | Comparador (**detallado abajo**) |
