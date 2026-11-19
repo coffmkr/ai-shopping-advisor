@@ -5,11 +5,11 @@
 
 ## 2. Panel en Nuxt
 
-- [ ] 2.1 Test de la página de login (debe fallar): muestra el mensaje de error ante credenciales incorrectas
-- [ ] 2.2 Middleware de ruta `admin`, layout del panel, página de login y portada del panel; test en verde
-- [ ] 2.3 Verificación manual: `/admin` sin sesión redirige al login, login con el administrador de la semilla, cierre de sesión
+- [x] 2.1 Test de la página de login (debe fallar): muestra el mensaje de error ante credenciales incorrectas
+- [x] 2.2 Middleware de ruta `admin`, layout del panel, página de login y portada del panel; test en verde
+- [x] 2.3 Verificación manual: `/admin` sin sesión redirige al login, login con el administrador de la semilla, cierre de sesión
 
 ## 3. Cierre
 
-- [ ] 3.1 README 2.5 actualizado con la protección CSRF real
-- [ ] 3.2 `make test`, typecheck y lint en verde
+- [x] 3.1 README 2.5 actualizado con la protección CSRF real
+- [x] 3.2 `make test`, typecheck y lint en verde

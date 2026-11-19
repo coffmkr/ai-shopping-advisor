@@ -63,7 +63,10 @@ test.group('Sesión del administrador', (group) => {
     wrongPassword.assertStatus(400)
     unknownEmail.assertStatus(400)
     assert.deepEqual(wrongPassword.body(), unknownEmail.body())
-    assert.equal(wrongPassword.body().message, 'Email o contraseña incorrectos')
+    assert.equal(
+      (wrongPassword.body() as { message: string }).message,
+      'Email o contraseña incorrectos'
+    )
   })
 
   test('bloquea el sexto intento fallido en un minuto aunque la clave sea correcta', async ({

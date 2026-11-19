@@ -359,10 +359,12 @@ flowchart LR
   viabilidad).
 - **Inyección de instrucciones:** títulos, reseñas y mensajes del chat se pasan al LLM como datos delimitados; la
   salida del LLM se valida con VineJS y todo ID de producto se comprueba contra la base de datos.
-- **Autenticación del administrador:** guard de sesión de AdonisJS, contraseña con hash argon2, cookie
-  `httpOnly`, `Secure`, `SameSite=Strict`, protección CSRF con Shield; rutas `/admin/*` protegidas. El
-  navegador solo habla con el origen de Nuxt (proxy hacia AdonisJS), así que la cookie estricta funciona sin
-  abrir CORS.
+- **Autenticación del administrador:** guard de sesión de AdonisJS, contraseña con hash, cookie `httpOnly`,
+  `SameSite=Strict` y `Secure` en producción; todas las rutas `/api/admin/*` (salvo el login) responden 401 sin
+  sesión; mismo mensaje para email inexistente y contraseña incorrecta, y bloqueo tras 5 intentos fallidos por
+  minuto. Protección CSRF: el navegador solo habla con el origen de Nuxt (proxy hacia AdonisJS), la cookie es
+  `SameSite=Strict` y la API exige JSON, así que un sitio ajeno no puede enviar peticiones con la sesión; el token
+  CSRF de Shield queda desactivado por esa razón (decisión en `openspec/changes/archive/2026-11-18-t3-acceso-admin/design.md`).
 - **Abuso:** límite diario de búsquedas del agente y una sola búsqueda activa por categoría, para no agotar la
   cuota de Canopy. En la ampliación, rate limit en el chat (10 mensajes por minuto por visitante).
 - **Privacidad:** no se guardan IPs ni datos personales; los clics usan como máximo un hash diario no reversible.
