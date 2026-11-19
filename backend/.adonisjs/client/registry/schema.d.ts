@@ -125,6 +125,45 @@ export interface Registry {
       rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/session_controller').default['destroy']>>>
     }
   }
+  'candidates.index': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/admin/candidates'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['index']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['index']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['index']>>>
+    }
+  }
+  'candidates.show': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/admin/candidates/:id'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['show']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['show']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['show']>>>
+    }
+  }
+  'candidates.update': {
+    methods: ["PATCH"]
+    pattern: '/api/admin/candidates/:id'
+    types: {
+      body: ExtractBody<InferInput<(typeof import('#validators/review').reviewValidator)>>
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: ExtractQuery<InferInput<(typeof import('#validators/review').reviewValidator)>>
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['update']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['update']>>> | { status: 422; response: { errors: SimpleError[] } }
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/candidates_controller').default['update']>>> | { status: 422; response: { errors: SimpleError[] } }
+    }
+  }
 }
 
 export namespace Route {

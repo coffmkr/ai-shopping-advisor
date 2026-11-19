@@ -31,6 +31,11 @@ router
   .group(() => {
     router.get('session', [controllers.admin.Session, 'show'])
     router.delete('session', [controllers.admin.Session, 'destroy'])
+
+    // Revisión y publicación de candidatos (HU2)
+    router.get('candidates', [controllers.admin.Candidates, 'index'])
+    router.get('candidates/:id', [controllers.admin.Candidates, 'show'])
+    router.patch('candidates/:id', [controllers.admin.Candidates, 'update'])
   })
   .prefix('/api/admin')
   .use(middleware.auth())

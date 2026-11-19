@@ -13,6 +13,9 @@ export type ScannedRoutes = {
     'session.store': { paramsTuple?: []; params?: {} }
     'session.show': { paramsTuple?: []; params?: {} }
     'session.destroy': { paramsTuple?: []; params?: {} }
+    'candidates.index': { paramsTuple?: []; params?: {} }
+    'candidates.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'candidates.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   GET: {
     'health.show': { paramsTuple?: []; params?: {} }
@@ -22,6 +25,8 @@ export type ScannedRoutes = {
     'catalog.compare': { paramsTuple?: []; params?: {} }
     'redirect.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'session.show': { paramsTuple?: []; params?: {} }
+    'candidates.index': { paramsTuple?: []; params?: {} }
+    'candidates.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   HEAD: {
     'health.show': { paramsTuple?: []; params?: {} }
@@ -31,12 +36,17 @@ export type ScannedRoutes = {
     'catalog.compare': { paramsTuple?: []; params?: {} }
     'redirect.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'session.show': { paramsTuple?: []; params?: {} }
+    'candidates.index': { paramsTuple?: []; params?: {} }
+    'candidates.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   POST: {
     'session.store': { paramsTuple?: []; params?: {} }
   }
   DELETE: {
     'session.destroy': { paramsTuple?: []; params?: {} }
+  }
+  PATCH: {
+    'candidates.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
 }
 declare module '@adonisjs/core/types/http' {

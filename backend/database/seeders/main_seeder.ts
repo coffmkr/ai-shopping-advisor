@@ -3,20 +3,35 @@ import { readFile } from 'node:fs/promises'
 import env from '#start/env'
 import AdminUser from '#models/admin_user'
 import AmazonAffiliateLinkBuilder from '#adapters/amazon/amazon_affiliate_link_builder'
-import { mapProductDetail } from '#adapters/canopy/canopy_mapper'
+import { mapProductDetail, mapSearchResults } from '#adapters/canopy/canopy_mapper'
 import { assignPriceTiers } from '#services/price_tier'
 import { CATEGORY_FIXTURES } from '#database/fixtures/categories'
 import { SHEET_FIXTURES } from '#database/fixtures/catalog_seed'
+import { CANDIDATE_FIXTURES } from '#database/fixtures/candidates_seed'
 
 /**
  * Semilla reproducible e idempotente (upsert por claves naturales), sin red:
  * categorías y rúbricas, administrador de prueba, una búsqueda de origen
- * ficticia por categoría y 12 productos aprobados con ficha.
+ * ficticia por categoría, 12 productos aprobados con ficha y 8 candidatos
+ * pendientes con borrador (los candidatos nunca se sobrescriben: si el
+ * administrador ya los revisó, la semilla respeta su decisión).
  */
 
 /** UUID fijo de la búsqueda de origen de la semilla para cada categoría. */
 function seedRunId(index: number) {
   return `00000000-0000-4000-8000-${String(index + 1).padStart(12, '0')}`
+}
+
+async function loadSearchItem(categorySlug: string, asin: string) {
+  const url = new URL(`../fixtures/canopy/search-${categorySlug}.json`, import.meta.url)
+  const raw = JSON.parse(await readFile(url, 'utf8'))
+  const items: any[] = raw.data.amazonProductSearchResults.productResults.results
+  const item = items.find((i) => i.asin === asin)
+  const result = mapSearchResults({
+    data: { amazonProductSearchResults: { productResults: { results: [item] } } },
+  })[0]
+  if (!item || !result) throw new Error(`La búsqueda grabada de ${categorySlug} no tiene ${asin}`)
+  return { raw: item, result }
 }
 
 async function loadDetail(asin: string) {
@@ -84,7 +99,9 @@ export default class MainSeeder extends BaseSeeder {
           status: 'completed',
           is_seed: true,
           provider_requests: 0,
-          candidates_created: SHEET_FIXTURES.filter((s) => s.categorySlug === category.slug).length,
+          candidates_created:
+            SHEET_FIXTURES.filter((s) => s.categorySlug === category.slug).length +
+            CANDIDATE_FIXTURES.filter((c) => c.categorySlug === category.slug).length,
           created_at: now,
           started_at: now,
           finished_at: now,
@@ -186,6 +203,35 @@ export default class MainSeeder extends BaseSeeder {
           .onConflict(['product_id', 'paired_product_id'])
           .ignore()
       }
+    }
+
+    // Candidatos pendientes (solo se insertan si no existen)
+    for (const candidate of CANDIDATE_FIXTURES) {
+      const { raw, result } = await loadSearchItem(candidate.categorySlug, candidate.asin)
+      const categoryIndex = CATEGORY_FIXTURES.findIndex((c) => c.slug === candidate.categorySlug)
+      await db
+        .table('products')
+        .insert({
+          provider: 'amazon',
+          provider_product_id: candidate.asin,
+          slug: candidate.slug,
+          category_id: categoryIds[candidate.categorySlug],
+          agent_run_id: seedRunId(categoryIndex),
+          title: result.title.slice(0, 500),
+          brand: result.brand,
+          image_url: result.imageUrl,
+          rating: result.rating ?? 0,
+          reviews_count: result.reviewsCount ?? 0,
+          reference_price_usd: result.priceUsd,
+          key_specs: JSON.stringify(candidate.draft.keySpecs),
+          provider_snapshot: JSON.stringify(raw),
+          data_updated_at: now,
+          agent_draft: JSON.stringify(candidate.draft),
+          status: 'pending',
+          created_at: now,
+        })
+        .onConflict(['provider', 'provider_product_id'])
+        .ignore()
     }
   }
 }

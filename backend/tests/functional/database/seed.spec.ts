@@ -79,8 +79,55 @@ test.group('Semilla de productos de ejemplo', (group) => {
 
     assert.equal(await count('categories'), 4)
     assert.equal(await count('rubric_criteria'), 16)
-    assert.equal(await count('products'), 12)
+    assert.equal(await count('products'), 20)
     assert.equal(await count('agent_runs'), 4)
     assert.equal(await count('product_scores'), 48)
+  })
+})
+
+test.group('Candidatos pendientes de la semilla', (group) => {
+  group.each.setup(() => testUtils.db().withGlobalTransaction())
+
+  test('incluye 2 candidatos pendientes por categoría con borrador y origen de semilla', async ({
+    assert,
+  }) => {
+    await runSeed()
+
+    const pending = await db
+      .from('products as p')
+      .join('agent_runs as ar', 'ar.id', 'p.agent_run_id')
+      .join('categories as c', 'c.id', 'p.category_id')
+      .where('p.status', 'pending')
+      .select('c.slug', 'p.agent_draft', 'ar.is_seed', 'p.affiliate_url', 'p.summary')
+
+    assert.lengthOf(pending, 8)
+    for (const slug of ['soportes-laptop', 'soportes-celular', 'teclados-mecanicos', 'desk-pads']) {
+      assert.lengthOf(
+        pending.filter((p) => p.slug === slug),
+        2,
+        slug
+      )
+    }
+    for (const candidate of pending) {
+      assert.isTrue(candidate.is_seed)
+      assert.isNull(candidate.affiliate_url)
+      assert.isNull(candidate.summary)
+      assert.isString(candidate.agent_draft.summary)
+      assert.isObject(candidate.agent_draft.scores)
+    }
+  })
+
+  test('no reabre un candidato que el administrador ya revisó', async ({ assert }) => {
+    await runSeed()
+    await db
+      .from('products')
+      .where('provider_product_id', 'B0DRFGNWV1')
+      .update({ status: 'rejected', rejection_reason: 'No es mecánico' })
+
+    await runSeed()
+
+    const k521 = await db.from('products').where('provider_product_id', 'B0DRFGNWV1').firstOrFail()
+    assert.equal(k521.status, 'rejected')
+    assert.equal(k521.rejection_reason, 'No es mecánico')
   })
 })

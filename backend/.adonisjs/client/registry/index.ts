@@ -62,6 +62,24 @@ const routes = {
     tokens: [[0,"api"],[0,"admin"],[0,"session"]],
     types: placeholder as Registry['session.destroy']['types'],
   },
+  'candidates.index': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/admin/candidates',
+    tokens: [[0,"api"],[0,"admin"],[0,"candidates"]],
+    types: placeholder as Registry['candidates.index']['types'],
+  },
+  'candidates.show': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/admin/candidates/:id',
+    tokens: [[0,"api"],[0,"admin"],[0,"candidates"],[1,"id"]],
+    types: placeholder as Registry['candidates.show']['types'],
+  },
+  'candidates.update': {
+    methods: ["PATCH"],
+    pattern: '/api/admin/candidates/:id',
+    tokens: [[0,"api"],[0,"admin"],[0,"candidates"],[1,"id"]],
+    types: placeholder as Registry['candidates.update']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

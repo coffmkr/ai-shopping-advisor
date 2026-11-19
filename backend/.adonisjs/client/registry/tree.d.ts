@@ -19,4 +19,9 @@ export interface ApiDefinition {
     show: typeof routes['session.show']
     destroy: typeof routes['session.destroy']
   }
+  candidates: {
+    index: typeof routes['candidates.index']
+    show: typeof routes['candidates.show']
+    update: typeof routes['candidates.update']
+  }
 }
