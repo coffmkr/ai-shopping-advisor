@@ -1,6 +1,14 @@
 import Category from '#models/category'
 import Product from '#models/product'
 import type { ClickSource, PriceTier } from '#models/types'
+import { bestByCriterion } from '#services/compare'
+
+export class DifferentCategoriesError extends Error {
+  constructor() {
+    super('Solo se comparan productos de la misma categoría')
+    this.name = 'DifferentCategoriesError'
+  }
+}
 
 /**
  * Consultas públicas del catálogo. Cada respuesta se construye campo a campo:
@@ -165,6 +173,52 @@ export default class CatalogService {
       },
       alternatives,
       pairings: product.pairings.map((p) => toCard(p, p.category.slug, 'detail')),
+    }
+  }
+
+  /**
+   * Compara productos aprobados de una misma categoría. Devuelve null si alguno
+   * no existe o no está aprobado; lanza DifferentCategoriesError si mezclan categorías.
+   */
+  async compareProducts(ids: string[]) {
+    const products = await approvedWithScores()
+      .whereIn('id', ids)
+      .preload('category', (q) => q.preload('criteria', (c) => c.orderBy('position')))
+    if (products.length !== ids.length) return null
+
+    const categoryIds = new Set(products.map((p) => p.categoryId))
+    if (categoryIds.size > 1) throw new DifferentCategoriesError()
+
+    const category = products[0].category
+    const criteria = category.criteria.map((c) => ({ key: c.key, label: c.label }))
+    const ordered = ids.map((id) => products.find((p) => p.id === id)!)
+
+    return {
+      category: { slug: category.slug, name: category.name },
+      criteria,
+      products: ordered.map((product) => ({
+        id: product.id,
+        slug: product.slug,
+        title: product.title,
+        imageUrl: product.imageUrl,
+        priceTier: product.priceTier,
+        scores: scoresOf(product),
+        idealFor: product.idealFor,
+        pros: product.pros,
+        cons: product.cons,
+        keySpecs: product.keySpecs,
+        badges: product.badges,
+        goUrl: goUrl(product.id, 'compare'),
+      })),
+      bestByCriterion: bestByCriterion(
+        criteria.map((c) => c.key),
+        ordered.map((p) => ({
+          id: p.id,
+          rating: Number(p.rating),
+          reviewsCount: p.reviewsCount,
+          scores: scoresOf(p),
+        }))
+      ),
     }
   }
 

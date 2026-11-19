@@ -32,6 +32,12 @@ const routes = {
     tokens: [[0,"api"],[0,"products"],[1,"slug"]],
     types: placeholder as Registry['catalog.product']['types'],
   },
+  'catalog.compare': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/compare',
+    tokens: [[0,"api"],[0,"compare"]],
+    types: placeholder as Registry['catalog.compare']['types'],
+  },
   'redirect.show': {
     methods: ["GET","HEAD"],
     pattern: '/go/:id',

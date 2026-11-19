@@ -60,6 +60,19 @@ export interface Registry {
       rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['product']>>>
     }
   }
+  'catalog.compare': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/compare'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: ExtractQueryForGet<InferInput<(typeof import('#validators/compare').compareValidator)>>
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['compare']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['compare']>>> | { status: 422; response: { errors: SimpleError[] } }
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/catalog_controller').default['compare']>>> | { status: 422; response: { errors: SimpleError[] } }
+    }
+  }
   'redirect.show': {
     methods: ["GET","HEAD"]
     pattern: '/go/:id'

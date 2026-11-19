@@ -8,6 +8,7 @@ export type ScannedRoutes = {
     'catalog.categories': { paramsTuple?: []; params?: {} }
     'catalog.category_products': { paramsTuple: [ParamValue]; params: {'slug': ParamValue} }
     'catalog.product': { paramsTuple: [ParamValue]; params: {'slug': ParamValue} }
+    'catalog.compare': { paramsTuple?: []; params?: {} }
     'redirect.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   GET: {
@@ -15,6 +16,7 @@ export type ScannedRoutes = {
     'catalog.categories': { paramsTuple?: []; params?: {} }
     'catalog.category_products': { paramsTuple: [ParamValue]; params: {'slug': ParamValue} }
     'catalog.product': { paramsTuple: [ParamValue]; params: {'slug': ParamValue} }
+    'catalog.compare': { paramsTuple?: []; params?: {} }
     'redirect.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   HEAD: {
@@ -22,6 +24,7 @@ export type ScannedRoutes = {
     'catalog.categories': { paramsTuple?: []; params?: {} }
     'catalog.category_products': { paramsTuple: [ParamValue]; params: {'slug': ParamValue} }
     'catalog.product': { paramsTuple: [ParamValue]; params: {'slug': ParamValue} }
+    'catalog.compare': { paramsTuple?: []; params?: {} }
     'redirect.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
 }

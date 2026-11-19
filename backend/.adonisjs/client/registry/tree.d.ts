@@ -9,6 +9,7 @@ export interface ApiDefinition {
     categories: typeof routes['catalog.categories']
     categoryProducts: typeof routes['catalog.category_products']
     product: typeof routes['catalog.product']
+    compare: typeof routes['catalog.compare']
   }
   redirect: {
     show: typeof routes['redirect.show']

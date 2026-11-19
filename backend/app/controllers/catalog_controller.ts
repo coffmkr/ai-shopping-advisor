@@ -1,6 +1,7 @@
 import { inject } from '@adonisjs/core'
 import type { HttpContext } from '@adonisjs/core/http'
-import CatalogService from '#services/catalog_service'
+import CatalogService, { DifferentCategoriesError } from '#services/catalog_service'
+import { compareValidator, parseIds } from '#validators/compare'
 
 @inject()
 export default class CatalogController {
@@ -14,6 +15,28 @@ export default class CatalogController {
     const result = await this.catalog.listCategoryProducts(params.slug)
     if (!result) return response.notFound({ error: 'not_found', message: 'La categoría no existe' })
     return result
+  }
+
+  async compare({ request, response }: HttpContext) {
+    const { ids } = await request.validateUsing(compareValidator, {
+      data: { ids: parseIds(request.qs().ids) },
+    })
+
+    try {
+      const result = await this.catalog.compareProducts(ids)
+      if (!result) {
+        return response.notFound({
+          error: 'not_found',
+          message: 'Algún producto no existe o ya no está publicado',
+        })
+      }
+      return result
+    } catch (error) {
+      if (error instanceof DifferentCategoriesError) {
+        return response.unprocessableEntity({ error: 'validation_error', message: error.message })
+      }
+      throw error
+    }
   }
 
   async product({ params, response }: HttpContext) {

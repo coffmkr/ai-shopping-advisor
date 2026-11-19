@@ -18,5 +18,8 @@ router.get('/api/categories', [controllers.Catalog, 'categories'])
 router.get('/api/categories/:slug/products', [controllers.Catalog, 'categoryProducts'])
 router.get('/api/products/:slug', [controllers.Catalog, 'product'])
 
+// Comparador (HU3)
+router.get('/api/compare', [controllers.Catalog, 'compare'])
+
 // Salida a Amazon con clic registrado
 router.get('/go/:id', [controllers.Redirect, 'show'])
