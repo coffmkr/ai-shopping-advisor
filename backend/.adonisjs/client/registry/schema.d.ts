@@ -125,6 +125,45 @@ export interface Registry {
       rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/session_controller').default['destroy']>>>
     }
   }
+  'agent_runs.index': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/admin/agent-runs'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['index']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['index']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['index']>>>
+    }
+  }
+  'agent_runs.store': {
+    methods: ["POST"]
+    pattern: '/api/admin/agent-runs'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['store']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['store']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['store']>>>
+    }
+  }
+  'agent_runs.show': {
+    methods: ["GET","HEAD"]
+    pattern: '/api/admin/agent-runs/:id'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['show']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['show']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/admin/agent_runs_controller').default['show']>>>
+    }
+  }
   'candidates.index': {
     methods: ["GET","HEAD"]
     pattern: '/api/admin/candidates'

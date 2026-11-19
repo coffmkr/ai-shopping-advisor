@@ -62,6 +62,24 @@ const routes = {
     tokens: [[0,"api"],[0,"admin"],[0,"session"]],
     types: placeholder as Registry['session.destroy']['types'],
   },
+  'agent_runs.index': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/admin/agent-runs',
+    tokens: [[0,"api"],[0,"admin"],[0,"agent-runs"]],
+    types: placeholder as Registry['agent_runs.index']['types'],
+  },
+  'agent_runs.store': {
+    methods: ["POST"],
+    pattern: '/api/admin/agent-runs',
+    tokens: [[0,"api"],[0,"admin"],[0,"agent-runs"]],
+    types: placeholder as Registry['agent_runs.store']['types'],
+  },
+  'agent_runs.show': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/admin/agent-runs/:id',
+    tokens: [[0,"api"],[0,"admin"],[0,"agent-runs"],[1,"id"]],
+    types: placeholder as Registry['agent_runs.show']['types'],
+  },
   'candidates.index': {
     methods: ["GET","HEAD"],
     pattern: '/api/admin/candidates',

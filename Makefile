@@ -32,10 +32,11 @@ seed: db-up
 fresh: db-up
 	cd backend && node ace migration:fresh --drop-types --seed
 
-## Backend en :3333 y frontend en :3000 (el navegador solo usa :3000)
+## Backend en :3333, worker del agente y frontend en :3000 (el navegador solo usa :3000)
 start: db-up
 	@trap 'kill 0' INT TERM EXIT; \
 	(cd backend && npm run dev) & \
+	(cd backend && node ace agent:work) & \
 	(cd frontend && npm run dev) & \
 	wait
 

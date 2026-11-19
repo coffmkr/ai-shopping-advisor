@@ -13,6 +13,9 @@ export type ScannedRoutes = {
     'session.store': { paramsTuple?: []; params?: {} }
     'session.show': { paramsTuple?: []; params?: {} }
     'session.destroy': { paramsTuple?: []; params?: {} }
+    'agent_runs.index': { paramsTuple?: []; params?: {} }
+    'agent_runs.store': { paramsTuple?: []; params?: {} }
+    'agent_runs.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'candidates.index': { paramsTuple?: []; params?: {} }
     'candidates.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'candidates.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
@@ -25,6 +28,8 @@ export type ScannedRoutes = {
     'catalog.compare': { paramsTuple?: []; params?: {} }
     'redirect.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'session.show': { paramsTuple?: []; params?: {} }
+    'agent_runs.index': { paramsTuple?: []; params?: {} }
+    'agent_runs.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'candidates.index': { paramsTuple?: []; params?: {} }
     'candidates.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
@@ -36,11 +41,14 @@ export type ScannedRoutes = {
     'catalog.compare': { paramsTuple?: []; params?: {} }
     'redirect.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'session.show': { paramsTuple?: []; params?: {} }
+    'agent_runs.index': { paramsTuple?: []; params?: {} }
+    'agent_runs.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'candidates.index': { paramsTuple?: []; params?: {} }
     'candidates.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   POST: {
     'session.store': { paramsTuple?: []; params?: {} }
+    'agent_runs.store': { paramsTuple?: []; params?: {} }
   }
   DELETE: {
     'session.destroy': { paramsTuple?: []; params?: {} }

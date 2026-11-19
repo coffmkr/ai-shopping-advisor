@@ -5,6 +5,7 @@
 
 export const controllers = {
   admin: {
+    AgentRuns: () => import('#controllers/admin/agent_runs_controller'),
     Candidates: () => import('#controllers/admin/candidates_controller'),
     Session: () => import('#controllers/admin/session_controller'),
   },

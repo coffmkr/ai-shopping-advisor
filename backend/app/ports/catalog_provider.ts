@@ -28,9 +28,10 @@ export interface SearchOptions {
   limit?: number
 }
 
-export interface CatalogProvider {
-  searchProducts(term: string, options?: SearchOptions): Promise<ProviderSearchResult[]>
-  getProduct(asin: string): Promise<ProviderProductDetail | null>
+/** Clase abstracta para usarla como clave del contenedor de AdonisJS. */
+export abstract class CatalogProvider {
+  abstract searchProducts(term: string, options?: SearchOptions): Promise<ProviderSearchResult[]>
+  abstract getProduct(asin: string): Promise<ProviderProductDetail | null>
 }
 
 export class CatalogProviderError extends Error {

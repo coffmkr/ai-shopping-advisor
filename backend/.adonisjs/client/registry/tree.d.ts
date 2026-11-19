@@ -19,6 +19,11 @@ export interface ApiDefinition {
     show: typeof routes['session.show']
     destroy: typeof routes['session.destroy']
   }
+  agentRuns: {
+    index: typeof routes['agent_runs.index']
+    store: typeof routes['agent_runs.store']
+    show: typeof routes['agent_runs.show']
+  }
   candidates: {
     index: typeof routes['candidates.index']
     show: typeof routes['candidates.show']

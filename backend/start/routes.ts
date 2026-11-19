@@ -32,6 +32,11 @@ router
     router.get('session', [controllers.admin.Session, 'show'])
     router.delete('session', [controllers.admin.Session, 'destroy'])
 
+    // Búsquedas del agente (HU1)
+    router.get('agent-runs', [controllers.admin.AgentRuns, 'index'])
+    router.post('agent-runs', [controllers.admin.AgentRuns, 'store'])
+    router.get('agent-runs/:id', [controllers.admin.AgentRuns, 'show'])
+
     // Revisión y publicación de candidatos (HU2)
     router.get('candidates', [controllers.admin.Candidates, 'index'])
     router.get('candidates/:id', [controllers.admin.Candidates, 'show'])
