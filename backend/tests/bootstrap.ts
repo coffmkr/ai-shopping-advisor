@@ -41,7 +41,11 @@ export const plugins: Config['plugins'] = [
  * The teardown functions are executed after all the tests
  */
 export const runnerHooks: Required<Pick<Config, 'setup' | 'teardown'>> = {
-  setup: [],
+  /**
+   * La base de pruebas se recrea desde cero en cada ejecución: así los tests
+   * siempre corren contra el esquema real y nunca contra la base de desarrollo.
+   */
+  setup: [() => testUtils.db().truncate(), () => testUtils.db().migrate()],
   teardown: [],
 }
 

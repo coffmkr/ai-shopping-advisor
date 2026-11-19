@@ -7,55 +7,176 @@
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 import { DateTime } from 'luxon'
 
-export class AuthAccessTokenSchema extends BaseModel {
-  static $columns = [
-    'abilities',
-    'createdAt',
-    'expiresAt',
-    'hash',
-    'id',
-    'lastUsedAt',
-    'name',
-    'tokenableId',
-    'type',
-    'updatedAt',
-  ] as const
-  $columns = AuthAccessTokenSchema.$columns
-  @column()
-  declare abilities: string
-  @column.dateTime({ autoCreate: true })
-  declare createdAt: DateTime | null
-  @column.dateTime()
-  declare expiresAt: DateTime | null
-  @column()
-  declare hash: string
-  @column({ isPrimary: true })
-  declare id: number
-  @column.dateTime()
-  declare lastUsedAt: DateTime | null
-  @column()
-  declare name: string | null
-  @column()
-  declare tokenableId: number
-  @column()
-  declare type: string
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  declare updatedAt: DateTime | null
-}
-
-export class UserSchema extends BaseModel {
-  static $columns = ['createdAt', 'email', 'fullName', 'id', 'password', 'updatedAt'] as const
-  $columns = UserSchema.$columns
+export class AdminUserSchema extends BaseModel {
+  static $columns = ['createdAt', 'email', 'id', 'password', 'updatedAt'] as const
+  $columns = AdminUserSchema.$columns
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
   @column()
   declare email: string
-  @column()
-  declare fullName: string | null
   @column({ isPrimary: true })
-  declare id: number
+  declare id: string
   @column({ serializeAs: null })
   declare password: string
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime | null
+}
+
+export class AgentRunSchema extends BaseModel {
+  static $columns = ['candidatesCreated', 'categoryId', 'createdAt', 'errorMessage', 'finishedAt', 'id', 'isSeed', 'maxPriceUsd', 'providerRequests', 'requestedById', 'startedAt', 'status'] as const
+  $columns = AgentRunSchema.$columns
+  @column()
+  declare candidatesCreated: number
+  @column()
+  declare categoryId: string
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime
+  @column()
+  declare errorMessage: string | null
+  @column.dateTime()
+  declare finishedAt: DateTime | null
+  @column({ isPrimary: true })
+  declare id: string
+  @column()
+  declare isSeed: boolean
+  @column()
+  declare maxPriceUsd: string | null
+  @column()
+  declare providerRequests: number
+  @column()
+  declare requestedById: string
+  @column.dateTime()
+  declare startedAt: DateTime | null
+  @column()
+  declare status: any
+}
+
+export class CategorySchema extends BaseModel {
+  static $columns = ['createdAt', 'icon', 'id', 'name', 'searchTerm', 'slug'] as const
+  $columns = CategorySchema.$columns
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime
+  @column()
+  declare icon: string | null
+  @column({ isPrimary: true })
+  declare id: string
+  @column()
+  declare name: string
+  @column()
+  declare searchTerm: string
+  @column()
+  declare slug: string
+}
+
+export class ClickEventSchema extends BaseModel {
+  static $columns = ['id', 'occurredAt', 'productId', 'source', 'visitorHash'] as const
+  $columns = ClickEventSchema.$columns
+  @column({ isPrimary: true })
+  declare id: bigint | number
+  @column.dateTime()
+  declare occurredAt: DateTime
+  @column()
+  declare productId: string
+  @column()
+  declare source: any
+  @column()
+  declare visitorHash: string | null
+}
+
+export class ProductPairingSchema extends BaseModel {
+  static $columns = ['pairedProductId', 'productId'] as const
+  $columns = ProductPairingSchema.$columns
+  @column()
+  declare pairedProductId: string
+  @column({ isPrimary: true })
+  declare productId: string
+}
+
+export class ProductScoreSchema extends BaseModel {
+  static $columns = ['criterionId', 'productId', 'score'] as const
+  $columns = ProductScoreSchema.$columns
+  @column()
+  declare criterionId: string
+  @column({ isPrimary: true })
+  declare productId: string
+  @column()
+  declare score: number
+}
+
+export class ProductSchema extends BaseModel {
+  static $columns = ['affiliateUrl', 'agentDraft', 'agentRunId', 'badges', 'brand', 'categoryId', 'cons', 'createdAt', 'dataUpdatedAt', 'id', 'idealFor', 'imageUrl', 'keySpecs', 'notFor', 'priceTier', 'pros', 'provider', 'providerProductId', 'providerSnapshot', 'rating', 'referencePriceUsd', 'rejectionReason', 'reviewedAt', 'reviewedById', 'reviewsCount', 'slug', 'status', 'summary', 'title'] as const
+  $columns = ProductSchema.$columns
+  @column()
+  declare affiliateUrl: string | null
+  @column()
+  declare agentDraft: any
+  @column()
+  declare agentRunId: string
+  @column()
+  declare badges: any
+  @column()
+  declare brand: string | null
+  @column()
+  declare categoryId: string
+  @column()
+  declare cons: any
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime
+  @column.dateTime()
+  declare dataUpdatedAt: DateTime
+  @column({ isPrimary: true })
+  declare id: string
+  @column()
+  declare idealFor: string | null
+  @column()
+  declare imageUrl: string | null
+  @column()
+  declare keySpecs: any
+  @column()
+  declare notFor: string | null
+  @column()
+  declare priceTier: any | null
+  @column()
+  declare pros: any
+  @column()
+  declare provider: any
+  @column()
+  declare providerProductId: string
+  @column()
+  declare providerSnapshot: any
+  @column()
+  declare rating: string
+  @column()
+  declare referencePriceUsd: string | null
+  @column()
+  declare rejectionReason: string | null
+  @column.dateTime()
+  declare reviewedAt: DateTime | null
+  @column()
+  declare reviewedById: string | null
+  @column()
+  declare reviewsCount: number
+  @column()
+  declare slug: string
+  @column()
+  declare status: any
+  @column()
+  declare summary: string | null
+  @column()
+  declare title: string
+}
+
+export class RubricCriterionSchema extends BaseModel {
+  static $columns = ['categoryId', 'id', 'key', 'label', 'position'] as const
+  $columns = RubricCriterionSchema.$columns
+  @column()
+  declare categoryId: string
+  @column({ isPrimary: true })
+  declare id: string
+  @column()
+  declare key: string
+  @column()
+  declare label: string
+  @column()
+  declare position: number
 }

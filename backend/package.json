@@ -35,7 +35,9 @@
     "#database/*": "./database/*.js",
     "#tests/*": "./tests/*.js",
     "#start/*": "./start/*.js",
-    "#config/*": "./config/*.js"
+    "#config/*": "./config/*.js",
+    "#ports/*": "./app/ports/*.js",
+    "#adapters/*": "./app/adapters/*.js"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^8.5.2",
@@ -63,6 +65,7 @@
     "@adonisjs/session": "^8.1.0",
     "@adonisjs/shield": "^9.0.0",
     "@japa/api-client": "^3.2.1",
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "@tuyau/core": "^1.2.2",
     "@vinejs/vine": "^4.4.0",
     "luxon": "^3.7.2",

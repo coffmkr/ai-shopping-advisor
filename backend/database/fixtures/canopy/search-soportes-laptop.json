@@ -1,0 +1,1414 @@
+{
+  "data": {
+    "amazonProductSearchResults": {
+      "availableRefinements": [
+        {
+          "name": "prime",
+          "options": [
+            {
+              "name": "Free Shipping by Amazon"
+            }
+          ]
+        },
+        {
+          "name": "reviews",
+          "options": [
+            {
+              "name": "4 Stars"
+            }
+          ]
+        },
+        {
+          "name": "brand",
+          "options": [
+            {
+              "name": "Nulaxy"
+            },
+            {
+              "name": "Rain Design"
+            },
+            {
+              "name": "Lamicall"
+            },
+            {
+              "name": "Twelve South"
+            },
+            {
+              "name": "OMOTON"
+            },
+            {
+              "name": "MOFT"
+            },
+            {
+              "name": "UGREEN"
+            },
+            {
+              "name": "Pyle"
+            },
+            {
+              "name": "BESIGN"
+            },
+            {
+              "name": "Ergotron"
+            },
+            {
+              "name": "Mount-It!"
+            },
+            {
+              "name": "Urmust"
+            },
+            {
+              "name": "Targus"
+            },
+            {
+              "name": "Vaydeer"
+            },
+            {
+              "name": "Kensington"
+            },
+            {
+              "name": "SAIJI"
+            },
+            {
+              "name": "AboveTEK"
+            },
+            {
+              "name": "Viozon"
+            },
+            {
+              "name": "StarTech.com"
+            },
+            {
+              "name": "Razer"
+            },
+            {
+              "name": "Lenovo"
+            },
+            {
+              "name": "tounee"
+            },
+            {
+              "name": "LEVO"
+            },
+            {
+              "name": "Rockville"
+            },
+            {
+              "name": "Fellowes"
+            },
+            {
+              "name": "MOUNT PRO"
+            },
+            {
+              "name": "Reloop"
+            },
+            {
+              "name": "TEAMIX"
+            },
+            {
+              "name": "MOUNTUP"
+            },
+            {
+              "name": "Transformers"
+            }
+          ]
+        },
+        {
+          "name": "eligible_for_free_shipping",
+          "options": [
+            {
+              "name": "Free Shipping by Amazon"
+            }
+          ]
+        },
+        {
+          "name": "customer_reviews",
+          "options": [
+            {
+              "name": "4 Stars"
+            }
+          ]
+        },
+        {
+          "name": "deals_discounts",
+          "options": [
+            {
+              "name": "All Discounts"
+            },
+            {
+              "name": "Buy More, Save More"
+            },
+            {
+              "name": "Coupons"
+            },
+            {
+              "name": "Today's Deals"
+            }
+          ]
+        },
+        {
+          "name": "special_features",
+          "options": [
+            {
+              "name": "360 Degree Rotation"
+            },
+            {
+              "name": "Adjustable"
+            },
+            {
+              "name": "Portable"
+            },
+            {
+              "name": "Ergonomic"
+            },
+            {
+              "name": "Foldable"
+            },
+            {
+              "name": "Adhesive"
+            },
+            {
+              "name": "Arm"
+            },
+            {
+              "name": "Flexible"
+            },
+            {
+              "name": "Grip"
+            },
+            {
+              "name": "Hand Free"
+            },
+            {
+              "name": "Handle"
+            },
+            {
+              "name": "Lockable"
+            },
+            {
+              "name": "Magnetic"
+            },
+            {
+              "name": "Non-Slip"
+            },
+            {
+              "name": "Pocket Friendly"
+            },
+            {
+              "name": "Slim Profile"
+            },
+            {
+              "name": "Swivel"
+            }
+          ]
+        },
+        {
+          "name": "condition",
+          "options": [
+            {
+              "name": "New"
+            },
+            {
+              "name": "Used"
+            }
+          ]
+        },
+        {
+          "name": "uses",
+          "options": [
+            {
+              "name": "Beach"
+            },
+            {
+              "name": "Bed"
+            },
+            {
+              "name": "Car"
+            },
+            {
+              "name": "Desk"
+            },
+            {
+              "name": "Sofa"
+            },
+            {
+              "name": "Treadmill"
+            }
+          ]
+        },
+        {
+          "name": "brands",
+          "options": [
+            {
+              "name": "Nulaxy"
+            },
+            {
+              "name": "Rain Design"
+            },
+            {
+              "name": "Lamicall"
+            },
+            {
+              "name": "Twelve South"
+            },
+            {
+              "name": "OMOTON"
+            },
+            {
+              "name": "MOFT"
+            },
+            {
+              "name": "UGREEN"
+            },
+            {
+              "name": "Pyle"
+            },
+            {
+              "name": "BESIGN"
+            },
+            {
+              "name": "Ergotron"
+            },
+            {
+              "name": "Mount-It!"
+            },
+            {
+              "name": "Urmust"
+            },
+            {
+              "name": "Targus"
+            },
+            {
+              "name": "Vaydeer"
+            },
+            {
+              "name": "Kensington"
+            },
+            {
+              "name": "SAIJI"
+            },
+            {
+              "name": "AboveTEK"
+            },
+            {
+              "name": "Viozon"
+            },
+            {
+              "name": "StarTech.com"
+            },
+            {
+              "name": "Razer"
+            },
+            {
+              "name": "Lenovo"
+            },
+            {
+              "name": "tounee"
+            },
+            {
+              "name": "LEVO"
+            },
+            {
+              "name": "Rockville"
+            },
+            {
+              "name": "Fellowes"
+            },
+            {
+              "name": "MOUNT PRO"
+            },
+            {
+              "name": "Reloop"
+            },
+            {
+              "name": "TEAMIX"
+            },
+            {
+              "name": "MOUNTUP"
+            }
+          ]
+        },
+        {
+          "name": "featured_character",
+          "options": [
+            {
+              "name": "Transformers"
+            }
+          ]
+        },
+        {
+          "name": "mounting_type",
+          "options": [
+            {
+              "name": "Dash Mount"
+            },
+            {
+              "name": "Floor Stand"
+            },
+            {
+              "name": "Handlebar Mount"
+            },
+            {
+              "name": "Shelf Mount"
+            },
+            {
+              "name": "Tabletop"
+            },
+            {
+              "name": "Wall Mount"
+            }
+          ]
+        },
+        {
+          "name": "form_factor",
+          "options": [
+            {
+              "name": "Gimbal"
+            },
+            {
+              "name": "L-Shape"
+            },
+            {
+              "name": "Pedestal"
+            },
+            {
+              "name": "Pillow"
+            },
+            {
+              "name": "Popgrip"
+            },
+            {
+              "name": "Ring"
+            },
+            {
+              "name": "Tower"
+            },
+            {
+              "name": "Tripod"
+            }
+          ]
+        },
+        {
+          "name": "sustainability_features",
+          "options": [
+            {
+              "name": "Any Feature"
+            },
+            {
+              "name": "Carbon Impact"
+            },
+            {
+              "name": "Recycled Materials"
+            },
+            {
+              "name": "Safer Chemicals"
+            },
+            {
+              "name": "Worker Wellbeing"
+            }
+          ]
+        },
+        {
+          "name": "material",
+          "options": [
+            {
+              "name": "Acacia"
+            },
+            {
+              "name": "Acrylic"
+            },
+            {
+              "name": "Acrylonitrile Butadiene Styrene (ABS)"
+            },
+            {
+              "name": "Alloy Steel"
+            },
+            {
+              "name": "Aluminum"
+            },
+            {
+              "name": "Ash Wood"
+            },
+            {
+              "name": "Bamboo"
+            },
+            {
+              "name": "Beechwood"
+            },
+            {
+              "name": "Brass"
+            },
+            {
+              "name": "Carbon Steel"
+            },
+            {
+              "name": "Cement"
+            },
+            {
+              "name": "Cotton"
+            },
+            {
+              "name": "Engineered Wood"
+            },
+            {
+              "name": "Fabric"
+            },
+            {
+              "name": "Fiberglass"
+            },
+            {
+              "name": "Glass"
+            },
+            {
+              "name": "Iron"
+            },
+            {
+              "name": "Leather & Suede"
+            },
+            {
+              "name": "Manufactured Wood"
+            },
+            {
+              "name": "Marble"
+            },
+            {
+              "name": "Metal"
+            },
+            {
+              "name": "Nylon"
+            },
+            {
+              "name": "Plastic"
+            },
+            {
+              "name": "Polycarbonate (PC)"
+            },
+            {
+              "name": "Polyester"
+            },
+            {
+              "name": "Polyethylene Terephthalate"
+            },
+            {
+              "name": "Polyresin"
+            },
+            {
+              "name": "Polyurethane (PU)"
+            },
+            {
+              "name": "Resin"
+            },
+            {
+              "name": "Rubber"
+            },
+            {
+              "name": "Silicone"
+            },
+            {
+              "name": "Stainless Steel"
+            },
+            {
+              "name": "Steel"
+            },
+            {
+              "name": "Stone"
+            },
+            {
+              "name": "Thermoplastic Polyurethane"
+            },
+            {
+              "name": "Vinyl"
+            },
+            {
+              "name": "Walnut"
+            },
+            {
+              "name": "Wood"
+            },
+            {
+              "name": "Zinc"
+            }
+          ]
+        },
+        {
+          "name": "top_brands",
+          "options": [
+            {
+              "name": "Top Brands"
+            }
+          ]
+        },
+        {
+          "name": "fastening_type",
+          "options": [
+            {
+              "name": "Clip Holder"
+            },
+            {
+              "name": "Magnetic"
+            },
+            {
+              "name": "Sticky Pad"
+            },
+            {
+              "name": "Suction Cup"
+            }
+          ]
+        },
+        {
+          "name": "seller",
+          "options": [
+            {
+              "name": "BoxWave Corporation"
+            },
+            {
+              "name": "PHAPPY"
+            },
+            {
+              "name": "Fjolsaz"
+            },
+            {
+              "name": "jianidedian"
+            },
+            {
+              "name": "zhmeiguo222"
+            },
+            {
+              "name": "zhouyaning"
+            },
+            {
+              "name": "yushanglansheng"
+            }
+          ]
+        },
+        {
+          "name": "amazon_beauty",
+          "options": [
+            {
+              "name": "Premium Brands"
+            }
+          ]
+        },
+        {
+          "name": "units",
+          "options": [
+            {
+              "name": "Inch"
+            },
+            {
+              "name": "Metric"
+            }
+          ]
+        },
+        {
+          "name": "weight",
+          "options": [
+            {
+              "name": "Up to 1 lb"
+            },
+            {
+              "name": "1 to 1.9 lb"
+            },
+            {
+              "name": "2 to 2.9 lb"
+            },
+            {
+              "name": "3 lb & above"
+            }
+          ]
+        },
+        {
+          "name": "width",
+          "options": [
+            {
+              "name": "Up to 1.9 in"
+            },
+            {
+              "name": "2 to 3.9 in"
+            },
+            {
+              "name": "4 to 5.9 in"
+            },
+            {
+              "name": "6 to 7.9 in"
+            },
+            {
+              "name": "8 to 9.9 in"
+            },
+            {
+              "name": "10 to 11.9 in"
+            },
+            {
+              "name": "12 in & above"
+            }
+          ]
+        },
+        {
+          "name": "compatibility",
+          "options": [
+            {
+              "name": "Camera"
+            },
+            {
+              "name": "Laptops"
+            },
+            {
+              "name": "Smartphones"
+            },
+            {
+              "name": "Desktop"
+            },
+            {
+              "name": "E-reader"
+            },
+            {
+              "name": "Game Pad"
+            },
+            {
+              "name": "Gaming Consoles"
+            },
+            {
+              "name": "Headphones"
+            },
+            {
+              "name": "Keyboard"
+            },
+            {
+              "name": "Printers"
+            },
+            {
+              "name": "Projectors"
+            },
+            {
+              "name": "Smartwatch"
+            },
+            {
+              "name": "Speakers"
+            },
+            {
+              "name": "Tablets"
+            },
+            {
+              "name": "Television"
+            }
+          ]
+        },
+        {
+          "name": "piece_count",
+          "options": [
+            {
+              "name": "19 & under"
+            },
+            {
+              "name": "20-49"
+            },
+            {
+              "name": "50-99"
+            },
+            {
+              "name": "100-199"
+            },
+            {
+              "name": "200-299"
+            },
+            {
+              "name": "300-399"
+            },
+            {
+              "name": "400-499"
+            },
+            {
+              "name": "500 & above"
+            }
+          ]
+        },
+        {
+          "name": "item_height",
+          "options": [
+            {
+              "name": "Up to 1.9 in"
+            },
+            {
+              "name": "2 to 3.9 in"
+            },
+            {
+              "name": "4 to 5.9 in"
+            },
+            {
+              "name": "6 to 7.9 in"
+            },
+            {
+              "name": "8 in & above"
+            }
+          ]
+        },
+        {
+          "name": "grade",
+          "options": [
+            {
+              "name": "Commercial Grade"
+            }
+          ]
+        },
+        {
+          "name": "base_type",
+          "options": [
+            {
+              "name": "Leg"
+            },
+            {
+              "name": "Pedestal"
+            }
+          ]
+        },
+        {
+          "name": "tier_count",
+          "options": [
+            {
+              "name": "1 Tier"
+            },
+            {
+              "name": "5 Tiers & Above"
+            }
+          ]
+        },
+        {
+          "name": "base_material_type",
+          "options": [
+            {
+              "name": "Metal"
+            },
+            {
+              "name": "Alloy Steel"
+            },
+            {
+              "name": "Aluminum"
+            },
+            {
+              "name": "Plastic"
+            }
+          ]
+        },
+        {
+          "name": "top_material_type",
+          "options": [
+            {
+              "name": "Metal"
+            },
+            {
+              "name": "Wood"
+            },
+            {
+              "name": "Manufactured Wood"
+            },
+            {
+              "name": "Plastic"
+            }
+          ]
+        },
+        {
+          "name": "connection_type",
+          "options": [
+            {
+              "name": "Bluetooth"
+            },
+            {
+              "name": "USB"
+            }
+          ]
+        },
+        {
+          "name": "item_shape",
+          "options": [
+            {
+              "name": "Rectangular"
+            },
+            {
+              "name": "A-Shape"
+            },
+            {
+              "name": "Round"
+            },
+            {
+              "name": "Diamond"
+            },
+            {
+              "name": "L-Shape"
+            },
+            {
+              "name": "Oval"
+            }
+          ]
+        },
+        {
+          "name": "gender",
+          "options": [
+            {
+              "name": "Women's"
+            },
+            {
+              "name": "Men's"
+            },
+            {
+              "name": "Unisex"
+            }
+          ]
+        },
+        {
+          "name": "furniture_finish",
+          "options": [
+            {
+              "name": "Walnut"
+            },
+            {
+              "name": "Wood"
+            }
+          ]
+        },
+        {
+          "name": "style",
+          "options": [
+            {
+              "name": "Antique"
+            },
+            {
+              "name": "Art Deco"
+            },
+            {
+              "name": "Casual"
+            },
+            {
+              "name": "Classic"
+            },
+            {
+              "name": "Contemporary"
+            },
+            {
+              "name": "Industrial"
+            },
+            {
+              "name": "Mission"
+            },
+            {
+              "name": "Modern"
+            },
+            {
+              "name": "Traditional"
+            }
+          ]
+        },
+        {
+          "name": "theme",
+          "options": [
+            {
+              "name": "Animals"
+            },
+            {
+              "name": "Churches, Buildings & Houses"
+            },
+            {
+              "name": "Cityscapes, Shops & Restaurants"
+            },
+            {
+              "name": "Crosses"
+            },
+            {
+              "name": "Foods & Beverages"
+            },
+            {
+              "name": "Fruit & Vegetables"
+            },
+            {
+              "name": "Gothic"
+            },
+            {
+              "name": "Hearts"
+            },
+            {
+              "name": "Music"
+            },
+            {
+              "name": "Romance & Love"
+            },
+            {
+              "name": "Stars"
+            },
+            {
+              "name": "Stockings"
+            },
+            {
+              "name": "Trains"
+            },
+            {
+              "name": "Weddings"
+            }
+          ]
+        },
+        {
+          "name": "handmade_products",
+          "options": [
+            {
+              "name": "Handmade"
+            }
+          ]
+        },
+        {
+          "name": "customizable_products",
+          "options": [
+            {
+              "name": "Customizable"
+            }
+          ]
+        }
+      ],
+      "productResults": {
+        "results": [
+          {
+            "title": "Laptop Stand for desk(360°Rotating),Aluminum laptop Riser for 10-16\"Laptops",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4ODQ4MTUxMzcwOTk2ODI2OjE3OTUwNDcyNTA6c3BfYXRmOjMwMDEwODMyODA0NjkwMjo6MDo6&url=%2FLaptop-360%25C2%25B0Rotating-Aluminum-laptop-Laptops%2Fdp%2FB09PYPPD9L%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs%26dib_tag%3Dse%26keywords%3Dlaptop%2Bstand%26qid%3D1795047250%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B09PYPPD9L",
+            "price": {
+              "symbol": "$",
+              "value": 35.98,
+              "currency": "USD",
+              "display": "$35.98"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71mNTsmd4NL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 2981,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Adjustable Laptop Stand, Computer Stand with 360 Rotating Base",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4ODQ4MTUxMzcwOTk2ODI2OjE3OTUwNDcyNTA6c3BfYXRmOjMwMDQyNjkzNzI4NDIwMjo6MDo6&url=%2FLOXP-Adjustable-Computer-Rotating-Ergonomic%2Fdp%2FB0DBLBJ2HG%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs%26dib_tag%3Dse%26keywords%3Dlaptop%2Bstand%26qid%3D1795047250%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0DBLBJ2HG",
+            "price": {
+              "symbol": "$",
+              "value": 31.99,
+              "currency": "USD",
+              "display": "$31.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71DQp57-ltL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 2632,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "BESIGN LS03 Aluminum Laptop Stand, Ergonomic Detachable Computer Stand, Notebook Riser, Laptop Mount Compatible with Air, Pro, Dell, HP, Lenovo More 10-15.6\" Laptops, Silver",
+            "url": "https://www.amazon.com/BESIGN-Aluminum-Ergonomic-Detachable-Compatible/dp/B08BRCT4JH/ref=sr_1_3?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-3&tag=superlink092-20",
+            "asin": "B08BRCT4JH",
+            "price": {
+              "symbol": "$",
+              "value": 15.29,
+              "currency": "USD",
+              "display": "$15.29"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71G8rdQin3L._AC_UY218_.jpg",
+            "rating": 4.8,
+            "ratingsTotal": 24564,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Adjustable Laptop Stand for Desk, Metal Laptop Riser Holder",
+            "url": "https://www.amazon.com/Gogoonike-Adjustable-Foldable-Ventilated-Compatible/dp/B0C7BKZ883/ref=sr_1_4?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-4&tag=superlink092-20",
+            "asin": "B0C7BKZ883",
+            "price": {
+              "symbol": "$",
+              "value": 15.29,
+              "currency": "USD",
+              "display": "$15.29"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71Api8I7QML._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 4587,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Adjustable Laptop Stand, Computer Stand with 360 Rotating Base",
+            "url": "https://www.amazon.com/LOXP-Adjustable-Computer-Rotating-Ergonomic/dp/B0DBLBJ2HG/ref=sr_1_5?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-5&tag=superlink092-20",
+            "asin": "B0DBLBJ2HG",
+            "price": {
+              "symbol": "$",
+              "value": 31.99,
+              "currency": "USD",
+              "display": "$31.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71DQp57-ltL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 2632,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Amazon Basics Sturdy and Portable Ergonomic Laptop Stand for Desk, Height Adjustable Riser with Ventilated Cooling, Foldable, Fits all Laptops up to 15.6 Inch, Silver",
+            "url": "https://www.amazon.com/Amazon-Basics-Portable-Adjustable-Notebook/dp/B0BLRJ4R8F/ref=sr_1_6?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-6&tag=superlink092-20",
+            "asin": "B0BLRJ4R8F",
+            "price": {
+              "symbol": "$",
+              "value": 29.99,
+              "currency": "USD",
+              "display": "$29.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/51KyaTB1EKL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 3949,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "tounee Telescopic Laptop Stand for Desk with 360° Swivel Base, Sit to Stand, Height Adjustable, Portable Riser Holder for Good Posture, Compatible with MacBook Pro, All Laptops 10-17\"-Gray",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4ODQ4MTUxMzcwOTk2ODI2OjE3OTUwNDcyNTA6c3BfbXRmOjIwMDE2MDIxOTk4NDU5ODo6MDo6&url=%2FAdjustable-Ergonomic-Rotating-Computer-Compatible%2Fdp%2FB09Y8B81F7%2Fref%3Dsr_1_7_sspa%3Fdib%3DeyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs%26dib_tag%3Dse%26keywords%3Dlaptop%2Bstand%26qid%3D1795047250%26sr%3D8-7-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B09Y8B81F7",
+            "price": {
+              "symbol": "$",
+              "value": 54.99,
+              "currency": "USD",
+              "display": "$54.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61BilDos9dL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 4390,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "BESIGN LS03 Aluminum Laptop Stand, Ergonomic Detachable Computer Stand, Notebook Riser, Laptop Mount Compatible with Air, Pro, Dell, HP, Lenovo More 10-15.6\" Laptops, Black",
+            "url": "https://www.amazon.com/LS03-Aluminum-Ergonomic-Detachable-Compatible/dp/B07X7RV38T/ref=sr_1_8?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-8&tag=superlink092-20",
+            "asin": "B07X7RV38T",
+            "price": {
+              "symbol": "$",
+              "value": 15.29,
+              "currency": "USD",
+              "display": "$15.29"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71GMtNr13QL._AC_UY218_.jpg",
+            "rating": 4.8,
+            "ratingsTotal": 24564,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "BESIGN LS10 Laptop Stand for Desk, Ergonomic Adjustable Notebook Tablet Stand, Foldable Laptop Riser, Portable Desktop Book Stands, Computer Holder Compatible with 10-14\" Laptops, Black",
+            "url": "https://www.amazon.com/Aluminum-Ergonomic-Adjustable-Notebook-Compatible/dp/B08BKVGY3S/ref=sr_1_9?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-9&tag=superlink092-20",
+            "asin": "B08BKVGY3S",
+            "price": {
+              "symbol": "$",
+              "value": 13.99,
+              "currency": "USD",
+              "display": "$13.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71Ul52PtAYL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 6438,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "gianotter Dual Monitor Stand Riser With Drawer and 2 Pen Holders",
+            "url": "https://www.amazon.com/gianotter-Monitor-Organizer-Holders-Computer/dp/B0DJKSMV2T/ref=sr_1_10?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-10&tag=superlink092-20",
+            "asin": "B0DJKSMV2T",
+            "price": {
+              "symbol": "$",
+              "value": 24.29,
+              "currency": "USD",
+              "display": "$24.29"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/715+qntQ7xL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 3902,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "SAIJI Height & Angle Adjustable Lap Desk Laptop Stand for Bed",
+            "url": "https://www.amazon.com/SAIJI-Adjustable-Portable-Foldable-Reading/dp/B08TBG3SPW/ref=sr_1_11?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-11&tag=superlink092-20",
+            "asin": "B08TBG3SPW",
+            "price": {
+              "symbol": "$",
+              "value": 31.99,
+              "currency": "USD",
+              "display": "$31.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71QEsxS+1HL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 5634,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "N86 360 Rotating Laptop Stand for Desk with Locking Knobs, Black",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4ODQ4MTUxMzcwOTk2ODI2OjE3OTUwNDcyNTA6c3BfbXRmOjMwMTA1MzQxMjI0MTYwMjo6MDo6&url=%2FMoallia-Rotating-Computer-Notebook-Collaborative%2Fdp%2FB0D2R6NGNY%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs%26dib_tag%3Dse%26keywords%3Dlaptop%2Bstand%26qid%3D1795047250%26sr%3D8-12-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0D2R6NGNY",
+            "price": {
+              "symbol": "$",
+              "value": 35.99,
+              "currency": "USD",
+              "display": "$35.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71utbzoE15L._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 1869,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Nulaxy Ergonomic Adjustable Laptop Stand for Desk, Dual Foldable Computer Riser with Advanced Heat-Vent, Heavy-Duty Portable Notebook Holder for Posture Correction, Compatible with Mac 10-16\" Laptops",
+            "url": "https://www.amazon.com/Nulaxy-Ergonomic-Adjustable-Computer-Compatible/dp/B077B9W343/ref=sr_1_13?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-13&tag=superlink092-20",
+            "asin": "B077B9W343",
+            "price": {
+              "symbol": "$",
+              "value": 19.99,
+              "currency": "USD",
+              "display": "$19.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61jtA8kHq9L._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 17045,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Lamicall Aluminum Laptop Stand for Desk for MacBook Air Pro Neo 10-17.3''",
+            "url": "https://www.amazon.com/Lamicall-Laptop-Stand-Riser-Portable/dp/B08M94BTYC/ref=sr_1_14?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-14&tag=superlink092-20",
+            "asin": "B08M94BTYC",
+            "price": {
+              "symbol": "$",
+              "value": 29.99,
+              "currency": "USD",
+              "display": "$29.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71pNZrEkYWL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 10580,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Laptop Stand for Desk, Adjustable Laptop Riser, Black",
+            "url": "https://www.amazon.com/Tonmom-Laptop-Stand-Adjustable-Riser/dp/B08G84P8ZX/ref=sr_1_15?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-15&tag=superlink092-20",
+            "asin": "B08G84P8ZX",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61O3uGg2MJL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 17911,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Adjustable Laptop Stand for Desk, Portable Airflow Laptop Riser Holder",
+            "url": "https://www.amazon.com/LOXP-Adjustable-Ventilated-Ergonominc-Compatible/dp/B0FB96TYFV/ref=sr_1_16?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-16&tag=superlink092-20",
+            "asin": "B0FB96TYFV",
+            "price": {
+              "symbol": "$",
+              "value": 15.99,
+              "currency": "USD",
+              "display": "$15.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71yHCECPEcL._AC_UY218_.jpg",
+            "rating": 4.4,
+            "ratingsTotal": 2066,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Model-X 2.0 Laptop Stand, Laptop Stand for Desk Adjustable Height",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4ODQ4MTUxMzcwOTk2ODI2OjE3OTUwNDcyNTA6c3BfbXRmOjMwMTI4ODQ4OTAwMDYwMjo6MDo6&url=%2FSTXND-Model-X-2-0-Laptop-Adjustable%2Fdp%2FB0GX2CNWRT%2Fref%3Dsr_1_17_sspa%3Fdib%3DeyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs%26dib_tag%3Dse%26keywords%3Dlaptop%2Bstand%26qid%3D1795047250%26sr%3D8-17-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0GX2CNWRT",
+            "price": {
+              "symbol": "$",
+              "value": 89.99,
+              "currency": "USD",
+              "display": "$89.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61iR5WmeHCL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 102,
+            "isPrime": false,
+            "sponsored": true,
+            "coupon": {
+              "label": "$10.00 off"
+            }
+          },
+          {
+            "title": "Projector Stand Tripod Laptop Stands Height Adjustable",
+            "url": "https://www.amazon.com/Projector-Tripod-Adjustable-Gooseneck-23-5inch-46-5inch/dp/B09T6KYSCX/ref=sr_1_18?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-18&tag=superlink092-20",
+            "asin": "B09T6KYSCX",
+            "price": {
+              "symbol": "$",
+              "value": 34.98,
+              "currency": "USD",
+              "display": "$34.98"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61jdo1arLML._AC_UY218_.jpg",
+            "rating": 4.4,
+            "ratingsTotal": 6832,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Laptop Stand for desk(360°Rotating),Aluminum laptop Riser for 10-16\"Laptops",
+            "url": "https://www.amazon.com/Laptop-360%C2%B0Rotating-Aluminum-laptop-Laptops/dp/B09PYPPD9L/ref=sr_1_19?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-19&tag=superlink092-20",
+            "asin": "B09PYPPD9L",
+            "price": {
+              "symbol": "$",
+              "value": 35.98,
+              "currency": "USD",
+              "display": "$35.98"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71mNTsmd4NL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 2981,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Laptop Stand for Desk, Aluminum Laptop Riser Holder",
+            "url": "https://www.amazon.com/Tonmom-Laptop-Stand-Aluminum-Holder/dp/B09HSZTNM6/ref=sr_1_20?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-20&tag=superlink092-20",
+            "asin": "B09HSZTNM6",
+            "price": {
+              "symbol": "$",
+              "value": 12.59,
+              "currency": "USD",
+              "display": "$12.59"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71jSu8N-TGL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 2339,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "tounee Telescopic Laptop Stand for Desk with 360° Swivel Base, Sit to Stand, Height Adjustable, Portable Riser Holder for Good Posture, Compatible with MacBook Pro, All Laptops 10-17\"-Gray",
+            "url": "https://www.amazon.com/Adjustable-Ergonomic-Rotating-Computer-Compatible/dp/B09Y8B81F7/ref=sr_1_21?dib=eyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs&dib_tag=se&keywords=laptop+stand&qid=1795047250&sr=8-21&tag=superlink092-20",
+            "asin": "B09Y8B81F7",
+            "price": {
+              "symbol": "$",
+              "value": 54.99,
+              "currency": "USD",
+              "display": "$54.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61BilDos9dL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 4390,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "BESIGN LS03 Aluminum Laptop Stand, Ergonomic Detachable Computer Stand, Notebook Riser, Laptop Mount Compatible with Air, Pro, Dell, HP, Lenovo More 10-15.6\" Laptops, Silver",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4ODQ4MTUxMzcwOTk2ODI2OjE3OTUwNDcyNTA6c3BfYnRmOjMwMDQ1MDE5MzcwMjkwMjo6MDo6&url=%2FBESIGN-Aluminum-Ergonomic-Detachable-Compatible%2Fdp%2FB08BRCT4JH%2Fref%3Dsr_1_22_sspa%3Fdib%3DeyJ2IjoiMSJ9.lZZhe4bPX_Nmcp_VkIhmkmcz-YhlsXDOX7q3GLHhNbs9zRsl6nxHveE2OOWrj7QkpwCgeb1RDrT3TCUo0iQ-MlNhK69ZqqvTUpnnO-_yi6hm6G3uqm19O7IHfilfzfuh1cIZGpeZhbG9VHDNkvtnDCupNIj14dXtmw34ZmH-wK1mPo9G2ijsFh4q8Sp3vkNLHNzY5wLNg7ikgZCh_DlTaGLi69tFg9ARylIezzZ6zDw.EpzA7D8mCr3IRdyl5iLXlSuHbwECfgh9K22LvhkfBvs%26dib_tag%3Dse%26keywords%3Dlaptop%2Bstand%26qid%3D1795047250%26sr%3D8-22-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B08BRCT4JH",
+            "price": {
+              "symbol": "$",
+              "value": 15.29,
+              "currency": "USD",
+              "display": "$15.29"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71G8rdQin3L._AC_UY218_.jpg",
+            "rating": 4.8,
+            "ratingsTotal": 24564,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Laptop Stand for desk(360°Rotating),Aluminum laptop Riser for 10-16\"Laptops",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo3NzY0NjExNTk2MDE2Mzg2OjE3OTUwNDcyNTA6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDAxMDgzMjgwNDY5MDI6OjA6Og&url=%2FLaptop-360%25C2%25B0Rotating-Aluminum-laptop-Laptops%2Fdp%2FB09PYPPD9L%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%253Aamzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%26cv_ct_cx%3Dlaptop%2Bstand%26keywords%3Dlaptop%2Bstand%26pd_rd_i%3DB09PYPPD9L%26pd_rd_r%3Dc0e182a5-b217-4620-9510-b91dd90d0f5d%26pd_rd_w%3D8cyJQ%26pd_rd_wg%3D2PKa9%26pf_rd_p%3D9435b2aa-085c-44dc-8cef-d0748587ce2d%26pf_rd_r%3D0RH53J7D4326NJPZAVQ1%26qid%3D1795047250%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-1-73e1366e-5cfd-4283-a4f2-da1469909d71-spons%26aref%3DZJTtcSjZsq%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1&aref=ZJTtcSjZsq&tag=superlink092-20",
+            "asin": "B09PYPPD9L",
+            "price": {
+              "symbol": "$",
+              "value": 35.98,
+              "currency": "USD",
+              "display": "$35.98"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71mNTsmd4NL._AC_UL320_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 2981,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Model-X 2.0 Laptop Stand, Laptop Stand for Desk Adjustable Height",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo3NzY0NjExNTk2MDE2Mzg2OjE3OTUwNDcyNTA6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDEyODg0ODkwMDA2MDI6OjE6Og&url=%2FSTXND-Model-X-2-0-Laptop-Adjustable%2Fdp%2FB0GX2CNWRT%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%253Aamzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%26cv_ct_cx%3Dlaptop%2Bstand%26keywords%3Dlaptop%2Bstand%26pd_rd_i%3DB0GX2CNWRT%26pd_rd_r%3Dc0e182a5-b217-4620-9510-b91dd90d0f5d%26pd_rd_w%3D8cyJQ%26pd_rd_wg%3D2PKa9%26pf_rd_p%3D9435b2aa-085c-44dc-8cef-d0748587ce2d%26pf_rd_r%3D0RH53J7D4326NJPZAVQ1%26qid%3D1795047250%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-2-73e1366e-5cfd-4283-a4f2-da1469909d71-spons%26aref%3DMdlRFi3MTv%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1&aref=MdlRFi3MTv&tag=superlink092-20",
+            "asin": "B0GX2CNWRT",
+            "price": {
+              "symbol": "$",
+              "value": 89.99,
+              "currency": "USD",
+              "display": "$89.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61iR5WmeHCL._AC_UL320_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 102,
+            "isPrime": false,
+            "sponsored": true,
+            "coupon": {
+              "label": "$10.00 off"
+            }
+          },
+          {
+            "title": "tounee Telescopic Laptop Stand for Desk with 360° Swivel Base, Sit to Stand, Height Adjustable, Portable Riser Holder for Good Posture, Compatible with MacBook Pro, All Laptops 10-17\"-Gray",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo3NzY0NjExNTk2MDE2Mzg2OjE3OTUwNDcyNTA6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjoyMDAxNjAyMTk5ODQ1OTg6OjI6Og&url=%2FAdjustable-Ergonomic-Rotating-Computer-Compatible%2Fdp%2FB09Y8B81F7%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%253Aamzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%26cv_ct_cx%3Dlaptop%2Bstand%26keywords%3Dlaptop%2Bstand%26pd_rd_i%3DB09Y8B81F7%26pd_rd_r%3Dc0e182a5-b217-4620-9510-b91dd90d0f5d%26pd_rd_w%3D8cyJQ%26pd_rd_wg%3D2PKa9%26pf_rd_p%3D9435b2aa-085c-44dc-8cef-d0748587ce2d%26pf_rd_r%3D0RH53J7D4326NJPZAVQ1%26qid%3D1795047250%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-3-73e1366e-5cfd-4283-a4f2-da1469909d71-spons%26aref%3Dh8utkw1k53%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1&aref=h8utkw1k53&tag=superlink092-20",
+            "asin": "B09Y8B81F7",
+            "price": {
+              "symbol": "$",
+              "value": 54.99,
+              "currency": "USD",
+              "display": "$54.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61BilDos9dL._AC_UL320_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 4390,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Adjustable Laptop Stand, Computer Stand with 360 Rotating Base",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo3NzY0NjExNTk2MDE2Mzg2OjE3OTUwNDcyNTA6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDA0MjY5MzcyODQyMDI6OjM6Og&url=%2FLOXP-Adjustable-Computer-Rotating-Ergonomic%2Fdp%2FB0DBLBJ2HG%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%253Aamzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%26cv_ct_cx%3Dlaptop%2Bstand%26keywords%3Dlaptop%2Bstand%26pd_rd_i%3DB0DBLBJ2HG%26pd_rd_r%3Dc0e182a5-b217-4620-9510-b91dd90d0f5d%26pd_rd_w%3D8cyJQ%26pd_rd_wg%3D2PKa9%26pf_rd_p%3D9435b2aa-085c-44dc-8cef-d0748587ce2d%26pf_rd_r%3D0RH53J7D4326NJPZAVQ1%26qid%3D1795047250%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-4-73e1366e-5cfd-4283-a4f2-da1469909d71-spons%26aref%3D7EQ9PYISX4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1&aref=7EQ9PYISX4&tag=superlink092-20",
+            "asin": "B0DBLBJ2HG",
+            "price": {
+              "symbol": "$",
+              "value": 31.99,
+              "currency": "USD",
+              "display": "$31.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71DQp57-ltL._AC_UL320_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 2632,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "N86 360 Rotating Laptop Stand for Desk with Locking Knobs, Black",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo3NzY0NjExNTk2MDE2Mzg2OjE3OTUwNDcyNTA6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDEwNTM0MTIyNDE2MDI6OjQ6Og&url=%2FMoallia-Rotating-Computer-Notebook-Collaborative%2Fdp%2FB0D2R6NGNY%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%253Aamzn1.sym.9435b2aa-085c-44dc-8cef-d0748587ce2d%26cv_ct_cx%3Dlaptop%2Bstand%26keywords%3Dlaptop%2Bstand%26pd_rd_i%3DB0D2R6NGNY%26pd_rd_r%3Dc0e182a5-b217-4620-9510-b91dd90d0f5d%26pd_rd_w%3D8cyJQ%26pd_rd_wg%3D2PKa9%26pf_rd_p%3D9435b2aa-085c-44dc-8cef-d0748587ce2d%26pf_rd_r%3D0RH53J7D4326NJPZAVQ1%26qid%3D1795047250%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-5-73e1366e-5cfd-4283-a4f2-da1469909d71-spons%26aref%3DaKyAZkf25K%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1&aref=aKyAZkf25K&tag=superlink092-20",
+            "asin": "B0D2R6NGNY",
+            "price": {
+              "symbol": "$",
+              "value": 35.99,
+              "currency": "USD",
+              "display": "$35.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71utbzoE15L._AC_UL320_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 1869,
+            "isPrime": false,
+            "sponsored": true
+          }
+        ],
+        "pageInfo": {
+          "currentPage": 1,
+          "totalPages": 20,
+          "hasNextPage": true,
+          "hasPrevPage": false
+        }
+      }
+    }
+  }
+}

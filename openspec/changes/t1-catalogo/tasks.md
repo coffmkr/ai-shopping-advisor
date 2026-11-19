@@ -1,17 +1,17 @@
 ## 1. Esquema de datos
 
-- [ ] 1.1 Tests de restricciones (deben fallar): producto duplicado por proveedor + ASIN, ASIN de 9 caracteres, nota 11, producto aprobado sin link o sin resumen, producto combinado consigo mismo, dos búsquedas activas en la misma categoría
-- [ ] 1.2 Eliminar `users`, `access_tokens`, el modelo `User` y su transformer y validador del starter
-- [ ] 1.3 Migraciones de enumerados y tablas (`admin_users`, `categories`, `rubric_criteria`, `agent_runs`, `products`, `product_scores`, `product_pairings`, `click_events`) con checks e índices
-- [ ] 1.4 Modelos Lucid con relaciones y `AdminUser` con hash
-- [ ] 1.5 Tests de restricciones en verde
+- [x] 1.1 Tests de restricciones (deben fallar): producto duplicado por proveedor + ASIN, ASIN de 9 caracteres, nota 11, producto aprobado sin link o sin resumen, producto combinado consigo mismo, dos búsquedas activas en la misma categoría
+- [x] 1.2 Eliminar `users`, `access_tokens`, el modelo `User` y su transformer y validador del starter
+- [x] 1.3 Migraciones de enumerados y tablas (`admin_users`, `categories`, `rubric_criteria`, `agent_runs`, `products`, `product_scores`, `product_pairings`, `click_events`) con checks e índices
+- [x] 1.4 Modelos Lucid con relaciones y `AdminUser` con hash
+- [x] 1.5 Tests de restricciones en verde
 
 ## 2. Link de afiliado y proveedor de datos
 
-- [ ] 2.1 Tests unitarios de `AffiliateLinkBuilder` (deben fallar): formato exacto, ASIN inválido, sin forma de pasar una URL
-- [ ] 2.2 Puerto y adaptador de Amazon; tests en verde
-- [ ] 2.3 Puerto `CatalogProvider`, adaptador MCP de Canopy y test unitario del mapeo con una respuesta grabada
-- [ ] 2.4 Comando `canopy:record` y grabación de las fixtures de las 4 categorías
+- [x] 2.1 Tests unitarios de `AffiliateLinkBuilder` (deben fallar): formato exacto, ASIN inválido, sin forma de pasar una URL
+- [x] 2.2 Puerto y adaptador de Amazon; tests en verde
+- [x] 2.3 Puerto `CatalogProvider`, adaptador MCP de Canopy y test unitario del mapeo con una respuesta grabada
+- [x] 2.4 Comando `canopy:record` y grabación de las fixtures de las 4 categorías
 
 ## 3. Semilla
 
