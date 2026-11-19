@@ -1,0 +1,24 @@
+# PostgreSQL 16 (imagen con pgvector, preparada para la ampliación) con dos bases:
+# advisor_dev para desarrollo y advisor_test para las pruebas.
+# Puerto 55432 para no chocar con un PostgreSQL local.
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: ai-shopping-advisor-db
+    environment:
+      POSTGRES_USER: advisor
+      POSTGRES_PASSWORD: advisor
+      POSTGRES_DB: advisor_dev
+    ports:
+      - '55432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U advisor -d advisor_dev']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  db-data:

@@ -148,16 +148,19 @@ agente → tarjetas con imágenes y datos reales (`docs/viabilidad/02-amazon-can
 
 ### **1.4. Instrucciones de instalación:**
 
-Se completarán con el código. Previsto, con atajos en un `Makefile`:
+Requisitos: Docker y Node 24. Todos los atajos están en el `Makefile` de la raíz.
 
-1. `cp backend/.env.example backend/.env` y `cp frontend/.env.example frontend/.env`, y completar las variables
-   (ninguna clave real se sube al repositorio).
-2. `make setup` (solo la primera vez): instala dependencias, levanta PostgreSQL 16 + pgvector con Docker
-   Compose (una base de desarrollo y otra de pruebas), corre las migraciones y la semilla (categorías, rúbricas,
-   administrador de prueba, una búsqueda de origen ficticia y productos de ejemplo grabados, sin llamar a Canopy).
+1. `make setup` (solo la primera vez): crea los archivos de entorno que falten a partir de `.env.example`
+   (y la `APP_KEY` del backend), instala dependencias, levanta PostgreSQL 16 con Docker Compose (una base de
+   desarrollo y otra de pruebas, en el puerto 55432), corre las migraciones y la semilla. Ninguna clave real se
+   sube al repositorio.
+2. Completa `CANOPY_API_KEY` en el archivo de entorno de la raíz (y `ANTHROPIC_API_KEY` si quieres que el agente
+   redacte fichas en vivo).
 3. `make start`: backend AdonisJS en `http://localhost:3333`, worker de la cola (pg-boss) y frontend Nuxt en
-   `http://localhost:3000`. El navegador solo habla con Nuxt, que reenvía `/api/*` y `/go/*` al backend (ver 2.2).
-4. `make test` (unitarios y funcionales del backend, componentes del frontend) y `make test-e2e` (Playwright).
+   `http://localhost:3000`. Abre `http://localhost:3000`: el navegador solo habla con Nuxt, que reenvía `/api/*`
+   y `/go/*` al backend (ver 2.2).
+4. `make test`: tests unitarios y funcionales del backend (contra la base de pruebas) y de componentes del
+   frontend. `make fresh` recrea la base de desarrollo con la semilla.
 
 ### **1.5. Validación de viabilidad (previa a esta documentación)**
 
