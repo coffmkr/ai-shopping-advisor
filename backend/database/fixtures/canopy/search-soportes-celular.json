@@ -1,0 +1,1315 @@
+{
+  "data": {
+    "amazonProductSearchResults": {
+      "availableRefinements": [
+        {
+          "name": "prime",
+          "options": [
+            {
+              "name": "Free Shipping by Amazon"
+            }
+          ]
+        },
+        {
+          "name": "reviews",
+          "options": [
+            {
+              "name": "4 Stars"
+            }
+          ]
+        },
+        {
+          "name": "brand",
+          "options": [
+            {
+              "name": "Lamicall"
+            },
+            {
+              "name": "Nulaxy"
+            },
+            {
+              "name": "OMOTON"
+            },
+            {
+              "name": "UGREEN"
+            },
+            {
+              "name": "LISEN"
+            },
+            {
+              "name": "MoKo"
+            },
+            {
+              "name": "MOFT"
+            },
+            {
+              "name": "Klearlook Maximized Clarity!"
+            },
+            {
+              "name": "Aduro"
+            },
+            {
+              "name": "Cellet"
+            },
+            {
+              "name": "OCYCLONE"
+            },
+            {
+              "name": "Sonix"
+            },
+            {
+              "name": "JTEMAN"
+            },
+            {
+              "name": "KDD"
+            },
+            {
+              "name": "Call of Duty"
+            },
+            {
+              "name": "Legend of Zelda"
+            },
+            {
+              "name": "Hello Kitty"
+            },
+            {
+              "name": "Marvel"
+            },
+            {
+              "name": "Bolt"
+            }
+          ]
+        },
+        {
+          "name": "eligible_for_free_shipping",
+          "options": [
+            {
+              "name": "Free Shipping by Amazon"
+            }
+          ]
+        },
+        {
+          "name": "customer_reviews",
+          "options": [
+            {
+              "name": "4 Stars"
+            }
+          ]
+        },
+        {
+          "name": "uses",
+          "options": [
+            {
+              "name": "Bed"
+            },
+            {
+              "name": "Car"
+            },
+            {
+              "name": "Desk"
+            },
+            {
+              "name": "Sofa"
+            }
+          ]
+        },
+        {
+          "name": "deals_discounts",
+          "options": [
+            {
+              "name": "All Discounts"
+            },
+            {
+              "name": "Buy More, Save More"
+            },
+            {
+              "name": "Coupons"
+            },
+            {
+              "name": "Today's Deals"
+            }
+          ]
+        },
+        {
+          "name": "special_features",
+          "options": [
+            {
+              "name": "360 Degree Rotation"
+            },
+            {
+              "name": "Adjustable"
+            },
+            {
+              "name": "Foldable"
+            },
+            {
+              "name": "Ergonomic"
+            },
+            {
+              "name": "Adhesive"
+            },
+            {
+              "name": "Arm"
+            },
+            {
+              "name": "Flexible"
+            },
+            {
+              "name": "Gooseneck"
+            },
+            {
+              "name": "Grip"
+            },
+            {
+              "name": "Hand Free"
+            },
+            {
+              "name": "Handle"
+            },
+            {
+              "name": "Magnetic"
+            },
+            {
+              "name": "Non-Slip"
+            },
+            {
+              "name": "Pocket Friendly"
+            },
+            {
+              "name": "Portable"
+            },
+            {
+              "name": "Slim Profile"
+            },
+            {
+              "name": "Swivel"
+            }
+          ]
+        },
+        {
+          "name": "condition",
+          "options": [
+            {
+              "name": "New"
+            },
+            {
+              "name": "Used"
+            }
+          ]
+        },
+        {
+          "name": "mounting_type",
+          "options": [
+            {
+              "name": "Dash Mount"
+            },
+            {
+              "name": "Floor Stand"
+            },
+            {
+              "name": "Handlebar Mount"
+            },
+            {
+              "name": "Shelf Mount"
+            },
+            {
+              "name": "Tabletop"
+            },
+            {
+              "name": "Wall Mount"
+            }
+          ]
+        },
+        {
+          "name": "fastening_type",
+          "options": [
+            {
+              "name": "Clip Holder"
+            },
+            {
+              "name": "Magnetic"
+            },
+            {
+              "name": "Sticky Pad"
+            },
+            {
+              "name": "Suction Cup"
+            }
+          ]
+        },
+        {
+          "name": "brands",
+          "options": [
+            {
+              "name": "Lamicall"
+            },
+            {
+              "name": "Nulaxy"
+            },
+            {
+              "name": "OMOTON"
+            },
+            {
+              "name": "UGREEN"
+            },
+            {
+              "name": "LISEN"
+            },
+            {
+              "name": "MoKo"
+            },
+            {
+              "name": "MOFT"
+            },
+            {
+              "name": "Klearlook Maximized Clarity!"
+            },
+            {
+              "name": "Aduro"
+            },
+            {
+              "name": "Cellet"
+            },
+            {
+              "name": "OCYCLONE"
+            },
+            {
+              "name": "Sonix"
+            },
+            {
+              "name": "JTEMAN"
+            },
+            {
+              "name": "KDD"
+            }
+          ]
+        },
+        {
+          "name": "featured_character",
+          "options": [
+            {
+              "name": "Call of Duty"
+            },
+            {
+              "name": "Legend of Zelda"
+            },
+            {
+              "name": "Hello Kitty"
+            },
+            {
+              "name": "Marvel"
+            },
+            {
+              "name": "Bolt"
+            }
+          ]
+        },
+        {
+          "name": "form_factor",
+          "options": [
+            {
+              "name": "Arm Stand"
+            },
+            {
+              "name": "Gimbal"
+            },
+            {
+              "name": "Kick"
+            },
+            {
+              "name": "L-Shape"
+            },
+            {
+              "name": "Pedestal"
+            },
+            {
+              "name": "Pillow"
+            },
+            {
+              "name": "Popgrip"
+            },
+            {
+              "name": "Ring"
+            },
+            {
+              "name": "Tower"
+            },
+            {
+              "name": "Tripod"
+            }
+          ]
+        },
+        {
+          "name": "material",
+          "options": [
+            {
+              "name": "Acrylic"
+            },
+            {
+              "name": "Acrylonitrile Butadiene Styrene (ABS)"
+            },
+            {
+              "name": "Alloy Steel"
+            },
+            {
+              "name": "Aluminum"
+            },
+            {
+              "name": "Bamboo"
+            },
+            {
+              "name": "Beechwood"
+            },
+            {
+              "name": "Brass"
+            },
+            {
+              "name": "Carbon Steel"
+            },
+            {
+              "name": "Cement"
+            },
+            {
+              "name": "Cotton"
+            },
+            {
+              "name": "Faux Leather"
+            },
+            {
+              "name": "Glass"
+            },
+            {
+              "name": "Iron"
+            },
+            {
+              "name": "Leather & Suede"
+            },
+            {
+              "name": "Manufactured Wood"
+            },
+            {
+              "name": "Marble"
+            },
+            {
+              "name": "Metal"
+            },
+            {
+              "name": "Plastic"
+            },
+            {
+              "name": "Polycarbonate (PC)"
+            },
+            {
+              "name": "Polyester"
+            },
+            {
+              "name": "Polypropylene (PP)"
+            },
+            {
+              "name": "Polyresin"
+            },
+            {
+              "name": "Polyurethane (PU)"
+            },
+            {
+              "name": "Resin"
+            },
+            {
+              "name": "Rosewood"
+            },
+            {
+              "name": "Rubber"
+            },
+            {
+              "name": "Silicone"
+            },
+            {
+              "name": "Stainless Steel"
+            },
+            {
+              "name": "Steel"
+            },
+            {
+              "name": "Stone"
+            },
+            {
+              "name": "Synthetic Resin"
+            },
+            {
+              "name": "Thermoplastic Polyurethane"
+            },
+            {
+              "name": "Vinyl"
+            },
+            {
+              "name": "Walnut"
+            },
+            {
+              "name": "Wood"
+            },
+            {
+              "name": "Zinc"
+            }
+          ]
+        },
+        {
+          "name": "top_brands",
+          "options": [
+            {
+              "name": "Top Brands"
+            }
+          ]
+        },
+        {
+          "name": "piece_count",
+          "options": [
+            {
+              "name": "19 & under"
+            },
+            {
+              "name": "20-49"
+            },
+            {
+              "name": "50-99"
+            },
+            {
+              "name": "100-199"
+            },
+            {
+              "name": "200-299"
+            },
+            {
+              "name": "300-399"
+            },
+            {
+              "name": "400-499"
+            },
+            {
+              "name": "500 & above"
+            }
+          ]
+        },
+        {
+          "name": "customizable_products",
+          "options": [
+            {
+              "name": "Customizable"
+            }
+          ]
+        },
+        {
+          "name": "seller",
+          "options": [
+            {
+              "name": "BoxWave Corporation"
+            },
+            {
+              "name": "Essential Contraptions"
+            },
+            {
+              "name": "diythinker"
+            },
+            {
+              "name": "qinzhang002"
+            },
+            {
+              "name": "Jiaozuo Jinyixuan Agricultural Technology Co., Ltd"
+            },
+            {
+              "name": "yumeishm"
+            }
+          ]
+        },
+        {
+          "name": "sustainability_features",
+          "options": [
+            {
+              "name": "Any Feature"
+            },
+            {
+              "name": "Carbon Impact"
+            },
+            {
+              "name": "Recycled Materials"
+            },
+            {
+              "name": "Safer Chemicals"
+            },
+            {
+              "name": "Worker Wellbeing"
+            }
+          ]
+        },
+        {
+          "name": "units",
+          "options": [
+            {
+              "name": "Inch"
+            },
+            {
+              "name": "Metric"
+            }
+          ]
+        },
+        {
+          "name": "amazon_beauty",
+          "options": [
+            {
+              "name": "Premium Brands"
+            }
+          ]
+        },
+        {
+          "name": "item_shape",
+          "options": [
+            {
+              "name": "Rectangular"
+            },
+            {
+              "name": "Round"
+            },
+            {
+              "name": "Square"
+            },
+            {
+              "name": "Semicircular"
+            },
+            {
+              "name": "Triangular"
+            }
+          ]
+        },
+        {
+          "name": "weight",
+          "options": [
+            {
+              "name": "Up to 1 lb"
+            },
+            {
+              "name": "1 to 1.9 lb"
+            },
+            {
+              "name": "2 to 2.9 lb"
+            },
+            {
+              "name": "3 lb & above"
+            }
+          ]
+        },
+        {
+          "name": "base_type",
+          "options": [
+            {
+              "name": "Leg"
+            },
+            {
+              "name": "Pedestal"
+            }
+          ]
+        },
+        {
+          "name": "width",
+          "options": [
+            {
+              "name": "Up to 1.9 in"
+            },
+            {
+              "name": "2 to 3.9 in"
+            },
+            {
+              "name": "4 to 5.9 in"
+            },
+            {
+              "name": "6 to 7.9 in"
+            },
+            {
+              "name": "8 to 9.9 in"
+            },
+            {
+              "name": "10 to 11.9 in"
+            },
+            {
+              "name": "12 in & above"
+            }
+          ]
+        },
+        {
+          "name": "smart_home_compatibility",
+          "options": [
+            {
+              "name": "Not Smart Home Compatible"
+            }
+          ]
+        },
+        {
+          "name": "grade",
+          "options": [
+            {
+              "name": "Commercial Grade"
+            }
+          ]
+        },
+        {
+          "name": "item_height",
+          "options": [
+            {
+              "name": "Up to 1.9 in"
+            },
+            {
+              "name": "2 to 3.9 in"
+            },
+            {
+              "name": "4 to 5.9 in"
+            },
+            {
+              "name": "6 to 7.9 in"
+            },
+            {
+              "name": "8 in & above"
+            }
+          ]
+        },
+        {
+          "name": "gender",
+          "options": [
+            {
+              "name": "Women's"
+            },
+            {
+              "name": "Men's"
+            },
+            {
+              "name": "Unisex"
+            }
+          ]
+        },
+        {
+          "name": "compatibility",
+          "options": [
+            {
+              "name": "Smartphones"
+            },
+            {
+              "name": "Tablets"
+            },
+            {
+              "name": "Telephones"
+            },
+            {
+              "name": "Smartwatch"
+            }
+          ]
+        },
+        {
+          "name": "connection_type",
+          "options": [
+            {
+              "name": "Ethernet"
+            },
+            {
+              "name": "Bluetooth"
+            },
+            {
+              "name": "USB"
+            }
+          ]
+        },
+        {
+          "name": "style",
+          "options": [
+            {
+              "name": "Antique"
+            },
+            {
+              "name": "Art Deco"
+            },
+            {
+              "name": "Casual"
+            },
+            {
+              "name": "Classic"
+            },
+            {
+              "name": "Contemporary"
+            },
+            {
+              "name": "Farmhouse"
+            },
+            {
+              "name": "Modern"
+            },
+            {
+              "name": "Traditional"
+            },
+            {
+              "name": "Vintage"
+            }
+          ]
+        },
+        {
+          "name": "handmade_products",
+          "options": [
+            {
+              "name": "Handmade"
+            }
+          ]
+        },
+        {
+          "name": "tier_count",
+          "options": [
+            {
+              "name": "1 Tier"
+            }
+          ]
+        },
+        {
+          "name": "theme",
+          "options": [
+            {
+              "name": "Animals"
+            },
+            {
+              "name": "Churches, Buildings & Houses"
+            },
+            {
+              "name": "Cityscapes, Shops & Restaurants"
+            },
+            {
+              "name": "Crosses"
+            },
+            {
+              "name": "Elves"
+            },
+            {
+              "name": "Flowers & Plants"
+            },
+            {
+              "name": "Foods & Beverages"
+            },
+            {
+              "name": "Fruit & Vegetables"
+            },
+            {
+              "name": "Gingerbread"
+            },
+            {
+              "name": "Gothic"
+            },
+            {
+              "name": "Hearts"
+            },
+            {
+              "name": "Icicles & Snowflakes"
+            },
+            {
+              "name": "Military"
+            },
+            {
+              "name": "Music"
+            },
+            {
+              "name": "Nutcracker"
+            },
+            {
+              "name": "Religious & Inspirational"
+            },
+            {
+              "name": "Romance & Love"
+            },
+            {
+              "name": "Santa & Mrs. Claus"
+            },
+            {
+              "name": "Schools, Colleges & Universities"
+            },
+            {
+              "name": "Sleighs & Sleds"
+            },
+            {
+              "name": "Snowmen"
+            },
+            {
+              "name": "Stars"
+            },
+            {
+              "name": "Stockings"
+            },
+            {
+              "name": "Trains"
+            },
+            {
+              "name": "Trees & Wreaths"
+            },
+            {
+              "name": "Weddings"
+            }
+          ]
+        },
+        {
+          "name": "top_material_type",
+          "options": [
+            {
+              "name": "Plastic"
+            },
+            {
+              "name": "Metal"
+            }
+          ]
+        },
+        {
+          "name": "base_material_type",
+          "options": [
+            {
+              "name": "Plastic"
+            },
+            {
+              "name": "Metal"
+            }
+          ]
+        }
+      ],
+      "productResults": {
+        "results": [
+          {
+            "title": "Stocking Stuffers for Teen Boys Girls Gifts Cell Phone Stand Upgrade Adjustable Rock on Lazy Phone Stand for Desk Cool Funny Gadget Gifts for Christmas Adult Men Women Wife 2Pack Purple Green",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4Mjc5OTIzMDQxMzE4NjY6MTc5NTA0ODExNDpzcF9hdGY6MzAxNjU4MTI5MjQ4ODAyOjowOjo&url=%2FStocking-Stuffers-Upgrade-Adjustable-Christmas%2Fdp%2FB0FMF6T6XL%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc%26dib_tag%3Dse%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26qid%3D1795048114%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0FMF6T6XL",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61fwwdsksWL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 61,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Stocking Stuffers for Teens Boys Men Kids Gifts Thumbs Up Lazy Phone Holder",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4Mjc5OTIzMDQxMzE4NjY6MTc5NTA0ODExNDpzcF9hdGY6MzAxNTAwMDMwNTQzMzAyOjowOjo&url=%2FThumbs-Up-Lazy-Phone-Holder%2Fdp%2FB0CG8BCP9L%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc%26dib_tag%3Dse%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26qid%3D1795048114%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0CG8BCP9L",
+            "price": {
+              "symbol": "$",
+              "value": 9.99,
+              "currency": "USD",
+              "display": "$9.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61++8TrrzmL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 1922,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Nulaxy Full Aluminum Dual Folding Cell Phone Stand for Desk, Black",
+            "url": "https://www.amazon.com/Nulaxy-Adjustable-Anti-Slip-Smartphone-Essential/dp/B07F8S18D5/ref=sr_1_3?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-3&tag=superlink092-20",
+            "asin": "B07F8S18D5",
+            "price": {
+              "symbol": "$",
+              "value": 9.99,
+              "currency": "USD",
+              "display": "$9.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61srjyM7TFL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 82431,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Lamicall Cell Phone Stand for Desk, Height Angle Adjustable Phone Holder",
+            "url": "https://www.amazon.com/Lamicall-Foldable-Phone-Stand-Desk/dp/B09MCKK9NX/ref=sr_1_4?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-4&tag=superlink092-20",
+            "asin": "B09MCKK9NX",
+            "price": {
+              "symbol": "$",
+              "value": 9.99,
+              "currency": "USD",
+              "display": "$9.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61cHbjMo7IL._AC_UY218_.jpg",
+            "rating": 4.8,
+            "ratingsTotal": 38959,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "2 Pcs Cell Phone Stand for Desk Adjustable Desktop Phone Holder",
+            "url": "https://www.amazon.com/Adjustable-Foldable-Portable-Compatible-Smartphones/dp/B0963PBY4C/ref=sr_1_5?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-5&tag=superlink092-20",
+            "asin": "B0963PBY4C",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61z3hWDb8XL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 8138,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "EUCOS 62\" Phone Tripod, Tripod for iPhone & Selfie Stick with Remote",
+            "url": "https://www.amazon.com/Extendable-Ultimate-Solidest-Compatible-Android/dp/B09XHZ8F7F/ref=sr_1_6?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-6&tag=superlink092-20",
+            "asin": "B09XHZ8F7F",
+            "price": {
+              "symbol": "$",
+              "value": 23.99,
+              "currency": "USD",
+              "display": "$23.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61LnPbT7KML._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 24522,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Aluminum Phone Stand, Rose Gold Phone Prop, Desk Phone Stand, Phone Cradle",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4Mjc5OTIzMDQxMzE4NjY6MTc5NTA0ODExNDpzcF9tdGY6MzAxNTAxNzkyMjQzODAyOjowOjo&url=%2FAluminum-Phone-Stand-Rose-Cradle%2Fdp%2FB0GQD9SD1H%2Fref%3Dsr_1_7_sspa%3Fdib%3DeyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc%26dib_tag%3Dse%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26qid%3D1795048114%26sr%3D8-7-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0GQD9SD1H",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/718hQlBWrgL._AC_UY218_.jpg",
+            "rating": 4.4,
+            "ratingsTotal": 38,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "LISEN Cell Phone Stand Phone Holder for Desk, Office Decor Gadgets for Men",
+            "url": "https://www.amazon.com/Height-Adjustable-LISEN-Aluminum-Compatible/dp/B07Z82895W/ref=sr_1_8?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-8&tag=superlink092-20",
+            "asin": "B07Z82895W",
+            "price": {
+              "symbol": "$",
+              "value": 11.99,
+              "currency": "USD",
+              "display": "$11.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61pIqTCmMGL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 71827,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Nulaxy 2 Pack Aluminum Dual Folding Cell Phone Stand for Desk, Black&Silver",
+            "url": "https://www.amazon.com/Nulaxy-Folding-Adjustable-Foldable-Compatible/dp/B0BRN58CXR/ref=sr_1_9?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-9&tag=superlink092-20",
+            "asin": "B0BRN58CXR",
+            "price": {
+              "symbol": "$",
+              "value": 14.98,
+              "currency": "USD",
+              "display": "$14.98"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/618XSrGSpVL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 10252,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "OMOTON C2 Adjustable Aluminum Cell Phone Stand with Charging Cutout, Silver",
+            "url": "https://www.amazon.com/Adjustable-OMOTON-Cellphone-Anti-Slip-Convenient/dp/B0744DM3Y3/ref=sr_1_10?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-10&tag=superlink092-20",
+            "asin": "B0744DM3Y3",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/616-8VSyqdL._AC_UY218_.jpg",
+            "rating": 4.8,
+            "ratingsTotal": 68554,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Phone Stand Holder, Aluminum Phone Stand for Desk",
+            "url": "https://www.amazon.com/CreaDream-Aluminum-Desktop-Compatible-5s-Rose/dp/B088H1YDS1/ref=sr_1_11?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-11&tag=superlink092-20",
+            "asin": "B088H1YDS1",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71iFj50N+8L._AC_UY218_.jpg",
+            "rating": 4.8,
+            "ratingsTotal": 21792,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "JTEMAN Cell Phone Stand with Bluetooth Speaker and Charging Function",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4Mjc5OTIzMDQxMzE4NjY6MTc5NTA0ODExNDpzcF9tdGY6MzAwNzU1NzQ2NDAyNjAyOjowOjo&url=%2FJTEMAN-Bluetooth-Charging-Function-Tablets-Black%2Fdp%2FB0F145ZPNT%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc%26dib_tag%3Dse%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26qid%3D1795048114%26sr%3D8-12-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0F145ZPNT",
+            "price": {
+              "symbol": "$",
+              "value": 26.99,
+              "currency": "USD",
+              "display": "$26.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71uSckLN+nL._AC_UY218_.jpg",
+            "rating": 4.4,
+            "ratingsTotal": 349,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Metal Cell Phone Stand for Desk, Cute One-Piece Phone Holder, Stable Desktop Display Dock for iPhone, iPad, Samsung, Tablets & All Mobile Phones, Gold",
+            "url": "https://www.amazon.com/HZZADZXW-One-Piece-Desktop-Display-Samsung/dp/B0H117NK45/ref=sr_1_13?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-13&tag=superlink092-20",
+            "asin": "B0H117NK45",
+            "price": {
+              "symbol": "$",
+              "value": 7.58,
+              "currency": "USD",
+              "display": "$7.58"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/71B3twYsryL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 122,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Cell Phone Stand 2 Pack Cell Phone Holder for Desk, Portable Phone Stand Holder for Desktop Kitchen Travel, Cellphone Stand Mobile Holder for iPhone Stand & All Smartphone (Black)",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MzczOTk1MTYyNzk1NzA1OjE3OTUwNDgxMTQ6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDAyNDEyNjYyMDgwMjo6MDo6&url=%2FFadyDail-Portable-Desktop-Cellphone-Smartphone%2Fdp%2FB09VK71N5P%2Fref%3Dsxin_27_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%253Aamzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26cv_ct_cx%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26pd_rd_i%3DB09VK71N5P%26pd_rd_r%3D555c2715-e048-41e5-88f6-f1397c059dd1%26pd_rd_w%3DYISwS%26pd_rd_wg%3DJowlU%26pf_rd_p%3D4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26pf_rd_r%3DWVGXJBDHKY1VXV9ZVZS6%26qid%3D1795048114%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-1-e169343e-09af-4d41-85b1-8335fe8f32d0-spons%26aref%3DK5IJ2xGk4o%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=K5IJ2xGk4o&tag=superlink092-20",
+            "asin": "B09VK71N5P",
+            "price": {
+              "symbol": "$",
+              "value": 6.89,
+              "currency": "USD",
+              "display": "$6.89"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/41iYTy90EyL._AC_UL320_.jpg",
+            "rating": 4.3,
+            "ratingsTotal": 4394,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Nulaxy 2 Pack Aluminum Dual Folding Cell Phone Stand for Desk, Black&Silver",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MzczOTk1MTYyNzk1NzA1OjE3OTUwNDgxMTQ6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTU0MDcwNzc2MzkwMjo6MTo6&url=%2FNulaxy-Folding-Adjustable-Foldable-Compatible%2Fdp%2FB0BRN58CXR%2Fref%3Dsxin_27_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%253Aamzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26cv_ct_cx%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26pd_rd_i%3DB0BRN58CXR%26pd_rd_r%3D555c2715-e048-41e5-88f6-f1397c059dd1%26pd_rd_w%3DYISwS%26pd_rd_wg%3DJowlU%26pf_rd_p%3D4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26pf_rd_r%3DWVGXJBDHKY1VXV9ZVZS6%26qid%3D1795048114%26sbo%3D9ZOMT9Jm0JH%252Ft%252BWi68iDSA%253D%253D%26sr%3D1-2-e169343e-09af-4d41-85b1-8335fe8f32d0-spons%26aref%3DHWvYAh5SGr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=HWvYAh5SGr&tag=superlink092-20",
+            "asin": "B0BRN58CXR",
+            "price": {
+              "symbol": "$",
+              "value": 14.98,
+              "currency": "USD",
+              "display": "$14.98"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/618XSrGSpVL._AC_UL320_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 10252,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Cell Phone Foldable Stand for Desk, Portable Cell Phone Holder, Adjustable Tablet Dock, Office Desk Accessories for iPhone 18 17 16 15 14 13 Pro Max Air, Galaxy S25, S24, Black",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MzczOTk1MTYyNzk1NzA1OjE3OTUwNDgxMTQ6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDI3MjcwNTgyNDgwMjo6Mjo6&url=%2FHZZADZXW-Foldable-Portable-Adjustable-Phone%2Fdp%2FB0D8F2QGSP%2Fref%3Dsxin_27_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%253Aamzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26cv_ct_cx%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26pd_rd_i%3DB0D8F2QGSP%26pd_rd_r%3D555c2715-e048-41e5-88f6-f1397c059dd1%26pd_rd_w%3DYISwS%26pd_rd_wg%3DJowlU%26pf_rd_p%3D4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26pf_rd_r%3DWVGXJBDHKY1VXV9ZVZS6%26qid%3D1795048114%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-3-e169343e-09af-4d41-85b1-8335fe8f32d0-spons%26aref%3DEyU1UI7ta0%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=EyU1UI7ta0&tag=superlink092-20",
+            "asin": "B0D8F2QGSP",
+            "price": {
+              "symbol": "$",
+              "value": 6.99,
+              "currency": "USD",
+              "display": "$6.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/612It7Nu-pL._AC_UL320_.jpg",
+            "rating": 4.4,
+            "ratingsTotal": 243,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "4 Pack Cell Phone Stand for Desk, Foldable Cell Phone Holder Mobile Stand Phone Dock, Adjustable Tablet Stand Holder Compatible with iPhone 16 15 14 13 12 11 Pro iPad Samsung(4 Color)",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MzczOTk1MTYyNzk1NzA1OjE3OTUwNDgxMTQ6c3Bfc2VhcmNoX3RoZW1hdGljOjIwMDA1ODc4MjczODEzMTo6Mzo6&url=%2FVOVIGGOL-Foldable-Adjustable-Compatible-Samsung%2Fdp%2FB08RMQKMKC%2Fref%3Dsxin_27_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%253Aamzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26cv_ct_cx%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26pd_rd_i%3DB08RMQKMKC%26pd_rd_r%3D555c2715-e048-41e5-88f6-f1397c059dd1%26pd_rd_w%3DYISwS%26pd_rd_wg%3DJowlU%26pf_rd_p%3D4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26pf_rd_r%3DWVGXJBDHKY1VXV9ZVZS6%26qid%3D1795048114%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-4-e169343e-09af-4d41-85b1-8335fe8f32d0-spons%26aref%3D4WdX8koH5e%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=4WdX8koH5e&tag=superlink092-20",
+            "asin": "B08RMQKMKC",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61z0VTW7vUL._AC_UL320_.jpg",
+            "rating": 4.2,
+            "ratingsTotal": 1332,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Mayten Foldable Desk Cell Phone Stand Adjustable iPhone iPad Holder Stand,Compatible for iPhone 14Pro 14Plus 13 12Pro Max 11 SE XS XR 8 7 6,Switch,iPad,Samsung,Kindle-Black",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MzczOTk1MTYyNzk1NzA1OjE3OTUwNDgxMTQ6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2NjU2MzEyMjIwMjo6NDo6&url=%2FMayten-Adjustable-Universal-Dock%25EF%25BC%258CCompatible-Kindle-Black%2Fdp%2FB08DFWKCJ8%2Fref%3Dsxin_27_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%253Aamzn1.sym.4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26cv_ct_cx%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26pd_rd_i%3DB08DFWKCJ8%26pd_rd_r%3D555c2715-e048-41e5-88f6-f1397c059dd1%26pd_rd_w%3DYISwS%26pd_rd_wg%3DJowlU%26pf_rd_p%3D4fc3b349-2f5a-4620-b35e-3bfc5a564f92%26pf_rd_r%3DWVGXJBDHKY1VXV9ZVZS6%26qid%3D1795048114%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-5-e169343e-09af-4d41-85b1-8335fe8f32d0-spons%26aref%3DROQP25a9mM%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=ROQP25a9mM&tag=superlink092-20",
+            "asin": "B08DFWKCJ8",
+            "price": {
+              "symbol": "$",
+              "value": 6.99,
+              "currency": "USD",
+              "display": "$6.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61J-j+68NxL._AC_UL320_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 2600,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "Lamicall 360° Rotation Cell Phone Stand for Desk, Sturdy Phone Holder",
+            "url": "https://www.amazon.com/Lamicall-Adjustable-Phone-Stand-Desk/dp/B0DP42G526/ref=sr_1_14?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-14&tag=superlink092-20",
+            "asin": "B0DP42G526",
+            "price": {
+              "symbol": "$",
+              "value": 8.99,
+              "currency": "USD",
+              "display": "$8.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/617npV5YBwL._AC_UY218_.jpg",
+            "rating": 4.8,
+            "ratingsTotal": 3046,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Lamicall Ultra-Thin Foldable Cell Phone Stand for Desk",
+            "url": "https://www.amazon.com/Lamicall-Ultra-Thin-Cell-Phone-Stand/dp/B0FPBZ3BBG/ref=sr_1_15?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-15&tag=superlink092-20",
+            "asin": "B0FPBZ3BBG",
+            "price": {
+              "symbol": "$",
+              "value": 9.99,
+              "currency": "USD",
+              "display": "$9.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61hj293scDL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 2963,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "UGREEN Cell Phone Stand for Desk, Fully Foldable&Adjustable Phone Holder",
+            "url": "https://www.amazon.com/UGREEN-Compatible-Smartphone-Adjustable-Foldable/dp/B07BK5P5ST/ref=sr_1_16?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-16&tag=superlink092-20",
+            "asin": "B07BK5P5ST",
+            "price": {
+              "symbol": "$",
+              "value": 9.99,
+              "currency": "USD",
+              "display": "$9.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/518AlpsFbEL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 52782,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "APPS2Car Phone Stand for Desk, Adjustable Cell Phone Holder for Office",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4Mjc5OTIzMDQxMzE4NjY6MTc5NTA0ODExNDpzcF9tdGY6MzAxNjM3OTMxOTgxMjAyOjowOjo&url=%2FAdjustable-APPS2Car-Multifunctional-Universal-Watching%2Fdp%2FB08KZMTWRK%2Fref%3Dsr_1_17_sspa%3Fdib%3DeyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc%26dib_tag%3Dse%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26qid%3D1795048114%26sr%3D8-17-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B08KZMTWRK",
+            "price": {
+              "symbol": "$",
+              "value": 22.49,
+              "currency": "USD",
+              "display": "$22.49"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61suN8A9MIL._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 990,
+            "isPrime": false,
+            "sponsored": true
+          },
+          {
+            "title": "UGREEN Magnetic Phone Stand Compatible with MagSafe Holder for Desk Ergonomic Design Adjustable, Aluminum Cell Phone Stand Compatible for iPhone18 17 Air 16 15 14 13 12 Pro Max and MagSafe Case, Grey",
+            "url": "https://www.amazon.com/UGREEN-Foldable-Phone-Stand-Holder/dp/B0C22V8WSF/ref=sr_1_18?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-18&tag=superlink092-20",
+            "asin": "B0C22V8WSF",
+            "price": {
+              "symbol": "$",
+              "value": 22.99,
+              "currency": "USD",
+              "display": "$22.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/615ONlJKBJL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 4182,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "OMOTON TP02 Magnetic Phone Tripod for MagSafe, 360° Pivot, Clamp & Stands",
+            "url": "https://www.amazon.com/OMOTON-360%C2%B0Rotating-Adjustable-Essentials-Accessories/dp/B0FCM3SLLQ/ref=sr_1_19?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-19&tag=superlink092-20",
+            "asin": "B0FCM3SLLQ",
+            "price": {
+              "symbol": "$",
+              "value": 30.99,
+              "currency": "USD",
+              "display": "$30.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/719cPmxXF3L._AC_UY218_.jpg",
+            "rating": 4.6,
+            "ratingsTotal": 1972,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Lamicall for MagSafe Tripod Stand Ultra-Compact with 1/4\" Screw, Arca, Hook",
+            "url": "https://www.amazon.com/Lamicall-Magsafe-Tripod-Stand-Ultra-Compact/dp/B0FLD92XLB/ref=sr_1_20?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-20&tag=superlink092-20",
+            "asin": "B0FLD92XLB",
+            "price": {
+              "symbol": "$",
+              "value": 24.99,
+              "currency": "USD",
+              "display": "$24.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/615SGw-MOIL._AC_UY218_.jpg",
+            "rating": 4.7,
+            "ratingsTotal": 893,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "POQOD 2 Pack Cell Phone Stand, Foldable Phone Holder for Desk Compatible with Phone 15 14 13 12 11 Pro Xs Xs Max Xr X 8, Nintendo Switch, All Phones, Black & White",
+            "url": "https://www.amazon.com/Foldable-Holder-Compatible-Nintendo-Switch/dp/B0CS5BF879/ref=sr_1_21?dib=eyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc&dib_tag=se&keywords=cell+phone+stand+for+desk&qid=1795048114&sr=8-21&tag=superlink092-20",
+            "asin": "B0CS5BF879",
+            "price": {
+              "symbol": "$",
+              "value": 3.98,
+              "currency": "USD",
+              "display": "$3.98"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61J-hHrHHPL._AC_UY218_.jpg",
+            "rating": 4.1,
+            "ratingsTotal": 2177,
+            "isPrime": false,
+            "sponsored": false
+          },
+          {
+            "title": "Golf Phone Holder for Recording Swing, Magnetic Golf Tripod Stand with Ground Spike & Adjustable 47.6\" Selfie Stick, Golf Swing Recorder Training Aid, MagSafe Phone Mount for iPhone Android",
+            "url": "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4Mjc5OTIzMDQxMzE4NjY6MTc5NTA0ODExNDpzcF9idGY6MzAxNTIzNzk5MTE3MTAyOjowOjo&url=%2FNestweggie-Recording-Magnetic-Adjustable-Recorder%2Fdp%2FB0H87TNXQL%2Fref%3Dsr_1_22_sspa%3Fdib%3DeyJ2IjoiMSJ9.hBvvZKGPvzVflX8jnAclSbsRo4OB76BFc_e6lAcanzSRRx3lQCrMkU3TyKms-S0TscOR2Ri5fO-6UrXgRMOToYPj6LeILiYdtK_jB7kWScS0mbZSuLsdmLwKXz4aAgKm4tUqQm6E3QvzS0VRjSWSloCXqDqyfcA-5GvjflDjPt2q2DUlT_X5awVy1VyKLgOjnjFBqrX_7qSNLElugj_X45V0K4ZdgQ-WNmfowJtgJXY.6jg3C9J14ohRvqjWtdnV5wO3f-WLVEkQOuQnpkJs-Rc%26dib_tag%3Dse%26keywords%3Dcell%2Bphone%2Bstand%2Bfor%2Bdesk%26qid%3D1795048114%26sr%3D8-22-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&tag=superlink092-20",
+            "asin": "B0H87TNXQL",
+            "price": {
+              "symbol": "$",
+              "value": 46.99,
+              "currency": "USD",
+              "display": "$46.99"
+            },
+            "mainImageUrl": "https://m.media-amazon.com/images/I/61w1Px7X0vL._AC_UY218_.jpg",
+            "rating": 4.5,
+            "ratingsTotal": 6,
+            "isPrime": false,
+            "sponsored": true
+          }
+        ],
+        "pageInfo": {
+          "currentPage": 1,
+          "totalPages": 20,
+          "hasNextPage": true,
+          "hasPrevPage": false
+        }
+      }
+    }
+  }
+}

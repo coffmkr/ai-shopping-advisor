@@ -1,0 +1,24 @@
+# Secretos: nunca al repositorio
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+
+# Dependencias y builds
+node_modules/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+
+# Caché local de respuestas de proveedores
+.cache/
+
+# Configuración local de Claude Code (la compartida es .claude/settings.json)
+.claude/settings.local.json
+
+# Sistema
+.DS_Store

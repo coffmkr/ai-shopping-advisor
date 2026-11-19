@@ -1,0 +1,30 @@
+schema: spec-driven
+
+# Contexto del proyecto que OpenSpec muestra a la IA al crear artefactos.
+# La fuente de verdad completa es README.md; las reglas de trabajo están en CLAUDE.md.
+context: |
+  Proyecto: AI Shopping Advisor. Tienda de productos recomendados (escritorio y home office) con link de afiliado
+  de Amazon (tag zapyens-20). Un agente busca vía MCP de Canopy, el administrador aprueba la ficha y el visitante
+  compara y compra.
+  Stack: TypeScript. Backend AdonisJS 7 (Lucid, VineJS, Auth por sesión, Shield), PostgreSQL 16, cola pg-boss,
+  tests con Japa. Frontend Nuxt (SSR) + Tailwind, tests con Vitest + @nuxt/test-utils. E2E con Playwright.
+  Arquitectura hexagonal: services dependen solo de ports; adapters implementan Canopy, Claude y Amazon.
+  Alcance actual: núcleo del MVP (curaduría, catálogo, comparador, /go). Chat con embeddings = ampliación.
+  Reglas no negociables: el link de afiliado se construye en el servidor desde el ASIN validado, nunca desde
+  URLs del proveedor; la API pública nunca expone affiliate_url ni precios exactos; aprobar no llama a servicios
+  externos; una sola búsqueda activa por categoría.
+  Idioma de los artefactos: español.
+
+rules:
+  proposal:
+    - Referencia el ticket y la historia de usuario del README que implementa el cambio
+    - Incluye una sección "Fuera de alcance"
+  tasks:
+    - Ordena las tareas en TDD, primero los tests que deben fallar y después la implementación
+    - Un cambio de OpenSpec corresponde a un solo ticket del README
+
+operations:
+  apply:
+    guidance:
+      - Muestra los tests fallando antes de escribir el código que los hace pasar
+      - Ningún test llama a Canopy ni a Claude reales; usa las fixtures grabadas
