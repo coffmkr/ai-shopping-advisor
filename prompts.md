@@ -353,3 +353,19 @@ Actualiza la documentación técnica con las decisiones tomadas. Reorganiza el a
 tickets con dos nuevos detallados, `CLAUDE.md`, hook `PreToolUse` verificado con casos bloqueados y permitidos, y
 `openspec/` configurado con el contexto del proyecto.
 **Ajuste humano:** revisé la coherencia entre secciones y el tono de la documentación antes de cerrar la entrega.
+
+**Prompt 5 — Replanificación del backlog con trazabilidad**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Reestructura el backlog de lo general a lo específico: funcionalidades, historias de usuario y tickets, con la traza visible entre niveles. Detecta el trabajo que no cuelga de ninguna historia y propone las historias que faltan. Los tickets deben expresar qué se construye y cómo se acepta, en lenguaje de negocio, priorizados por lo que desbloquean y con el camino de implementación de cada uno (OpenSpec o delegación directa) según el criterio de si el cambio perdura, toca varias capas o necesita trazabilidad.
+```
+
+**Resultado:** dos historias nuevas (HU4, acceso al panel; HU5, navegar el catálogo), un backlog de siete tickets
+(T0–T6) con su traza F → HU → T, un ticket por historia que la cubre de punta a punta, y la regla de camino en
+`CLAUDE.md`. El detalle técnico anterior se conserva en `docs/detalle-tecnico-tickets.md` como insumo para OpenSpec.
+**Ajuste humano:** rechacé la primera propuesta, que separaba cada historia en tickets de servidor y de pantalla
+con nombres técnicos y mandaba las pantallas por delegación directa. Exigí la traza de requerimiento a ticket y
+que las pantallas nuevas formen parte del mismo change que su funcionalidad, reservando la delegación directa
+para cambios que no alteran reglas de negocio.

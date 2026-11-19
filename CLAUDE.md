@@ -44,6 +44,22 @@ para y pregunta.
 7. Pros y contras con palabras propias: nunca copies texto de reseñas.
 8. No guardes IPs ni datos personales.
 
+## OpenSpec o delegación directa
+
+Antes de empezar cualquier cambio, decide el camino con esta regla:
+
+- **OpenSpec** si el cambio perdura, toca varias capas (modelo, migración, endpoint, pantalla, tests) o necesita
+  trazabilidad del porqué. Flujo: `/opsx:propose` → revisión humana del change antes de escribir código →
+  `/opsx:apply` → `/opsx:archive`.
+- **Delegación directa** (plan mode, revisión del plan y ejecución) si el cambio es acotado (un filtro, un valor
+  por defecto, un log, un ajuste visual), es un bug fix obvio o es un prototipo o script desechable.
+
+El camino de cada ticket del backlog está indicado en el README, sección 6. Si un cambio no está en el backlog,
+aplica la regla y dime qué camino propones antes de empezar.
+
+Durante el apply: `proposal.md`, `design.md` y `specs/` son de solo lectura; solo se marca el avance en
+`tasks.md`. Si la implementación necesita desviarse de la spec, para y pregunta.
+
 ## Forma de trabajar
 
 - **Un ticket por vez** (backlog en README sección 6). No mezcles cambios de varios tickets.

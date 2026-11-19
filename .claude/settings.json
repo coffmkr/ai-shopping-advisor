@@ -1,4 +1,28 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm ci:*)",
+      "Bash(npm run:*)",
+      "Bash(npm test:*)",
+      "Bash(npm init:*)",
+      "Bash(npm create:*)",
+      "Bash(npx:*)",
+      "Bash(node ace:*)",
+      "Bash(make:*)",
+      "Bash(docker compose:*)",
+      "Bash(openspec:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)"
+    ],
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {

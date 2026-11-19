@@ -1029,181 +1029,191 @@ Criterios de aceptación:
 - **Dado** el comparador, **cuando** lo veo, **entonces** en cada criterio se resalta el producto con mejor nota.
 - **Dado** que intento comparar 1 producto, o más de 4, **cuando** abro el comparador, **entonces** se me indica
   el rango permitido.
-- **Dado** que abro la ficha de un producto, **cuando** la recorro, **entonces** veo alternativas más baratas o
-  más premium de la misma categoría y productos que combinan bien con él.
-- **Dado** el comparador o la ficha, **cuando** hago clic en "Ver en Amazon", **entonces** llego a Amazon y el
-  clic queda registrado con su origen (`compare` o `detail`).
+- **Dado** que intento comparar productos de categorías distintas, **cuando** abro el comparador, **entonces** se
+  me indica que solo se comparan productos de la misma categoría.
+- **Dado** el comparador, **cuando** hago clic en "Ver en Amazon" en una columna, **entonces** llego a Amazon y el
+  clic queda registrado con origen `compare`.
+
+Prioridad: alta · Estimación: 5 puntos
+
+**Historia de Usuario 4 — El administrador accede al panel de forma segura**
+
+> Como **administrador**, quiero **entrar al panel con mi email y contraseña** para que **solo yo pueda lanzar
+> búsquedas y publicar productos en la tienda**.
+
+Criterios de aceptación:
+- **Dado** que tengo una cuenta de administrador, **cuando** ingreso mi email y contraseña correctos, **entonces**
+  entro al panel.
+- **Dado** que me equivoco de email o de contraseña, **cuando** intento entrar, **entonces** veo un mensaje
+  genérico de credenciales inválidas, sin indicar cuál de los dos falló.
+- **Dado** que no he iniciado sesión, **cuando** abro cualquier página del panel, **entonces** me lleva al login.
+- **Dado** que estoy en el panel, **cuando** cierro sesión, **entonces** vuelvo al login y ya no puedo usar el
+  panel sin entrar de nuevo.
+- **Dado** que fallo el login 5 veces en un minuto, **cuando** lo intento otra vez, **entonces** se me pide
+  esperar antes de reintentar.
+
+Prioridad: alta · Estimación: 3 puntos
+
+**Historia de Usuario 5 — El visitante navega el catálogo y ve por qué se recomienda cada producto**
+
+> Como **visitante**, quiero **recorrer las categorías de la tienda y abrir la ficha de cada producto** para
+> **entender por qué se recomienda y para quién es antes de comprar**.
+
+Criterios de aceptación:
+- **Dado** que entro a la tienda, **cuando** veo el inicio, **entonces** veo las categorías y algunos productos
+  destacados.
+- **Dado** que abro "Soportes para laptop", **cuando** veo el listado, **entonces** solo aparecen productos
+  aprobados, cada uno con imagen, título, nota del asesor, etiquetas, rango de precio y el resumen de por qué lo
+  recomendamos.
+- **Dado** que abro la ficha de un producto, **cuando** la recorro, **entonces** veo la ficha completa (por qué lo
+  recomendamos, ideal para / no es para ti si, pros y contras, nota por criterio, especificaciones, etiquetas,
+  rango de precio y fecha de revisión), alternativas más baratas o más premium de la misma categoría y productos
+  que combinan bien con él.
+- **Dado** el listado o la ficha, **cuando** hago clic en "Ver en Amazon", **entonces** llego a Amazon con el link
+  de afiliado de la tienda y el clic queda registrado con su origen (`listing` o `detail`).
+- **Dado** un producto rechazado o pendiente, **cuando** intento abrir su ficha, **entonces** no la encuentro.
 - **Dado** cualquier página, **cuando** la veo, **entonces** se muestra el aviso de afiliado.
 
-Prioridad: alta · Estimación: 8 puntos
+Prioridad: alta · Estimación: 5 puntos
 
 ---
 
 ## 6. Tickets de Trabajo
 
-Backlog del núcleo del MVP en orden de construcción. Se trabaja **un ticket por vez**: tests primero, código
-después. Los cinco primeros están detallados abajo; el resto se detalla al empezarlo.
+Los tickets salen de descomponer las historias de usuario, que a su vez salen de las funcionalidades de la
+sección 1.2. Cada ticket dice **qué** se construye y cómo se acepta. El **cómo** (diseño, pasos y tests) se
+descompone al trabajarlo: en los tickets que van por OpenSpec, en su change (`proposal.md`, `spec.md`,
+`design.md` y `tasks.md`); en los de delegación directa, en el plan que se revisa antes de ejecutar. El detalle
+técnico elaborado durante el diseño está en `docs/detalle-tecnico-tickets.md` como insumo para esos changes.
 
-| # | Ticket | Tipo | Depende de | Historia |
-|---|---|---|---|---|
-| 1 | Esquema inicial, migraciones y semilla | Base de datos | — | — |
-| 2 | Agente buscador: endpoint, cola pg-boss y worker | Backend | 1 | HU1 |
-| 3 | Aprobación y rechazo del candidato | Backend | 1 | HU2 |
-| 4 | Catálogo público, comparador y redirección `/go` | Backend | 1 | HU3 |
-| 5 | Página del comparador | Frontend | 4 | HU3 |
-| 6 | Sesión del administrador (`/api/admin/session`) y middleware del panel en Nuxt | Backend + Frontend | 1 | HU1, HU2 |
-| 7 | Panel: búsquedas, cola de revisión y editor de la ficha | Frontend | 2, 3, 6 | HU1, HU2 |
-| 8 | Sitio público: inicio, categoría y ficha | Frontend | 4 | HU3 |
-| 9 | E2E de curaduría y de compra (Playwright) y workflow de CI | QA / DevOps | 1–8 | Todas |
+**Criterio de camino** (también en `CLAUDE.md`): OpenSpec si el cambio perdura, toca varias capas o necesita
+trazabilidad del porqué; delegación directa si es acotado, un bug fix obvio o un prototipo desechable.
 
-**Ticket 1 — [Base de datos] Esquema inicial, migraciones y semilla**
+### 6.1. Trazabilidad
 
-- **Tipo:** base de datos · **Prioridad:** alta (bloquea al resto) · **Estimación:** 5 puntos
-- **Descripción:** crear el esquema de la sección 3 con migraciones de Lucid sobre PostgreSQL 16 + pgvector, con
-  base de desarrollo y base de pruebas separadas, y una semilla reproducible.
-- **Alcance:**
-  1. `docker-compose.yml` con la imagen `pgvector/pgvector:pg16` y dos bases (desarrollo y pruebas) en puertos
-     no estándar para no chocar con un PostgreSQL local.
-  2. Migraciones de Lucid para las 8 tablas y los 5 enumerados del núcleo (sección 3.1; pgvector y las tablas del
-     chat llegan con la migración de la ampliación).
-  3. Restricciones: unique (`provider`, `provider_product_id`), unique (`category_id`, `key`) en la rúbrica,
-     formato del ASIN, `score` entre 0 y 10, `rating` entre 0 y 5, checks de ficha completa y `affiliate_url`
-     cuando `status = approved`, `product_id <> paired_product_id`, y único parcial de búsqueda activa por
-     categoría en AGENT_RUN.
-  4. Índices: (`category_id`, `status`), (`category_id`, `price_tier`), (`product_id`, `occurred_at`),
-     (`status`, `created_at`).
-  5. Modelos Lucid con sus relaciones.
-  6. Semilla: 4 categorías de escritorio con sus rúbricas, un administrador de prueba (contraseña desde `.env`),
-     una búsqueda de origen ficticia por categoría (`is_seed = true`, `completed`) y 12 productos aprobados con
-     ficha colgados de ellas, a partir de respuestas grabadas (sin llamar a Canopy).
-- **TDD — tests primero (Japa contra la base de pruebas real):**
-  - Insertar dos productos con el mismo (`amazon`, ASIN) falla por unicidad.
-  - Aprobar un producto sin `affiliate_url` o sin `summary` falla por el check.
-  - Un ASIN con 9 caracteres falla.
-  - Una nota de 11 falla.
-  - Un producto no puede combinarse consigo mismo.
-  - Borrar una categoría con productos falla por la FK.
-  - Dos AGENT_RUN `queued` en la misma categoría fallan por el único parcial; uno `completed` y otro `queued`, no.
-  - Tras la semilla, todo producto tiene una búsqueda de origen con `is_seed = true`.
-- **Criterios de aceptación:** `make setup` funciona en una máquina limpia; los tests pasan con `make test`; la semilla no
-  llama a servicios externos.
+```
+F3 Catálogo público
+ └─ HU5 Navegar el catálogo y ver la ficha
+     └─ T1 Catálogo: inicio, categorías, ficha y clic hacia Amazon
 
-**Ticket 2 — [Backend] Agente buscador: endpoint y trabajo asíncrono**
+F4 Comparador
+ └─ HU3 Comparar y decidir
+     └─ T2 Comparador de productos
 
-- **Tipo:** backend · **Prioridad:** alta · **Estimación:** 8 puntos · **Depende de:** Ticket 1 ·
-  **Historia:** HU1
-- **Descripción:** implementar `POST /api/admin/agent-runs` y el trabajo que busca en Canopy, filtra, obtiene
-  especificaciones y reseñas, y pide al LLM el borrador de la ficha de cada candidato.
-- **Alcance:**
-  1. Puerto `CatalogProvider` y adaptador `CanopyCatalogProvider` (cliente MCP): `search_amazon_products`
-     (`domain: US`), `get_amazon_product` y `get_amazon_product_top_reviews`.
-  2. Filtros deterministas en código: excluir `sponsored`, sin ASIN, sin precio o valoración, sobre
-     `maxPriceUsd`, variantes con las mismas valoraciones y ASIN que ya existen en la base (en cualquier estado).
-  3. `LlmClient` con `claude-sonnet-5-5`: recibe cada producto filtrado (datos, especificaciones y reseñas como
-     bloques de datos delimitados) y la rúbrica de la categoría; devuelve JSON con `summary`, `idealFor`, `notFor`,
-     `pros`, `cons` (con palabras propias), `scores` por criterio y `keySpecs`. Se valida con VineJS; se
-     descartan ASINs que no estaban en la entrada y notas de criterios que no son de la rúbrica.
-  4. Cola con **pg-boss**: el endpoint crea el AGENT_RUN `queued` y publica el trabajo `agent-run` con su id; un
-     worker (`bin/worker.ts`, concurrencia 1) lo ejecuta con estados `queued → running → completed | failed`,
-     una transacción para los candidatos, `agent_draft` guardado tal cual y contador `provider_requests`. Reintento
-     solo ante errores transitorios del proveedor (máx. 2, con espera creciente); al agotarse, `failed`.
-  5. `GET /api/admin/agent-runs` y `GET /api/admin/agent-runs/{id}` para el listado y el estado.
-  6. Una búsqueda activa por categoría → 409; límite diario de búsquedas (`CANOPY_MAX_SEARCHES_PER_DAY`, sin
-     contar las de la semilla) → 429.
-- **TDD — tests primero:**
-  - Unitarios (fixtures grabadas de Canopy): 10 resultados con 3 patrocinados → ningún candidato patrocinado;
-    producto de US$64.99 con tope de US$40 → descartado; un ASIN que ya existe como `rejected` → omitido.
-  - Unitario: el LLM simulado devuelve un ASIN inventado o un criterio fuera de la rúbrica → se descarta.
-  - Funcionales: 202 con sesión; 401 sin sesión; 404 con categoría inexistente; proveedor simulado con error →
-    `failed` y 0 candidatos; 409 con otra búsqueda activa en la misma categoría; 202 en otra categoría; 429 al
-    superar el límite diario.
-  - Eval: 10 búsquedas grabadas cumplen los criterios de HU1 (ficha completa, notas en rango, sin patrocinados).
-- **Criterios de aceptación:** todos los criterios de HU1 cubiertos por tests; ningún test llama a Canopy ni a
-  Claude reales; la API key nunca aparece en logs.
+F2 Revisión, aprobación y link de afiliado
+ ├─ HU4 Acceder al panel de forma segura
+ │   └─ T3 Acceso del administrador al panel
+ └─ HU2 Revisar y publicar con link de afiliado
+     └─ T4 Revisión y publicación de candidatos
 
-**Ticket 3 — [Backend] Aprobación y rechazo del candidato**
+F1 Agente buscador
+ └─ HU1 Lanzar búsqueda y recibir candidatos
+     └─ T5 Búsqueda de productos con el agente
 
-- **Tipo:** backend · **Prioridad:** alta (es la pieza más delicada: estado, link y ficha publicada) ·
-  **Estimación:** 5 puntos · **Depende de:** Ticket 1 · **Historia:** HU2
-- **Descripción:** implementar la cola de revisión y la decisión del administrador sobre cada candidato:
-  `GET /api/admin/candidates`, `GET /api/admin/candidates/{id}` y `PATCH /api/admin/candidates/{id}`.
-- **Alcance:**
-  1. `AffiliateLinkBuilder` (puerto + implementación Amazon): recibe solo el ASIN, lo valida
-     (`^[A-Z0-9]{10}$`) y devuelve `https://www.amazon.com/dp/{ASIN}?tag={AMAZON_TAG}`. Nunca recibe ni reutiliza
-     URLs del proveedor.
-  2. Validador VineJS de la ficha (`Sheet`): longitudes de 4.3, una nota 0–10 **por cada** criterio de la rúbrica
-     de la categoría del producto y ningún criterio ajeno; `pairedProductIds` deben ser productos aprobados.
-  3. Servicio `review.approve`: en **una sola transacción** con bloqueo de la fila (`SELECT … FOR UPDATE`)
-     comprueba que el candidato sigue `pending`, guarda la ficha (sin tocar `agent_draft`), las notas en
-     PRODUCT_SCORE y los PRODUCT_PAIRING, genera `affiliate_url`, calcula `price_tier` por terciles de la
-     categoría y fija `status = approved`, `reviewed_by_id` y `reviewed_at`. No llama a ningún servicio externo.
-  4. Servicio `review.reject`: `status = rejected`, `rejection_reason` opcional, `reviewed_*`.
-  5. Errores: 401 sin sesión, 404 inexistente, 409 si no está `pending`, 422 con la lista de campos que fallan.
-- **TDD — tests primero:**
-  - Unitarios `AffiliateLinkBuilder`: ASIN válido → URL exacta con el tag; ASIN de 9 caracteres o con minúsculas
-    → error; no expone ningún parámetro para pasarle una URL.
-  - Funcional: aprobar un candidato cuyo `provider_snapshot` trae `tag=otro-20` → el `affiliate_url` guardado
-    contiene `tag=zapyens-20` y no contiene `otro-20`.
-  - Funcional: aprobar con una nota de menos o un criterio de otra categoría → 422 y sigue `pending`.
-  - Funcional: aprobar con un resumen editado → se publica el editado y `agent_draft` no cambia.
-  - Funcional: aprobar dos veces el mismo candidato (dos peticiones simultáneas) → una 200 y otra 409.
-  - Funcional: rechazar → `rejected` y el producto no aparece en `GET /api/categories/{slug}/products`.
-  - Funcional: sin sesión → 401 en los tres endpoints.
-- **Criterios de aceptación:** todos los criterios de HU2 cubiertos por tests; ningún test de este ticket
-  necesita red; la regla "el link se construye en el servidor desde el ASIN" está cubierta por un test que
-  fallaría si alguien reutilizara la URL del proveedor.
+Base (habilita a todas las historias)
+ ├─ T0 Preparar el proyecto
+ └─ T6 Pruebas de punta a punta e integración continua
+```
 
-**Ticket 4 — [Backend] Catálogo público, comparador y redirección**
+### 6.2. Backlog priorizado
 
-- **Tipo:** backend · **Prioridad:** alta · **Estimación:** 5 puntos · **Depende de:** Ticket 1 ·
-  **Historia:** HU3
-- **Descripción:** implementar los endpoints públicos sobre los que se apoyan el sitio y el comparador:
-  `GET /api/categories`, `GET /api/categories/{slug}/products`, `GET /api/products/{slug}`,
-  `GET /api/compare` y `GET /go/{productId}`.
-- **Alcance:**
-  1. Servicio `catalog`: solo productos `approved`; nunca expone `reference_price_usd`, `provider_snapshot`,
-     `agent_draft` ni `affiliate_url` (el visitante siempre sale por `/go`).
-  2. Ficha: alternativas = aprobados de la misma categoría con otro `price_tier` (máx. 2: uno más barato y uno
-     más premium si existen); "combina bien con" desde PRODUCT_PAIRING, solo aprobados.
-  3. Comparador: parsea `ids` (2 a 4 uuids distintos), carga los productos, exige que todos estén aprobados y
-     sean de la misma categoría, arma `criteria` desde la rúbrica y calcula `bestByCriterion` (en empate gana el de
-     mejor `rating` y luego el de más reseñas, para que el resultado sea determinista).
-  4. `/go/{productId}`: valida `src`, inserta CLICK_EVENT y responde 302 al `affiliate_url`; producto no aprobado
-     → 404 sin registrar el clic.
-- **TDD — tests primero:**
-  - Unitario `bestByCriterion`: gana la nota más alta; empate resuelto por `rating` y luego por reseñas.
-  - Funcional: 1 id o 5 ids → 422; ids repetidos → 422; dos categorías distintas → 422; uno `rejected` → 404.
-  - Funcional: comparar 2 productos aprobados devuelve el ejemplo de la sección 4 a partir de la semilla.
-  - Funcional: el listado de una categoría no incluye `pending` ni `rejected` ni el precio exacto.
-  - Funcional: `/go/{id}?src=compare` → 302 con `tag=zapyens-20` y un CLICK_EVENT con `source = compare`;
-    `src=foo` → 422; producto `pending` → 404 y ningún clic registrado.
-- **Criterios de aceptación:** el Ticket 5 puede construirse contra estos endpoints sin simularlos; el contrato
-  coincide con la sección 4.
+El número del ticket es el orden de trabajo. Se prioriza por lo que desbloquea: con T0 y T1 ya funciona la tienda
+de punta a punta con los productos de la semilla, y el agente (T5), que es lo más complejo y lo único que crea
+candidatos nuevos, va al final para no bloquear al resto.
 
-**Ticket 5 — [Frontend] Comparador por categoría**
+| # | Ticket | Historia | Depende de | Camino | Estimación | Entrega |
+|---|---|---|---|---|---|---|
+| T0 | Preparar el proyecto | — | — | Delegación directa | 2 puntos | 2 |
+| T1 | Catálogo: inicio, categorías, ficha y clic hacia Amazon | HU5 | T0 | OpenSpec | 5 puntos | 2 |
+| T2 | Comparador de productos | HU3 | T1 | OpenSpec | 5 puntos | 2 |
+| T3 | Acceso del administrador al panel | HU4 | T0 | OpenSpec | 3 puntos | 2 |
+| T4 | Revisión y publicación de candidatos | HU2 | T1, T3 | OpenSpec | 5 puntos | 2 |
+| T5 | Búsqueda de productos con el agente | HU1 | T3, T4 | OpenSpec | 8 puntos | 2 |
+| T6 | Pruebas de punta a punta e integración continua | Todas | T1–T5 | Delegación directa | 3 puntos | Final |
 
-- **Tipo:** frontend · **Prioridad:** alta · **Estimación:** 5 puntos · **Depende de:** Ticket 4 ·
-  **Historia:** HU3
-- **Descripción:** página pública de Nuxt que muestra de 2 a 4 productos de una categoría lado a lado y ayuda a
-  decidir.
-- **Alcance:**
-  1. Casilla "Comparar" en `ProductCard` del listado; la selección vive en la URL
-     (`/comparar?ids=…`) para que se pueda compartir, y una barra inferior muestra cuántos van (máx. 4).
-  2. Página `pages/comparar.vue` renderizada en el servidor con `useFetch` a `GET /api/compare`.
-  3. Componente `CompareTable`: cabecera con imagen, título, rango de precio y etiquetas; una fila por criterio de
-     la rúbrica con la nota y el mejor resaltado (`bestByCriterion`); filas de ideal para, pros, contras y
-     especificaciones; botón "Ver en Amazon" por columna hacia `goUrl`.
-  4. En móvil, columnas desplazables horizontalmente con la primera columna fija.
-  5. Estados: menos de 2 productos ("Elige al menos 2 productos"), error de la API y carga.
-  6. Accesible: tabla con encabezados (`<th scope>`), el resaltado no depende solo del color.
-- **TDD — tests primero (Vitest + `@nuxt/test-utils`, API simulada):**
-  - Con 3 productos renderiza 3 columnas y una fila por criterio.
-  - El mejor de cada criterio tiene la marca de "mejor" (texto o ícono, no solo color).
-  - Con 1 producto muestra el mensaje y no la tabla.
-  - El botón de cada columna apunta a `/go/{id}?src=compare`.
-  - Marcar un quinto producto en el listado queda deshabilitado.
-- **Criterios de aceptación:** el E2E de compra pasa por esta página; la página llega renderizada desde el
-  servidor (visible sin JavaScript); sin errores de accesibilidad críticos (axe).
+### 6.3. Detalle de los tickets
+
+**T0 — Preparar el proyecto**
+
+- **Historia:** ninguna (base) · **Depende de:** — · **Camino:** delegación directa
+- **Qué se logra:** el proyecto arranca en una máquina limpia con un solo comando: la aplicación del servidor, la
+  aplicación web y la base de datos funcionando y conectadas, sin funcionalidades todavía.
+- **Criterios de aceptación:**
+  - `make setup` y `make start` levantan la base de datos, el servidor y la web sin pasos manuales.
+  - La web muestra una página inicial que obtiene una respuesta del servidor a través del proxy de Nuxt.
+  - Existen una base de datos de desarrollo y otra de pruebas, separadas.
+  - Las variables necesarias están documentadas en los `.env.example`, sin valores reales.
+  - `make test` ejecuta los tests del servidor y de la web, aunque todavía no haya casi ninguno.
+
+**T1 — Catálogo: inicio, categorías, ficha y clic hacia Amazon**
+
+- **Historia:** HU5 · **Depende de:** T0 · **Camino:** OpenSpec
+- **Qué se logra:** el visitante recorre la tienda, abre la ficha de recomendación de cada producto y sale a
+  Amazon con el link de afiliado, con el clic registrado. Incluye la base de datos del catálogo y los productos
+  de ejemplo de la semilla.
+- **Criterios de aceptación:**
+  - Todos los criterios de HU5.
+  - La semilla carga las categorías con sus rúbricas, un administrador de prueba y productos de ejemplo grabados,
+    sin llamar a servicios externos.
+  - Ninguna respuesta pública incluye el link de afiliado, el precio exacto ni datos internos del proveedor: el
+    visitante siempre sale a Amazon a través de la redirección de la tienda.
+  - El link de afiliado se construye en el servidor a partir del ASIN y el tag de la tienda, nunca reutilizando
+    URLs del proveedor de datos.
+
+**T2 — Comparador de productos**
+
+- **Historia:** HU3 · **Depende de:** T1 · **Camino:** OpenSpec
+- **Qué se logra:** el visitante marca de 2 a 4 productos de una categoría y los ve lado a lado, con el mejor de
+  cada criterio resaltado.
+- **Criterios de aceptación:**
+  - Todos los criterios de HU3.
+  - El resultado es el mismo con independencia del orden en que se marcaron los productos; en caso de empate en
+    un criterio, se decide de forma consistente.
+  - La selección queda en la dirección de la página, para poder compartir la comparación.
+
+**T3 — Acceso del administrador al panel**
+
+- **Historia:** HU4 · **Depende de:** T0 · **Camino:** OpenSpec
+- **Qué se logra:** solo el administrador puede entrar al panel; el resto de pantallas y acciones del panel
+  quedan protegidas.
+- **Criterios de aceptación:**
+  - Todos los criterios de HU4.
+  - Cualquier acción del panel hecha sin sesión es rechazada por el servidor, aunque se llame directamente sin
+    pasar por la pantalla.
+  - La contraseña se guarda cifrada y no aparece nunca en logs ni en respuestas.
+
+**T4 — Revisión y publicación de candidatos**
+
+- **Historia:** HU2 · **Depende de:** T1, T3 · **Camino:** OpenSpec
+- **Qué se logra:** el administrador revisa los candidatos pendientes, corrige su ficha y los aprueba o rechaza;
+  al aprobar, el producto se publica en el catálogo con el link de afiliado de la tienda.
+- **Criterios de aceptación:**
+  - Todos los criterios de HU2.
+  - La semilla incluye candidatos pendientes, para poder revisar y publicar antes de que exista el agente (T5).
+  - Publicar no depende de ningún servicio externo.
+  - Aprobar dos veces el mismo candidato, por ejemplo desde dos pestañas, solo tiene efecto una vez.
+
+**T5 — Búsqueda de productos con el agente**
+
+- **Historia:** HU1 · **Depende de:** T3, T4 · **Camino:** OpenSpec
+- **Qué se logra:** el administrador lanza una búsqueda en una categoría con un precio máximo y, en segundo
+  plano, el agente encuentra productos, descarta los que no sirven y deja candidatos con el borrador de su ficha
+  en la cola de revisión.
+- **Criterios de aceptación:**
+  - Todos los criterios de HU1.
+  - El panel muestra el estado de cada búsqueda mientras avanza.
+  - Ningún test llama a Canopy ni a Claude reales: se usan respuestas grabadas.
+  - Se respeta el límite diario de búsquedas.
+
+**T6 — Pruebas de punta a punta e integración continua** *(entrega final)*
+
+- **Historia:** todas · **Depende de:** T1–T5 · **Camino:** delegación directa
+- **Qué se logra:** los dos flujos del producto quedan verificados de punta a punta y cada cambio en el
+  repositorio se comprueba automáticamente.
+- **Criterios de aceptación:**
+  - Una prueba recorre la curaduría: login, búsqueda, revisión y publicación.
+  - Una prueba recorre la compra: categoría, comparador, ficha y clic registrado hacia Amazon.
+  - Cada pull request ejecuta lint, typecheck, tests y escaneo de secretos (ver 2.4).
 
 ---
 
