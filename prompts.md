@@ -369,3 +369,56 @@ Reestructura el backlog de lo general a lo específico: funcionalidades, histori
 con nombres técnicos y mandaba las pantallas por delegación directa. Exigí la traza de requerimiento a ticket y
 que las pantallas nuevas formen parte del mismo change que su funcionalidad, reservando la delegación directa
 para cambios que no alteran reglas de negocio.
+
+---
+
+## 9. Implementación de la segunda entrega
+
+La implementación siguió el backlog del README (T0–T5), un ticket por vez, con TDD y con el camino que fija la regla
+de `CLAUDE.md`: delegación directa para preparar el proyecto (T0) y un change de OpenSpec por historia (T1–T5). Cada
+change se propuso y se validó (`openspec validate --strict`) y se commiteó antes de escribir código; al terminar se
+archivó, de modo que `openspec/specs/` contiene la especificación viva de las cuatro capacidades.
+
+**Prompt 1 — Preparación del proyecto (T0, delegación directa)**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Prepara el monorepo según el README: backend AdonisJS 7 sobre PostgreSQL, frontend Nuxt con SSR y Tailwind, PostgreSQL en Docker Compose con bases separadas de desarrollo y pruebas, y un Makefile con setup, start y test. El navegador debe hablar solo con Nuxt, que reenvía /api y /go al backend. Deja un endpoint de salud con su test y verifica que la página inicial llega renderizada desde el servidor a través del proxy.
+```
+
+**Resultado:** proyecto que arranca con `make setup` y `make start`, variables compartidas en un único archivo de
+entorno en la raíz y test de salud en verde.
+
+**Prompt 2 — Implementación por historia con OpenSpec (T1–T5)**
+
+```text
+Herramienta: Claude Code + OpenSpec · Modelo: Claude Opus 5.5
+
+Implementa el ticket <Tn> del README con OpenSpec. Propón el change (proposal, spec con escenarios WHEN/THEN, design y tasks) a partir de la historia y sus criterios de aceptación, usando docs/detalle-tecnico-tickets.md como insumo técnico, y valídalo antes de escribir código. En el apply sigue tasks.md en TDD: escribe los tests que deben fallar, comprueba que fallan, implementa lo mínimo para ponerlos en verde y verifica el flujo real a través de Nuxt. Ningún test llama a servicios externos. Al terminar, ejecuta las comprobaciones del proyecto y archiva el change.
+```
+
+**Resultado:** catálogo, comparador, acceso al panel, revisión y publicación, y agente buscador; 94 tests de backend
+(unitarios y funcionales contra la base de pruebas real) y 20 de componentes en el frontend.
+**Ajuste humano:** fijé el orden de trabajo por lo que desbloquea cada ticket (tienda primero, agente al final) y la
+semilla con datos reales grabados de Canopy en lugar de datos inventados.
+
+**Prompt 3 — Borrador de la ficha con Claude (T5)**
+
+```text
+Herramienta: Claude Code · Modelo: Claude Opus 5.5
+
+Implementa el adaptador del puerto LlmClient con el SDK oficial de Anthropic: una llamada por producto con salida estructurada (JSON Schema) que exija una nota por cada criterio de la rúbrica, datos del proveedor delimitados y tratados como datos, fallback del servidor ante rechazos y comprobación de stop_reason. Valida siempre la salida en el servicio del agente y descarta el borrador si el ASIN o los criterios no coinciden. Sin clave de la API, el agente debe seguir funcionando con un borrador básico.
+```
+
+**Resultado:** `ClaudeLlmClient` con `claude-sonnet-5-5` y `BasicDraftLlmClient` como alternativa sin clave.
+
+**Hallazgos durante la implementación** (detectados por los tests o por la verificación manual):
+
+- Canopy 3.0 ya no ofrece la herramienta de reseñas prevista en el diseño; el agente trabaja con el detalle del
+  producto.
+- El Redragon K521 se anuncia con "mechanical feeling" pero no es mecánico: quedó como candidato a rechazar.
+- El redirect de AdonisJS heredaba la query string de la petición y rompía el link de afiliado.
+- El proxy de Nuxt seguía la redirección hacia Amazon en lugar de devolver el 302 al navegador.
+- `migration:fresh` no eliminaba los tipos enumerados de PostgreSQL.
+- La aprobación simultánea del mismo candidato se probó sin transacción global para verificar el bloqueo real.
