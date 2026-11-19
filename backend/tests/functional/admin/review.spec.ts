@@ -71,7 +71,7 @@ test.group('Cola de revisión', (group) => {
     const response = await client.get(`/api/admin/candidates/${id}`).loginAs(admin)
 
     response.assertStatus(200)
-    const body = response.body()
+    const body = response.body() as any
     assert.equal(body.asin, NULAXY_LAPTOP)
     assert.equal(body.referencePriceUsd, 19.99)
     assert.isString(body.draft.summary)
@@ -182,7 +182,8 @@ test.group('Aprobar un candidato', (group) => {
 
     response.assertStatus(422)
     assert.include(JSON.stringify(response.body()), 'calidad_precio')
-    assert.equal((await candidate(NULAXY_LAPTOP)).status, 'pending')
+    const after = await candidate(NULAXY_LAPTOP)
+    assert.equal(after.status, 'pending')
   })
 
   test('rechaza una nota de un criterio de otra categoría', async ({ client }) => {
@@ -218,7 +219,8 @@ test.group('Aprobar un candidato', (group) => {
       .loginAs(admin)
 
     response.assertStatus(422)
-    assert.equal((await candidate(NULAXY_LAPTOP)).status, 'pending')
+    const after = await candidate(NULAXY_LAPTOP)
+    assert.equal(after.status, 'pending')
   })
 })
 
@@ -265,7 +267,8 @@ test.group('Rechazar un candidato', (group) => {
       .loginAs(admin)
 
     again.assertStatus(409)
-    assert.equal((await candidate(K521)).status, 'rejected')
+    const k521 = await candidate(K521)
+    assert.equal(k521.status, 'rejected')
   })
 })
 

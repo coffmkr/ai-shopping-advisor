@@ -1,5 +1,6 @@
 import { inject } from '@adonisjs/core'
 import db from '@adonisjs/lucid/services/db'
+import { DateTime } from 'luxon'
 import type { TransactionClientContract } from '@adonisjs/lucid/types/database'
 import env from '#start/env'
 import Product from '#models/product'
@@ -103,7 +104,7 @@ export default class ReviewService {
         affiliateUrl: this.links.build(product.asin),
         status: 'approved',
         reviewedById: adminId,
-        reviewedAt: (await import('luxon')).DateTime.now(),
+        reviewedAt: DateTime.now(),
       })
       await product.save()
 
@@ -146,7 +147,7 @@ export default class ReviewService {
         status: 'rejected',
         rejectionReason: reason ?? null,
         reviewedById: adminId,
-        reviewedAt: (await import('luxon')).DateTime.now(),
+        reviewedAt: DateTime.now(),
       })
       await product.save()
       return {
