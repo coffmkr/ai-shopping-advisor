@@ -10,10 +10,10 @@
 
 ## 3. Interfaz del comparador
 
-- [ ] 3.1 Tests de componentes (deben fallar): tabla con una columna por producto y una fila por criterio, marca "Mejor" en texto, mensaje con menos de 2 productos, botón con `src=compare`, casilla deshabilitada con 4 seleccionados
-- [ ] 3.2 Composable `useCompareSelection`, `CompareToggle`, `CompareBar`, `CompareTable` y página `comparar`; tests en verde
-- [ ] 3.3 Verificación manual: marcar productos en una categoría, abrir el comparador, compartir la URL y salir a Amazon
+- [x] 3.1 Tests de componentes (deben fallar): tabla con una columna por producto y una fila por criterio, marca "Mejor" en texto, mensaje con menos de 2 productos, botón con `src=compare`, casilla deshabilitada con 4 seleccionados
+- [x] 3.2 Composable `useCompareSelection`, `CompareToggle`, `CompareBar`, `CompareTable` y página `comparar`; tests en verde
+- [x] 3.3 Verificación manual: marcar productos en una categoría, abrir el comparador, compartir la URL y salir a Amazon
 
 ## 4. Cierre
 
-- [ ] 4.1 `make test`, typecheck y lint en verde
+- [x] 4.1 `make test`, typecheck y lint en verde

@@ -70,6 +70,28 @@ export interface ProductSheetResponse {
   pairings: ProductCard[]
 }
 
+export interface ComparedProduct {
+  id: string
+  slug: string
+  title: string
+  imageUrl: string | null
+  priceTier: PriceTier | null
+  scores: Record<string, number>
+  idealFor: string
+  pros: string[]
+  cons: string[]
+  keySpecs: Record<string, string>
+  badges: string[]
+  goUrl: string
+}
+
+export interface CompareResponse {
+  category: { slug: string; name: string }
+  criteria: Criterion[]
+  products: ComparedProduct[]
+  bestByCriterion: Record<string, string>
+}
+
 export const BADGE_LABELS: Record<string, string> = {
   best_rated: 'Mejor valorado',
   best_value: 'Mejor calidad-precio',

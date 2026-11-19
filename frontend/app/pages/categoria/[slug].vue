@@ -39,8 +39,17 @@ useSeoMeta({
         :key="product.id"
         :product="product"
         :criteria="data.criteria"
-      />
+      >
+        <template #actions>
+          <ClientOnly>
+            <CompareToggle :product-id="product.id" :category-slug="data.category.slug" />
+          </ClientOnly>
+        </template>
+      </ProductCard>
     </div>
+    <ClientOnly>
+      <CompareBar />
+    </ClientOnly>
   </div>
   <p v-else-if="error" class="rounded bg-rose-50 p-4 text-rose-900">
     No pudimos cargar la categoría. Inténtalo de nuevo en unos minutos.
